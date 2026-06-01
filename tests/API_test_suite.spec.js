@@ -10,7 +10,7 @@ test.describe('Autenticação e Perfis', () => {
       "senha": faker.internet.password()
     }
 
-    let responsePOSTmail_Maria_Silva = await page.request.post('http://localhost:3000/registro',
+    let responsePOSTmail_Maria_Silva = await page.request.post('/registro',
       {
         data: {
           "nome": "Maria Silva",
@@ -20,7 +20,7 @@ test.describe('Autenticação e Perfis', () => {
       });
 
     if (responsePOSTmail_Maria_Silva.status() === 400) {
-      let responsePOSTmail_new_valid_user1 = await page.request.post('http://localhost:3000/registro',
+      let responsePOSTmail_new_valid_user1 = await page.request.post('/registro',
         {
           data: ValidUser
         }
@@ -70,7 +70,7 @@ test.describe('Autenticação e Perfis', () => {
 
 
   test('Registo com Email Duplicado (Falha)', async ({ page }) => {
-    let responsePOSTmail_Admin = await page.request.post('http://localhost:3000/registro',
+    let responsePOSTmail_Admin = await page.request.post('/registro',
       {
         data: {
           "nome": "João Santos",
@@ -90,7 +90,7 @@ test.describe('Autenticação e Perfis', () => {
   test.describe('Registo com Dados Inválidos (Falha)', () => {
     test('rejeita uma senha vazia', async ({ page }) => {
       // Verifica se o sistema rejeita uma senha vazia.
-      const responsePOSTmail_Invalid1 = await page.request.post('http://localhost:3000/registro', {
+      const responsePOSTmail_Invalid1 = await page.request.post('/registro', {
         data: {
           nome: faker.person.fullName(),
           email: faker.internet.email(),
@@ -105,7 +105,7 @@ test.describe('Autenticação e Perfis', () => {
 
     test('rejeita um email com formato inválido', async ({ page }) => {
       // Verifica se o sistema rejeita um email com formato inválido.
-      const responsePOSTmail_Invalid2 = await page.request.post('http://localhost:3000/registro', {
+      const responsePOSTmail_Invalid2 = await page.request.post('/registro', {
         data: {
           nome: faker.person.fullName(),
           email: faker.person.fullName(), // Email sem @
@@ -120,7 +120,7 @@ test.describe('Autenticação e Perfis', () => {
 
     test('rejeita um nome vazio', async ({ page }) => {
       // Verifica se o sistema rejeita um nome vazio.
-      const responsePOSTmail_Invalid3 = await page.request.post('http://localhost:3000/registro', {
+      const responsePOSTmail_Invalid3 = await page.request.post('/registro', {
         data: {
           nome: '',
           email: faker.internet.email(),
@@ -135,7 +135,7 @@ test.describe('Autenticação e Perfis', () => {
 
     test('rejeita um email vazio', async ({ page }) => {
       // Verifica se o sistema rejeita um email vazio.
-      const responsePOSTmail_Invalid4 = await page.request.post('http://localhost:3000/registro', {
+      const responsePOSTmail_Invalid4 = await page.request.post('/registro', {
         data: {
           nome: faker.person.fullName(),
           email: '',
@@ -150,7 +150,7 @@ test.describe('Autenticação e Perfis', () => {
 
     test('rejeita um nome numérico', async ({ page }) => {
       // Verifica se o sistema rejeita um nome numérico.
-      const responsePOSTmail_Invalid5 = await page.request.post('http://localhost:3000/registro', {
+      const responsePOSTmail_Invalid5 = await page.request.post('/registro', {
         data: {
           nome: faker.number.int({ min: 1, max: 1000 }),
           email: faker.internet.email(),
@@ -165,7 +165,7 @@ test.describe('Autenticação e Perfis', () => {
 
     test('rejeita um email numérico', async ({ page }) => {
       // Verifica se o sistema rejeita um email numérico.
-      const responsePOSTmail_Invalid6 = await page.request.post('http://localhost:3000/registro', {
+      const responsePOSTmail_Invalid6 = await page.request.post('/registro', {
         data: {
           nome: faker.person.fullName(),
           email: faker.number.int({ min: 1, max: 1000 }),
@@ -180,7 +180,7 @@ test.describe('Autenticação e Perfis', () => {
 
     test('rejeita uma senha numérica', async ({ page }) => {
       // Verifica se o sistema rejeita uma senha numérica.
-      const responsePOSTmail_Invalid7 = await page.request.post('http://localhost:3000/registro', {
+      const responsePOSTmail_Invalid7 = await page.request.post('/registro', {
         data: {
           nome: faker.person.fullName(),
           email: faker.internet.email(),
@@ -195,7 +195,7 @@ test.describe('Autenticação e Perfis', () => {
 
     test('rejeita valores nulos', async ({ page }) => {
       // Verifica se o sistema rejeita valores nulos.
-      const responsePOSTmail_Invalid8 = await page.request.post('http://localhost:3000/registro', {
+      const responsePOSTmail_Invalid8 = await page.request.post('/registro', {
         data: {
           nome: null,
           email: null,
@@ -212,4 +212,83 @@ test.describe('Autenticação e Perfis', () => {
 
   });
 
-})
+ test('Login com Credenciais Válidas (Admin)', async ({ page }) => {
+  let startTime = Date.now();
+  
+  let responsePOSTlogin_Admin = await page.request.post('/login',
+      {
+        data: {
+          "email": "admin@biblioteca.com",
+          "senha": "123456"
+        }
+      });
+
+    let responsetime = Date.now()- startTime;
+    expect(responsePOSTlogin_Admin.status()).toBe(200);
+    expect(responsetime).toBeLessThan(2000);
+
+    let bodyPOSTlogin_Admin = await responsePOSTlogin_Admin.json();
+
+    expect(bodyPOSTlogin_Admin.mensagem).toBe('Login realizado com sucesso');
+    expect(bodyPOSTlogin_Admin).toHaveProperty('usuario');
+    expect(bodyPOSTlogin_Admin.usuario).not.toHaveProperty('senha');
+    expect(bodyPOSTlogin_Admin.usuario).toHaveProperty('tipo');
+    expect(bodyPOSTlogin_Admin.usuario.tipo).toBe(3); 
+  });
+
+test.describe('Validar rejeição de credenciais incorretas (Falha)', () => {
+  test('Login com senha incorreta', async ({ page }) => {
+  let responsePOSTinvalidlogin_Admin = await page.request.post('/login',
+      {
+        data: {
+          "email": "admin@biblioteca.com",
+          "senha": "senhaerrada"
+        }
+      });
+
+    expect(responsePOSTinvalidlogin_Admin.status()).toBe(401);
+
+    let bodyPOSTinvalidlogin_Admin = await responsePOSTinvalidlogin_Admin.json();
+
+    expect(bodyPOSTinvalidlogin_Admin.mensagem).toBe('Email ou senha incorretos'); 
+  });
+
+  test('Login com email incorreto', async ({ page }) => {
+  let responsePOSTinvalidlogin_Admin = await page.request.post('/login',
+      {
+        data: {
+          "email": "adminmailincorreto@biblioteca.com",
+          "senha": "123456"
+        }
+      });
+
+    expect(responsePOSTinvalidlogin_Admin.status()).toBe(401);
+
+    let bodyPOSTinvalidlogin_Admin = await responsePOSTinvalidlogin_Admin.json();
+
+    expect(bodyPOSTinvalidlogin_Admin.mensagem).toBe('Email ou senha incorretos'); 
+  });
+
+  test('Login com email e senha vazios', async ({ page }) => {
+  let responsePOSTinvalidlogin_Admin = await page.request.post('/login',
+      {
+        data: {
+          "email": "",
+          "senha": ""
+        }
+      });
+
+    expect(responsePOSTinvalidlogin_Admin.status()).toBe(401);
+
+    let bodyPOSTinvalidlogin_Admin = await responsePOSTinvalidlogin_Admin.json();
+
+    expect(bodyPOSTinvalidlogin_Admin.mensagem).toBe('Email ou senha incorretos'); 
+  });
+});
+});
+
+
+
+
+test.describe('Livros', () => {
+  test('Listar Todos os Livros (Sucesso)', async ({ page }) => {
