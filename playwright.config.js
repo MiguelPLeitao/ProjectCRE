@@ -79,3 +79,10 @@ export default defineConfig({
   // },
 });
 
+module.exports = {
+// Other configuration options...
+reporter: [
+['html'],
+['allure-playwright', { outputFolder: 'my-allure-results' }],
+],
+};
