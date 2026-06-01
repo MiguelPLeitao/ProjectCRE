@@ -1,6 +1,5 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
-import { faker } from '@faker-js/faker';
 
 test.describe('Estatísticas', () => {
     test('Obter Estatísticas da Biblioteca', async ({ request }) => {
@@ -81,6 +80,7 @@ test.describe('Estatísticas', () => {
         expect(bodyGETstatistics.comprasPendentes).toBe(totalPendingOrders);
         expect(Number.isInteger(bodyGETstatistics.comprasPendentes)).toBe(true);
         expect(bodyGETstatistics.comprasPendentes).toBeGreaterThanOrEqual(0);
+        expect(bodyGETstatistics.totalUsuarios).toBe(totalType1Users + totalType2Users + totalType3Users);
     });
 
 })
