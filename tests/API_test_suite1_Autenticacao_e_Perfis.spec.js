@@ -100,7 +100,8 @@ test.describe('Autenticação e Perfis', () => {
 
       expect(responsePOSTmail_Invalid1.status()).toBe(400);
       const bodyPOSTmail_Invalid1 = await responsePOSTmail_Invalid1.json();
-      expect(bodyPOSTmail_Invalid1.senha).not.toBe(undefined);
+      expect(bodyPOSTmail_Invalid1.mensagem).toBe("Nome, email válido e senha são obrigatórios");
+      expect(bodyPOSTmail_Invalid1).not.toHaveProperty('usuario');
     });
 
     test('rejeita um email com formato inválido', async ({ page }) => {
@@ -115,7 +116,8 @@ test.describe('Autenticação e Perfis', () => {
 
       expect(responsePOSTmail_Invalid2.status()).toBe(400);
       const bodyPOSTmail_Invalid2 = await responsePOSTmail_Invalid2.json();
-      expect(bodyPOSTmail_Invalid2.email).toContain("@");
+      expect(bodyPOSTmail_Invalid2.mensagem).toBe("Nome, email válido e senha são obrigatórios");
+      expect(bodyPOSTmail_Invalid2).not.toHaveProperty('usuario');
     });
 
     test('rejeita um nome vazio', async ({ page }) => {
@@ -130,7 +132,8 @@ test.describe('Autenticação e Perfis', () => {
 
       expect(responsePOSTmail_Invalid3.status()).toBe(400);
       const bodyPOSTmail_Invalid3 = await responsePOSTmail_Invalid3.json();
-      expect(bodyPOSTmail_Invalid3.nome).not.toBe(undefined);
+      expect(bodyPOSTmail_Invalid3.mensagem).toBe("Nome, email válido e senha são obrigatórios");
+      expect(bodyPOSTmail_Invalid3).not.toHaveProperty('usuario');
     });
 
     test('rejeita um email vazio', async ({ page }) => {
@@ -145,7 +148,8 @@ test.describe('Autenticação e Perfis', () => {
 
       expect(responsePOSTmail_Invalid4.status()).toBe(400);
       const bodyPOSTmail_Invalid4 = await responsePOSTmail_Invalid4.json();
-      expect(bodyPOSTmail_Invalid4.email).not.toBe(undefined);
+      expect(bodyPOSTmail_Invalid4.mensagem).toBe("Nome, email válido e senha são obrigatórios");
+      expect(bodyPOSTmail_Invalid4).not.toHaveProperty('usuario');
     });
 
     test('rejeita um nome numérico', async ({ page }) => {
@@ -160,7 +164,8 @@ test.describe('Autenticação e Perfis', () => {
 
       expect(responsePOSTmail_Invalid5.status()).toBe(400);
       const bodyPOSTmail_Invalid5 = await responsePOSTmail_Invalid5.json();
-      expect(typeof bodyPOSTmail_Invalid5.nome).toBe('string');
+      expect(bodyPOSTmail_Invalid5.mensagem).toBe("Nome, email válido e senha são obrigatórios");
+      expect(bodyPOSTmail_Invalid5).not.toHaveProperty('usuario');
     });
 
     test('rejeita um email numérico', async ({ page }) => {
@@ -175,7 +180,8 @@ test.describe('Autenticação e Perfis', () => {
 
       expect(responsePOSTmail_Invalid6.status()).toBe(400);
       const bodyPOSTmail_Invalid6 = await responsePOSTmail_Invalid6.json();
-      expect(typeof bodyPOSTmail_Invalid6.email).toBe('string');
+      expect(bodyPOSTmail_Invalid6.mensagem).toBe("Nome, email válido e senha são obrigatórios");
+      expect(bodyPOSTmail_Invalid6).not.toHaveProperty('usuario');
     });
 
     test('rejeita uma senha numérica', async ({ page }) => {
@@ -190,7 +196,8 @@ test.describe('Autenticação e Perfis', () => {
 
       expect(responsePOSTmail_Invalid7.status()).toBe(400);
       const bodyPOSTmail_Invalid7 = await responsePOSTmail_Invalid7.json();
-      expect(typeof bodyPOSTmail_Invalid7.senha).toBe('string');
+      expect(bodyPOSTmail_Invalid7.mensagem).toBe("Nome, email válido e senha são obrigatórios");
+      expect(bodyPOSTmail_Invalid7).not.toHaveProperty('usuario');
     });
 
     test('rejeita valores nulos', async ({ page }) => {
@@ -205,17 +212,15 @@ test.describe('Autenticação e Perfis', () => {
 
       expect(responsePOSTmail_Invalid8.status()).toBe(400);
       const bodyPOSTmail_Invalid8 = await responsePOSTmail_Invalid8.json();
-      expect(bodyPOSTmail_Invalid8.nome).not.toBe(undefined);
-      expect(bodyPOSTmail_Invalid8.email).not.toBe(undefined);
-      expect(bodyPOSTmail_Invalid8.senha).not.toBe(undefined);
+      expect(bodyPOSTmail_Invalid8.mensagem).toBe("Nome, email válido e senha são obrigatórios");
+      expect(bodyPOSTmail_Invalid8).not.toHaveProperty('usuario');
     });
-
   });
 
- test('Login com Credenciais Válidas (Admin)', async ({ page }) => {
-  let startTime = Date.now();
-  
-  let responsePOSTlogin_Admin = await page.request.post('/login',
+  test('Login com Credenciais Válidas (Admin)(Sucesso)', async ({ page }) => {
+    let startTime = Date.now();
+
+    let responsePOSTlogin_Admin = await page.request.post('/login',
       {
         data: {
           "email": "admin@biblioteca.com",
@@ -223,7 +228,7 @@ test.describe('Autenticação e Perfis', () => {
         }
       });
 
-    let responsetime = Date.now()- startTime;
+    let responsetime = Date.now() - startTime;
     expect(responsePOSTlogin_Admin.status()).toBe(200);
     expect(responsetime).toBeLessThan(2000);
 
@@ -233,62 +238,56 @@ test.describe('Autenticação e Perfis', () => {
     expect(bodyPOSTlogin_Admin).toHaveProperty('usuario');
     expect(bodyPOSTlogin_Admin.usuario).not.toHaveProperty('senha');
     expect(bodyPOSTlogin_Admin.usuario).toHaveProperty('tipo');
-    expect(bodyPOSTlogin_Admin.usuario.tipo).toBe(3); 
+    expect(bodyPOSTlogin_Admin.usuario.tipo).toBe(3);
   });
 
-test.describe('Validar rejeição de credenciais incorretas (Falha)', () => {
-  test('Login com senha incorreta', async ({ page }) => {
-  let responsePOSTinvalidlogin_Admin = await page.request.post('/login',
-      {
-        data: {
-          "email": "admin@biblioteca.com",
-          "senha": "senhaerrada"
-        }
-      });
+  test.describe('Validar rejeição de credenciais incorretas (Falha)', () => {
+    test('Login com senha incorreta', async ({ page }) => {
+      let response1POSTinvalidlogin_Admin = await page.request.post('/login',
+        {
+          data: {
+            "email": "admin@biblioteca.com",
+            "senha": "senhaerrada"
+          }
+        });
 
-    expect(responsePOSTinvalidlogin_Admin.status()).toBe(401);
+      expect(response1POSTinvalidlogin_Admin.status()).toBe(401);
 
-    let bodyPOSTinvalidlogin_Admin = await responsePOSTinvalidlogin_Admin.json();
+      let body1POSTinvalidlogin_Admin = await response1POSTinvalidlogin_Admin.json();
 
-    expect(bodyPOSTinvalidlogin_Admin.mensagem).toBe('Email ou senha incorretos'); 
-  });
+      expect(body1POSTinvalidlogin_Admin.mensagem).toBe('Email ou senha incorretos');
+    });
 
-  test('Login com email incorreto', async ({ page }) => {
-  let responsePOSTinvalidlogin_Admin = await page.request.post('/login',
-      {
-        data: {
-          "email": "adminmailincorreto@biblioteca.com",
-          "senha": "123456"
-        }
-      });
+    test('Login com email incorreto', async ({ page }) => {
+      let response2POSTinvalidlogin_Admin = await page.request.post('/login',
+        {
+          data: {
+            "email": "adminmailincorreto@biblioteca.com",
+            "senha": "123456"
+          }
+        });
 
-    expect(responsePOSTinvalidlogin_Admin.status()).toBe(401);
+      expect(response2POSTinvalidlogin_Admin.status()).toBe(401);
 
-    let bodyPOSTinvalidlogin_Admin = await responsePOSTinvalidlogin_Admin.json();
+      let body2POSTinvalidlogin_Admin = await response2POSTinvalidlogin_Admin.json();
 
-    expect(bodyPOSTinvalidlogin_Admin.mensagem).toBe('Email ou senha incorretos'); 
-  });
+      expect(body2POSTinvalidlogin_Admin.mensagem).toBe('Email ou senha incorretos');
+    });
 
-  test('Login com email e senha vazios', async ({ page }) => {
-  let responsePOSTinvalidlogin_Admin = await page.request.post('/login',
-      {
-        data: {
-          "email": "",
-          "senha": ""
-        }
-      });
+    test('Login com email e senha vazios', async ({ page }) => {
+      let response3POSTinvalidlogin_Admin = await page.request.post('/login',
+        {
+          data: {
+            "email": "",
+            "senha": ""
+          }
+        });
 
-    expect(responsePOSTinvalidlogin_Admin.status()).toBe(401);
+      expect(response3POSTinvalidlogin_Admin.status()).toBe(401);
 
-    let bodyPOSTinvalidlogin_Admin = await responsePOSTinvalidlogin_Admin.json();
+      let body3POSTinvalidlogin_Admin = await response3POSTinvalidlogin_Admin.json();
 
-    expect(bodyPOSTinvalidlogin_Admin.mensagem).toBe('Email ou senha incorretos'); 
+      expect(body3POSTinvalidlogin_Admin.mensagem).toBe('Email ou senha incorretos');
+    });
   });
 });
-});
-
-
-
-
-test.describe('Livros', () => {
-  test('Listar Todos os Livros (Sucesso)', async ({ page }) => {

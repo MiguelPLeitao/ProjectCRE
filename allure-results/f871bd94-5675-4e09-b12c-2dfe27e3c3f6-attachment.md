@@ -1,0 +1,109 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: API_test_suite3_Estatisticas.spec.js >> Estatísticas >> Obter Estatísticas da Biblioteca
+- Location: tests\API_test_suite3_Estatisticas.spec.js:6:9
+
+# Error details
+
+```
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 0
+Received: 3
+```
+
+# Test source
+
+```ts
+  1  | // @ts-check
+  2  | import { test, expect } from '@playwright/test';
+  3  | import { faker } from '@faker-js/faker';
+  4  | 
+  5  | test.describe('Estatísticas', () => {
+  6  |     test('Obter Estatísticas da Biblioteca', async ({ request }) => {
+  7  |         let responseGETbooks = await request.get('/livros');
+  8  |         let responseGETusers = await request.get('/usuarios');
+  9  |         let responseGETbookloans = await request.get('/arrendamentos');
+  10 |         let responseGETorders = await request.get('/compras');
+  11 | 
+  12 |         expect(responseGETbooks.status()).toBe(200);
+  13 |         expect(responseGETusers.status()).toBe(200);
+  14 |         expect(responseGETbookloans.status()).toBe(200);
+  15 |         expect(responseGETorders.status()).toBe(200);
+  16 | 
+  17 |         let bodyGETusers = await responseGETusers.json();
+  18 |         let bodyGETbooks = await responseGETbooks.json();
+  19 |         let bodyGETbookloans = await responseGETbookloans.json();
+  20 |         let bodyGETorders = await responseGETorders.json();
+  21 | 
+  22 |         let totalBooks = bodyGETbooks.length;
+  23 |         let totalPages = 0;
+  24 |         for (const book of bodyGETbooks) {
+  25 |             totalPages += book.paginas;
+  26 |         }
+  27 |         let totalUsers = bodyGETusers.length;
+  28 |         let totalType1Users = bodyGETusers.filter(user => user.tipo === 1).length;
+  29 |         let totalType2Users = bodyGETusers.filter(user => user.tipo === 2).length;
+  30 |         let totalType3Users = bodyGETusers.filter(user => user.tipo === 3).length;
+  31 | 
+  32 |         let totalAvailableBooks = bodyGETbooks.filter(book => book.disponivel === true).length;
+  33 | 
+  34 |         /* Outra forma de fazer o loop e contar em vez de usar função filter
+  35 |         let totalavailablebooks2 = 0
+  36 |         for (const book of bodyGETbooks) {
+  37 |             if (book.disponivel === true) {
+  38 |                 totalavailablebooks2 = totalavailablebooks2 + 1;
+  39 |             }
+  40 |         };
+  41 |         */
+  42 | 
+  43 |         let totalPendingLoans = bodyGETbookloans.filter(loan => loan.status === 'PENDENTE').length;
+  44 | 
+  45 |         let totalPendingOrders = bodyGETorders.filter(order => order.status === 'PENDENTE').length;
+  46 | 
+  47 | 
+  48 |         let responseGETstatistics = await request.get('/estatisticas');
+  49 | 
+  50 |         expect(responseGETstatistics.status()).toBe(200);
+  51 | 
+  52 |         let bodyGETstatistics = await responseGETstatistics.json();
+  53 |         console.log(bodyGETstatistics);
+  54 | 
+  55 |         expect(bodyGETstatistics.totalLivros).toBe(totalBooks);
+  56 |         expect(Number.isInteger(bodyGETstatistics.totalLivros)).toBe(true);
+  57 |         expect(bodyGETstatistics.totalLivros).toBeGreaterThanOrEqual(0);
+  58 |         expect(bodyGETstatistics.totalPaginas).toBe(totalPages);
+  59 |         expect(Number.isInteger(bodyGETstatistics.totalPaginas)).toBe(true);
+  60 |         expect(bodyGETstatistics.totalPaginas).toBeGreaterThanOrEqual(0);
+  61 |         expect(bodyGETstatistics.totalUsuarios).toBe(totalUsers);
+  62 |         expect(Number.isInteger(bodyGETstatistics.totalUsuarios)).toBe(true);
+  63 |         expect(bodyGETstatistics.totalUsuarios).toBeGreaterThanOrEqual(0);
+  64 |         expect(bodyGETstatistics.usuariosPorTipo.alunos).toBe(totalType1Users);
+  65 |         expect(Number.isInteger(bodyGETstatistics.usuariosPorTipo.alunos)).toBe(true);
+  66 |         expect(bodyGETstatistics.usuariosPorTipo.alunos).toBeGreaterThanOrEqual(0);
+  67 |         expect(bodyGETstatistics.usuariosPorTipo.funcionarios).toBe(totalType2Users);
+  68 |         expect(Number.isInteger(bodyGETstatistics.usuariosPorTipo.funcionarios)).toBe(true);
+  69 |         expect(bodyGETstatistics.usuariosPorTipo.funcionarios).toBeGreaterThanOrEqual(0);
+  70 |         expect(bodyGETstatistics.usuariosPorTipo.admins).toBe(totalType3Users);
+  71 |         expect(Number.isInteger(bodyGETstatistics.usuariosPorTipo.admins)).toBe(true);
+  72 |         expect(bodyGETstatistics.usuariosPorTipo.admins).toBeGreaterThanOrEqual(0);
+> 73 |         expect(bodyGETstatistics.livrosDisponiveis).toBe(totalAvailableBooks);
+     |                                                     ^ Error: expect(received).toBe(expected) // Object.is equality
+  74 |         expect(Number.isInteger(bodyGETstatistics.livrosDisponiveis)).toBe(true);
+  75 |         expect(bodyGETstatistics.livrosDisponiveis).toBeGreaterThanOrEqual(0);
+  76 |         expect(bodyGETstatistics.arrendamentosPendentes).toBe(totalPendingLoans);
+  77 |         expect(Number.isInteger(bodyGETstatistics.arrendamentosPendentes)).toBe(true);
+  78 |         expect(bodyGETstatistics.arrendamentosPendentes).toBeGreaterThanOrEqual(0);
+  79 |         expect(bodyGETstatistics.comprasPendentes).toBe(totalPendingOrders);
+  80 |         expect(Number.isInteger(bodyGETstatistics.comprasPendentes)).toBe(true);
+  81 |         expect(bodyGETstatistics.comprasPendentes).toBeGreaterThanOrEqual(0);
+  82 |     });
+  83 | 
+  84 | })
+```
