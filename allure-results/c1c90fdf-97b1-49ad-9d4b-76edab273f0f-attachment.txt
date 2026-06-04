@@ -1,0 +1,49 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code',
+    autor: 'Robert C. Martin',
+    paginas: 464,
+    descricao: 'Um guia completo sobre boas práticas de programação',
+    imagemUrl: 'https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
+    dataCadastro: '2026-06-04T09:51:55.127Z',
+    estoque: 5,
+    preco: 49.9
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter',
+    autor: 'J.K. Rowling',
+    paginas: 309,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso',
+    imagemUrl: 'https://m.media-amazon.com/images/I/81ibfYk4qmL._SY466_.jpg',
+    dataCadastro: '2026-06-04T09:51:55.127Z',
+    estoque: 3,
+    preco: 39.9
+  },
+  {
+    id: 3,
+    nome: 'Hamlet',
+    autor: 'Grant Sipes DDS',
+    paginas: 783,
+    descricao: 'Suasoria curso rerum comis quia adicio argentum defessus. Vesica ceno cogo quo cubo amissio terror spes supellex.',
+    imagemUrl: 'https://picsum.photos/seed/X9gl4aRMct/1785/1922',
+    dataCadastro: '2026-06-04T12:11:29.883Z',
+    estoque: 0,
+    preco: 124.32
+  },
+  {
+    id: 4,
+    nome: 'Carmilla',
+    autor: 'Bella Hodkiewicz',
+    paginas: 1292,
+    descricao: 'Vita xiphias antepono. Sordeo artificiose thesaurus placeat reiciendis admoveo derelinquo.',
+    imagemUrl: 'https://picsum.photos/seed/ufHw83tssl/787/134',
+    dataCadastro: '2026-06-04T12:11:34.251Z',
+    estoque: 0,
+    preco: 145.29
+  }
+]
+User ID usado:19
+Book ID usado:1
+2026-06-04T12:21:14.593Z
