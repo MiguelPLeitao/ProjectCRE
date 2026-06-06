@@ -1,0 +1,74 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code',
+    autor: 'Robert C. Martin',
+    paginas: 464,
+    descricao: 'Um guia completo sobre boas práticas de programação',
+    imagemUrl: 'https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
+    dataCadastro: '2026-06-06T08:41:08.983Z',
+    estoque: 2,
+    preco: 49.9
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter',
+    autor: 'J.K. Rowling',
+    paginas: 309,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso',
+    imagemUrl: 'https://m.media-amazon.com/images/I/81ibfYk4qmL._SY466_.jpg',
+    dataCadastro: '2026-06-06T08:41:08.983Z',
+    estoque: 1,
+    preco: 39.9
+  },
+  {
+    id: 3,
+    nome: 'The Plague',
+    autor: 'Dr. Marlene Kemmer',
+    paginas: 1057,
+    descricao: 'Cometes omnis argumentum cuppedia vapulus valeo recusandae adhaero aestus. Volubilis illum candidus collum vesco tondeo argumentum facere cavus quod.',
+    imagemUrl: 'https://picsum.photos/seed/8Tisl/1208/3659',
+    dataCadastro: '2026-06-06T14:09:59.961Z',
+    estoque: 0,
+    preco: 42.29
+  },
+  {
+    id: 4,
+    nome: 'And Then There Were None',
+    autor: 'Justin Bailey',
+    paginas: 1754,
+    descricao: 'Defungo crustulum quaerat saepe aeneus magnam terga delego aufero ambitus. Pariatur denuo iusto capio sto voco tonsor.',
+    imagemUrl: 'https://picsum.photos/seed/CnGo0w/2165/837',
+    dataCadastro: '2026-06-06T14:11:22.860Z',
+    estoque: 0,
+    preco: 88.69
+  },
+  {
+    id: 5,
+    nome: '20,000 Leagues Under the Sea',
+    autor: 'Mrs. Daisy Schmidt',
+    paginas: 1568,
+    descricao: 'Terror vespillo tersus truculenter. Currus articulus tunc creo hic bardus.',
+    imagemUrl: 'https://picsum.photos/seed/rFlQUI/2157/3111',
+    dataCadastro: '2026-06-06T14:12:09.297Z',
+    estoque: 0,
+    preco: 129.55
+  },
+  {
+    id: 6,
+    nome: 'Anne of Green Gables',
+    autor: 'Humberto Bode',
+    paginas: 490,
+    descricao: 'Traho perferendis vel spiritus quisquam barba vigilo virgo decipio. Statua caput repudiandae collum usque vir id vomer taedium.',
+    imagemUrl: 'https://picsum.photos/seed/LAZXL/1757/2649',
+    dataCadastro: '2026-06-06T14:12:11.454Z',
+    estoque: 0,
+    preco: 90.19
+  }
+]
+User ID usado:3
+Book ID usado:1
+2023-02-06T05:21:29.377Z
+2023-09-20T03:34:29.762Z
+25
+25

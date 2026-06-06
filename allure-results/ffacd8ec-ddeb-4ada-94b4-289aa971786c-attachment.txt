@@ -1,0 +1,88 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code',
+    autor: 'Robert C. Martin',
+    paginas: 464,
+    descricao: 'Um guia completo sobre boas práticas de programação',
+    imagemUrl: 'https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
+    dataCadastro: '2026-06-06T16:03:42.434Z',
+    estoque: 4,
+    preco: 49.9
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter',
+    autor: 'J.K. Rowling',
+    paginas: 309,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso',
+    imagemUrl: 'https://m.media-amazon.com/images/I/81ibfYk4qmL._SY466_.jpg',
+    dataCadastro: '2026-06-06T16:03:42.434Z',
+    estoque: 2,
+    preco: 39.9
+  },
+  {
+    id: 3,
+    nome: "Grimms' Fairy Tales - Editado",
+    autor: 'Erma Rosenbaum - Editado',
+    paginas: 470,
+    descricao: 'Pecus cornu tactus cuppedia explicabo verbera. Tergeo ater adflicto arbitro mollitia vivo. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-06T16:05:49.839Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 5,
+    nome: 'The Day of the Locust',
+    autor: 'Wilford Reilly',
+    paginas: 494,
+    descricao: 'Denuncio quos crapula tracto earum tenax vinum. Tabula optio cito temeritas attollo stips casso.',
+    imagemUrl: 'https://picsum.photos/seed/JHEvTF2u3/1648/249',
+    dataCadastro: '2026-06-06T16:05:50.660Z',
+    estoque: 0,
+    preco: 86.49
+  }
+]
+User ID usado:2
+Book ID usado:1
+2022-07-26T01:03:13.058Z
+2022-08-04T06:18:40.124Z
+[
+  {
+    id: 1,
+    usuarioId: 1,
+    livroId: 2,
+    dataInicio: '2027-04-24T07:05:56.868Z',
+    dataFim: '2027-05-25T08:36:17.883Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-06T16:04:22.317Z'
+  },
+  {
+    id: 2,
+    usuarioId: 2,
+    livroId: 1,
+    dataInicio: '2026-08-29T19:04:56.677Z',
+    dataFim: '2027-03-18T17:33:06.094Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-06T16:05:50.003Z'
+  },
+  {
+    id: 3,
+    usuarioId: 11,
+    livroId: 1,
+    dataInicio: '2029-06-04T07:14:59.854Z',
+    dataFim: '2030-02-02T13:25:28.639Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-06T16:05:50.682Z'
+  },
+  {
+    id: 4,
+    usuarioId: 2,
+    livroId: 1,
+    dataInicio: '2022-07-26T01:03:13.058Z',
+    dataFim: '2022-08-04T06:18:40.124Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-06T16:05:59.348Z'
+  }
+]

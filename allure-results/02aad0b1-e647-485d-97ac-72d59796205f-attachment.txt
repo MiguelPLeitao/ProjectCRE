@@ -1,0 +1,16 @@
+User ID usado:3
+Book ID usado:1
+2025-08-20T22:48:41.378Z
+2026-01-28T06:24:06.233Z
+1
+[
+  {
+    id: 1,
+    usuarioId: 3,
+    livroId: 1,
+    dataInicio: '2025-08-20T22:48:41.378Z',
+    dataFim: '2026-01-28T06:24:06.233Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-06T17:15:26.217Z'
+  }
+]

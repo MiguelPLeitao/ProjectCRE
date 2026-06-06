@@ -1,0 +1,72 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code',
+    autor: 'Robert C. Martin',
+    paginas: 464,
+    descricao: 'Um guia completo sobre boas práticas de programação',
+    imagemUrl: 'https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
+    dataCadastro: '2026-06-06T17:15:21.487Z',
+    estoque: 4,
+    preco: 49.9
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter',
+    autor: 'J.K. Rowling',
+    paginas: 309,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso',
+    imagemUrl: 'https://m.media-amazon.com/images/I/81ibfYk4qmL._SY466_.jpg',
+    dataCadastro: '2026-06-06T17:15:21.488Z',
+    estoque: 2,
+    preco: 39.9
+  },
+  {
+    id: 3,
+    nome: 'A Portrait of the Artist as a Young Man - Editado',
+    autor: 'Miss Martha Haley II - Editado',
+    paginas: 1922,
+    descricao: 'Talis cena aduro conqueror maiores. Defluo creptio tripudio terminatio pectus corrigo quos ara capio. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-06T17:43:51.617Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 5,
+    nome: 'Slaughterhouse Five - Editado',
+    autor: 'Mr. Zachary Thompson-Greenfelder - Editado',
+    paginas: 806,
+    descricao: 'Autus advenio amita vulgaris calculus. Cerno esse ascisco temptatio antepono clibanus truculenter absum laboriosam amplexus. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-06T17:43:51.791Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 6,
+    nome: 'The Iliad',
+    autor: 'Mr. Crawford Runte',
+    paginas: 1347,
+    descricao: 'Caute bibo umbra tepesco. Reprehenderit brevis voluptatum abduco conitor.',
+    imagemUrl: 'https://picsum.photos/seed/O4SAHo/689/3914',
+    dataCadastro: '2026-06-06T17:43:58.212Z',
+    estoque: 966,
+    preco: 60.69
+  },
+  {
+    id: 8,
+    nome: 'Lolita',
+    autor: 'Dave Bartoletti',
+    paginas: 625,
+    descricao: 'Vestigium adversus ut iusto. Teres totidem laudantium demulceo combibo ventosus.',
+    imagemUrl: 'https://picsum.photos/seed/Zxz4iBmQKS/2257/2026',
+    dataCadastro: '2026-06-06T17:43:58.376Z',
+    estoque: 0,
+    preco: 31.39
+  }
+]
+User ID usado:24
+Book ID usado:1
+2024-02-04T09:21:45.881Z
+2024-12-08T05:56:11.167Z

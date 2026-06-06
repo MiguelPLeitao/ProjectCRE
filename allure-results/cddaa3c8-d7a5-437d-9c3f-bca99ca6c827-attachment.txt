@@ -1,0 +1,39 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code',
+    autor: 'Robert C. Martin',
+    paginas: 464,
+    descricao: 'Um guia completo sobre boas práticas de programação',
+    imagemUrl: 'https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
+    dataCadastro: '2026-06-06T16:03:42.434Z',
+    estoque: 5,
+    preco: 49.9
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter',
+    autor: 'J.K. Rowling',
+    paginas: 309,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso',
+    imagemUrl: 'https://m.media-amazon.com/images/I/81ibfYk4qmL._SY466_.jpg',
+    dataCadastro: '2026-06-06T16:03:42.434Z',
+    estoque: 2,
+    preco: 39.9
+  },
+  {
+    id: 3,
+    nome: "Grimms' Fairy Tales - Editado",
+    autor: 'Erma Rosenbaum - Editado',
+    paginas: 470,
+    descricao: 'Pecus cornu tactus cuppedia explicabo verbera. Tergeo ater adflicto arbitro mollitia vivo. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-06T16:05:49.839Z',
+    estoque: 0,
+    preco: 0
+  }
+]
+User ID usado:2
+Book ID usado:1
+2026-08-29T19:04:56.677Z
+2027-03-18T17:33:06.094Z

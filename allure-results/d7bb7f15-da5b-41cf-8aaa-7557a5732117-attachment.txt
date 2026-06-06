@@ -1,0 +1,61 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code',
+    autor: 'Robert C. Martin',
+    paginas: 464,
+    descricao: 'Um guia completo sobre boas práticas de programação',
+    imagemUrl: 'https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
+    dataCadastro: '2026-06-06T16:03:42.434Z',
+    estoque: 3,
+    preco: 49.9
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter',
+    autor: 'J.K. Rowling',
+    paginas: 309,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso',
+    imagemUrl: 'https://m.media-amazon.com/images/I/81ibfYk4qmL._SY466_.jpg',
+    dataCadastro: '2026-06-06T16:03:42.434Z',
+    estoque: 2,
+    preco: 39.9
+  },
+  {
+    id: 3,
+    nome: "Grimms' Fairy Tales - Editado",
+    autor: 'Erma Rosenbaum - Editado',
+    paginas: 470,
+    descricao: 'Pecus cornu tactus cuppedia explicabo verbera. Tergeo ater adflicto arbitro mollitia vivo. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-06T16:05:49.839Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 5,
+    nome: 'The Day of the Locust',
+    autor: 'Wilford Reilly',
+    paginas: 494,
+    descricao: 'Denuncio quos crapula tracto earum tenax vinum. Tabula optio cito temeritas attollo stips casso.',
+    imagemUrl: 'https://picsum.photos/seed/JHEvTF2u3/1648/249',
+    dataCadastro: '2026-06-06T16:05:50.660Z',
+    estoque: 0,
+    preco: 86.49
+  },
+  {
+    id: 6,
+    nome: 'Life of Pi',
+    autor: 'Queen Smith',
+    paginas: 1192,
+    descricao: 'Veritas canis dens deinde compono distinctio cuppedia stips bellicus taceo. Modi auctor debilito cado spoliatio basium virgo atrox vitiosus.',
+    imagemUrl: 'https://picsum.photos/seed/ztIVgOA34/1897/1717',
+    dataCadastro: '2026-06-06T16:07:37.378Z',
+    estoque: 0,
+    preco: 75.89
+  }
+]
+User ID usado:14
+Book ID usado:2
+2025-02-20T17:30:08.010Z
+2025-06-03T23:56:10.402Z
