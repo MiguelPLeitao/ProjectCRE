@@ -1,0 +1,61 @@
+User ID usado:19
+Book ID usado:1
+2030-12-05T02:34:40.894Z
+2031-10-26T04:53:58.621Z
+6
+[
+  {
+    id: 1,
+    usuarioId: 9,
+    livroId: 3,
+    dataInicio: '2023-03-07T07:48:24.664Z',
+    dataFim: '2023-07-23T19:40:31.869Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-07T22:18:34.499Z'
+  },
+  {
+    id: 2,
+    usuarioId: 11,
+    livroId: 2,
+    dataInicio: '2023-11-20T21:25:19.198Z',
+    dataFim: '2024-04-11T00:07:09.826Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-07T22:18:34.535Z'
+  },
+  {
+    id: 3,
+    usuarioId: 16,
+    livroId: 3,
+    dataInicio: '2023-04-26T20:14:08.986Z',
+    dataFim: '2023-11-02T00:07:22.719Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-07T22:18:34.605Z'
+  },
+  {
+    id: 4,
+    usuarioId: 9,
+    livroId: 1,
+    dataInicio: '2020-01-13T00:10:36.887Z',
+    dataFim: '2020-04-18T23:12:41.126Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-07T22:18:34.629Z'
+  },
+  {
+    id: 5,
+    usuarioId: 21,
+    livroId: 6,
+    dataInicio: '2020-05-19T14:31:02.785Z',
+    dataFim: '2021-04-12T09:05:41.503Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-07T22:19:54.419Z'
+  },
+  {
+    id: 6,
+    usuarioId: 19,
+    livroId: 1,
+    dataInicio: '2030-12-05T02:34:40.894Z',
+    dataFim: '2031-10-26T04:53:58.621Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-07T22:19:54.449Z'
+  }
+]

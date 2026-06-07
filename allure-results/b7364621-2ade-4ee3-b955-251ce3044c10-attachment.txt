@@ -1,0 +1,39 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code',
+    autor: 'Robert C. Martin',
+    paginas: 464,
+    descricao: 'Um guia completo sobre boas práticas de programação',
+    imagemUrl: 'https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
+    dataCadastro: '2026-06-07T22:08:51.669Z',
+    estoque: 5,
+    preco: 49.9
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter',
+    autor: 'J.K. Rowling',
+    paginas: 309,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso',
+    imagemUrl: 'https://m.media-amazon.com/images/I/81ibfYk4qmL._SY466_.jpg',
+    dataCadastro: '2026-06-07T22:08:51.669Z',
+    estoque: 3,
+    preco: 39.9
+  },
+  {
+    id: 3,
+    nome: 'Catch-22',
+    autor: 'Ray Fay',
+    paginas: 96,
+    descricao: 'Vomer speculum vindico tabesco vaco. Debitis somnus cicuta credo unde.',
+    imagemUrl: 'https://picsum.photos/seed/KIK0OS/741/3681',
+    dataCadastro: '2026-06-07T22:18:33.402Z',
+    estoque: 108,
+    preco: 186.59
+  }
+]
+User ID usado:9
+Book ID usado:3
+2023-03-07T07:48:24.664Z
+2023-07-23T19:40:31.869Z

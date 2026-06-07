@@ -187,6 +187,8 @@ test.describe('Livros', () => {
     });
 
     test('Atualizar Livro Existente (Sucesso)', async ({ page }) => {
+        await new Promise(resolve => setTimeout(resolve, 3000));
+
         let response3GETbooks = await page.request.get('/livros');
 
         expect(response3GETbooks.status()).toBe(200);

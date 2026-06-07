@@ -1,0 +1,34 @@
+User ID usado:14
+Book ID usado:2
+2022-01-07T05:58:22.203Z
+2022-01-17T11:40:14.111Z
+2
+[
+  {
+    id: 1,
+    usuarioId: 5,
+    livroId: 1,
+    dataInicio: '2029-08-30T22:24:30.594Z',
+    dataFim: '2029-09-26T00:06:25.112Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-07T17:47:53.964Z'
+  },
+  {
+    id: 2,
+    usuarioId: 14,
+    livroId: 2,
+    dataInicio: '2022-01-07T05:58:22.203Z',
+    dataFim: '2022-01-17T11:40:14.111Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-07T17:47:54.017Z'
+  },
+  {
+    id: 3,
+    usuarioId: 15,
+    livroId: 1,
+    dataInicio: '2027-06-01T13:22:25.252Z',
+    dataFim: '2027-07-04T10:25:28.013Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-07T17:47:54.030Z'
+  }
+]

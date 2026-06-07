@@ -1,0 +1,3 @@
+usuário 1: tem 9 ordens de compra
+usuário 2: tem 7 ordens de compra
+usuário 3: tem 5 ordens de compra

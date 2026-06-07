@@ -1,0 +1,61 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code - Editado',
+    autor: 'Robert C. Martin - Editado',
+    paginas: 474,
+    descricao: 'Um guia completo sobre boas práticas de programação - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-07T17:58:11.874Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter',
+    autor: 'J.K. Rowling',
+    paginas: 309,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso',
+    imagemUrl: 'https://m.media-amazon.com/images/I/81ibfYk4qmL._SY466_.jpg',
+    dataCadastro: '2026-06-07T17:58:11.875Z',
+    estoque: 3,
+    preco: 39.9
+  },
+  {
+    id: 3,
+    nome: 'L.A. Confidential - Editado',
+    autor: 'Lori Stracke II - Editado',
+    paginas: 1707,
+    descricao: 'Quia verto cenaculum caute deludo corrupti fugiat valetudo crudelis pecto. Quae dolore cubicularis tollo catena aureus alius victus varius. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-07T17:58:16.661Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 5,
+    nome: 'My Bondage and My Freedom',
+    autor: 'Frank Wintheiser',
+    paginas: 388,
+    descricao: 'Constans derideo tertius summisse deleniti tabella. Ago arbor curriculum aequitas calco adaugeo nihil caveo.',
+    imagemUrl: 'https://picsum.photos/seed/VqGUT3/3630/520',
+    dataCadastro: '2026-06-07T17:58:16.900Z',
+    estoque: 0,
+    preco: 70.79
+  },
+  {
+    id: 6,
+    nome: 'The Pursuit of Love',
+    autor: 'Alexie Stark-Kutch',
+    paginas: 1815,
+    descricao: 'Tametsi abstergo cribro tonsor neque cubitum. Doloribus apparatus vomica ullam.',
+    imagemUrl: 'https://picsum.photos/seed/pjDg2Y2JRm/2236/1685',
+    dataCadastro: '2026-06-07T17:58:26.336Z',
+    estoque: 652,
+    preco: 145.89
+  }
+]
+User ID usado:9
+Book ID usado:6
+2028-06-10T05:48:44.553Z
+2029-03-27T07:56:55.806Z

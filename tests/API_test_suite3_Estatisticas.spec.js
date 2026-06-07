@@ -3,6 +3,8 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Estatísticas', () => {
     test('Obter Estatísticas da Biblioteca', async ({ request }) => {
+        await new Promise(resolve => setTimeout(resolve, 5000));
+        
         let responseGETbooks = await request.get('/livros');
         let responseGETavailablebooks = await request.get('/livros/disponiveis');
         let responseGETusers = await request.get('/usuarios');

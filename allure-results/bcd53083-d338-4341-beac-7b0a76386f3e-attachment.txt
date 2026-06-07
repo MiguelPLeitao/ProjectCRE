@@ -1,0 +1,141 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code - Editado',
+    autor: 'Robert C. Martin - Editado',
+    paginas: 474,
+    descricao: 'Um guia completo sobre boas práticas de programação - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-07T22:08:51.669Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter',
+    autor: 'J.K. Rowling',
+    paginas: 309,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso',
+    imagemUrl: 'https://m.media-amazon.com/images/I/81ibfYk4qmL._SY466_.jpg',
+    dataCadastro: '2026-06-07T22:08:51.669Z',
+    estoque: 0,
+    preco: 39.9
+  },
+  {
+    id: 3,
+    nome: 'Catch-22 - Editado',
+    autor: 'Ray Fay - Editado',
+    paginas: 106,
+    descricao: 'Vomer speculum vindico tabesco vaco. Debitis somnus cicuta credo unde. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-07T22:18:33.402Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 5,
+    nome: 'The Heart is a Lonely Hunter',
+    autor: 'Blanca Gibson',
+    paginas: 218,
+    descricao: 'Deripio demonstro ante despecto subseco tamquam caecus explicabo stillicidium. Deficio sapiente accusantium viduo nihil cuppedia compono.',
+    imagemUrl: 'https://picsum.photos/seed/KMUk1e/3914/3861',
+    dataCadastro: '2026-06-07T22:18:34.500Z',
+    estoque: 0,
+    preco: 156.05
+  },
+  {
+    id: 6,
+    nome: 'The Day of the Locust',
+    autor: 'Mr. Mack Luettgen',
+    paginas: 1697,
+    descricao: 'Canonicus ago adhuc comes caecus suscipit artificiose aveho. Doloremque tepesco ager vestrum conservo urbanus universe.',
+    imagemUrl: 'https://picsum.photos/seed/HBvWYU/3900/3558',
+    dataCadastro: '2026-06-07T22:19:54.229Z',
+    estoque: 118,
+    preco: 14.85
+  },
+  {
+    id: 8,
+    nome: "A Doll's House - Editado",
+    autor: 'Elias Marks - Editado',
+    paginas: 1297,
+    descricao: 'Vindico cito teres caste iste denique. Suggero pecco arx advenio. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-07T22:19:54.408Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 9,
+    nome: 'Clarissa',
+    autor: 'Catherine Quigley V',
+    paginas: 1234,
+    descricao: 'Tabernus decor vilicus sui aduro suasoria carus tergiversatio cursus vicissitudo. Adaugeo cognomen confugo templum nihil suffragium.',
+    imagemUrl: 'https://picsum.photos/seed/lawzNwLXF/2560/1963',
+    dataCadastro: '2026-06-07T22:20:04.136Z',
+    estoque: 613,
+    preco: 138.49
+  },
+  {
+    id: 11,
+    nome: 'Nostromo',
+    autor: 'Blanche Feeney',
+    paginas: 258,
+    descricao: 'Sursum ambitus delectus pectus defungo deripio torrens curis. Cruciamentum callide comes cernuus angelus creptio videlicet quia asporto.',
+    imagemUrl: 'https://picsum.photos/seed/0o80mSA/2862/3404',
+    dataCadastro: '2026-06-07T22:20:05.257Z',
+    estoque: 0,
+    preco: 92.77
+  },
+  {
+    id: 12,
+    nome: 'The Complete Works of Edgar Allen Poe',
+    autor: 'Doreen Hills',
+    paginas: 1914,
+    descricao: 'Repellat utor accedo supra decumbo titulus vilis vilis perferendis sol. Absque ter urbanus amaritudo uredo cupio id pecto.',
+    imagemUrl: 'https://picsum.photos/seed/4v7IHO/1866/1830',
+    dataCadastro: '2026-06-07T22:20:42.360Z',
+    estoque: 934,
+    preco: 181.54
+  },
+  {
+    id: 14,
+    nome: 'The Prince',
+    autor: 'Santiago Batz',
+    paginas: 595,
+    descricao: 'Apparatus ago dolorum absens. Degenero thermae accusator quos fugit valens canis urbs id.',
+    imagemUrl: 'https://picsum.photos/seed/oQjkwV/2718/107',
+    dataCadastro: '2026-06-07T22:20:42.576Z',
+    estoque: 0,
+    preco: 154.99
+  },
+  {
+    id: 15,
+    nome: 'All Quiet on the Western Front',
+    autor: 'Randall Marks',
+    paginas: 432,
+    descricao: 'Reiciendis harum solutio. Adfectus cubitum apostolus amplus abduco.',
+    imagemUrl: 'https://picsum.photos/seed/XHKM3Lq/1048/455',
+    dataCadastro: '2026-06-07T22:20:51.888Z',
+    estoque: 516,
+    preco: 120.3
+  },
+  {
+    id: 17,
+    nome: 'Wuthering Heights',
+    autor: 'Rudy Beatty I',
+    paginas: 136,
+    descricao: 'Curriculum eligendi absens capio. Cubitum tutamen conforto.',
+    imagemUrl: 'https://picsum.photos/seed/3AQLbk/1374/3184',
+    dataCadastro: '2026-06-07T22:20:53.002Z',
+    estoque: 0,
+    preco: 80.39
+  }
+]
+User ID usado:7
+Book ID usado:12
+Book Stock:934
+Book Price:181.54
+Buy order Quantity:76
+Order ID: 19
+Book Stock after cancel:934

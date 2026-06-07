@@ -1,0 +1,182 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code - Editado',
+    autor: 'Robert C. Martin - Editado',
+    paginas: 474,
+    descricao: 'Um guia completo sobre boas práticas de programação - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-07T17:47:49.113Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter',
+    autor: 'J.K. Rowling',
+    paginas: 309,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso',
+    imagemUrl: 'https://m.media-amazon.com/images/I/81ibfYk4qmL._SY466_.jpg',
+    dataCadastro: '2026-06-07T17:47:49.113Z',
+    estoque: 0,
+    preco: 39.9
+  },
+  {
+    id: 3,
+    nome: 'Jude the Obscure - Editado',
+    autor: 'Mrs. Nayeli Kunze - Editado',
+    paginas: 820,
+    descricao: 'Timidus aequus accedo ater cui est cursus tyrannus. Vilicus ater clam vallum peior teres bellicus tumultus crudelis. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-07T17:47:53.757Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 5,
+    nome: 'Paradise Lost',
+    autor: 'Seamus Hansen-Haag',
+    paginas: 1160,
+    descricao: 'Comes cupressus cognatus supellex amaritudo. Eos vester cursus capillus conatus alias.',
+    imagemUrl: 'https://picsum.photos/seed/w4ShLMVU/3171/2258',
+    dataCadastro: '2026-06-07T17:47:53.954Z',
+    estoque: 0,
+    preco: 58.49
+  },
+  {
+    id: 6,
+    nome: 'The Moviegoer - Editado',
+    autor: 'Tristian Zemlak - Editado',
+    paginas: 1360,
+    descricao: 'Canonicus caritas culpo attero spero contigo defleo textor aggero audentia. Conscendo accedo adduco. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-07T17:48:00.541Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 8,
+    nome: 'The Adventures of Augie March',
+    autor: 'Angelina Davis-Waters',
+    paginas: 1130,
+    descricao: 'Cursus eligendi abutor atavus adflicto subseco armarium apostolus atqui. Verecundia ter repellendus.',
+    imagemUrl: 'https://picsum.photos/seed/o5XUF/483/473',
+    dataCadastro: '2026-06-07T17:48:01.769Z',
+    estoque: 0,
+    preco: 173.15
+  },
+  {
+    id: 9,
+    nome: 'The Stranger - Editado - Editado',
+    autor: 'Hope Witting - Editado - Editado',
+    paginas: 1842,
+    descricao: 'Demo culpa ulciscor acceptus decens surculus sequi attollo crastinus. Vulnus brevis attonbitus cibus paulatim spes communis. - Editado - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-07T17:49:13.752Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 11,
+    nome: 'Brave New World',
+    autor: 'Janis Terry',
+    paginas: 1670,
+    descricao: 'Vigilo arguo adsum sulum. Cur supplanto cunae aufero aduro adaugeo deleniti tripudio baiulus claudeo.',
+    imagemUrl: 'https://picsum.photos/seed/31IOe/3878/657',
+    dataCadastro: '2026-06-07T17:49:13.964Z',
+    estoque: 0,
+    preco: 96.55
+  },
+  {
+    id: 12,
+    nome: 'Tropic of Cancer',
+    autor: 'Jill Funk-Roberts',
+    paginas: 14,
+    descricao: 'Amissio compono uter conicio adeo adduco timidus utrimque dolore acsi. Surgo constans cursus cotidie carbo ascisco sapiente.',
+    imagemUrl: 'https://picsum.photos/seed/GZ27XM/3523/267',
+    dataCadastro: '2026-06-07T17:49:32.163Z',
+    estoque: 734,
+    preco: 101.89
+  },
+  {
+    id: 14,
+    nome: 'Romeo and Juliet - Editado',
+    autor: 'Cristopher Herzog - Editado',
+    paginas: 1434,
+    descricao: 'Sortitus concido ustilo conicio molestiae cultura. Atqui abduco tunc adamo cenaculum earum suadeo uberrime verbera comprehendo. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-07T17:49:32.400Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 15,
+    nome: 'Don Quixote',
+    autor: 'Tracy Yundt',
+    paginas: 1528,
+    descricao: 'Una aliquid claro verbera suppono. Cunae pauci subnecto copiose quo xiphias.',
+    imagemUrl: 'https://picsum.photos/seed/rn7Z6OZ/2845/713',
+    dataCadastro: '2026-06-07T17:49:57.374Z',
+    estoque: 252,
+    preco: 67.85
+  },
+  {
+    id: 17,
+    nome: 'The Alchemist',
+    autor: 'Margarita Hodkiewicz',
+    paginas: 490,
+    descricao: 'Suus aptus amplus vos cumque atque spiculum. Caste comitatus aegrotatio pecco.',
+    imagemUrl: 'https://picsum.photos/seed/S5hdhA/1148/1906',
+    dataCadastro: '2026-06-07T17:49:57.579Z',
+    estoque: 0,
+    preco: 115.31
+  },
+  {
+    id: 18,
+    nome: 'Brideshead Revisited',
+    autor: 'Stella Schmitt',
+    paginas: 824,
+    descricao: 'Volubilis cruciamentum artificiose vacuus canonicus undique voluntarius cohors. Colo compono degenero neque coniuratio.',
+    imagemUrl: 'https://picsum.photos/seed/lcsiZHJ/1682/2928',
+    dataCadastro: '2026-06-07T17:51:37.823Z',
+    estoque: 559,
+    preco: 126.65
+  },
+  {
+    id: 20,
+    nome: 'One Thousand and One Nights',
+    autor: 'Kamryn Legros',
+    paginas: 171,
+    descricao: 'Accusantium voro verto id cattus amet. Amitto crepusculum laborum modi casus amiculum aequitas utpote curtus ascit.',
+    imagemUrl: 'https://picsum.photos/seed/3OSbkh3EUu/1450/3838',
+    dataCadastro: '2026-06-07T17:51:38.059Z',
+    estoque: 0,
+    preco: 161.95
+  },
+  {
+    id: 21,
+    nome: "Portnoy's Complaint - Editado",
+    autor: 'Hertha Gleichner - Editado',
+    paginas: 1068,
+    descricao: 'Approbo somniculosus velit calcar conscendo asperiores expedita dolore culpo desolo. Demo usus dolore debeo aiunt adaugeo adfero usus soluta tardus. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-07T17:57:36.179Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 23,
+    nome: 'Slaughterhouse Five',
+    autor: 'Carolina Ruecker',
+    paginas: 1579,
+    descricao: 'Utique circumvenio debitis adfectus quos comedo. Verbum comprehendo timor aequus statua aiunt sollicito ulciscor arceo vindico.',
+    imagemUrl: 'https://picsum.photos/seed/9c3uhHw73/3040/2455',
+    dataCadastro: '2026-06-07T17:57:37.559Z',
+    estoque: 0,
+    preco: 93.99
+  }
+]
+User ID usado:58
+Book ID usado:15
+2025-03-21T06:33:30.940Z
+2025-12-02T23:24:46.565Z

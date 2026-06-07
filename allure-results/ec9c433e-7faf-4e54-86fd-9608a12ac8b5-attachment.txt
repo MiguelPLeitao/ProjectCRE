@@ -1,0 +1,3 @@
+User ID usado:3
+Book ID usado:2
+Buy order Quantity:2533551901350125

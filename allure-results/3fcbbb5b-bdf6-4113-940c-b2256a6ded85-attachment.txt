@@ -1,0 +1,62 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code',
+    autor: 'Robert C. Martin',
+    paginas: 464,
+    descricao: 'Um guia completo sobre boas práticas de programação',
+    imagemUrl: 'https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
+    dataCadastro: '2026-06-07T18:09:05.763Z',
+    estoque: 0,
+    preco: 49.9
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter',
+    autor: 'J.K. Rowling',
+    paginas: 309,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso',
+    imagemUrl: 'https://m.media-amazon.com/images/I/81ibfYk4qmL._SY466_.jpg',
+    dataCadastro: '2026-06-07T18:09:05.764Z',
+    estoque: 0,
+    preco: 39.9
+  },
+  {
+    id: 3,
+    nome: 'Slaughterhouse Five',
+    autor: 'Lonnie Konopelski',
+    paginas: 597,
+    descricao: 'Tardus demens statua votum. Cognatus necessitatibus quis atavus defendo.',
+    imagemUrl: 'https://picsum.photos/seed/jNWj5/2570/3200',
+    dataCadastro: '2026-06-07T19:07:03.142Z',
+    estoque: 37,
+    preco: 42.05
+  },
+  {
+    id: 4,
+    nome: 'The Tin Drum',
+    autor: 'Miss Rylan Murazik-Schamberger',
+    paginas: 824,
+    descricao: 'Aufero adulescens agnosco ago. Ascit synagoga solvo comburo conscendo aequus.',
+    imagemUrl: 'https://picsum.photos/seed/zSDqN9tHi/3223/94',
+    dataCadastro: '2026-06-07T19:07:06.704Z',
+    estoque: 29,
+    preco: 164.8
+  },
+  {
+    id: 5,
+    nome: 'Dr. Zhivago',
+    autor: 'Birdie Corwin',
+    paginas: 1769,
+    descricao: 'Allatus agnosco ullus validus. Adopto vomer ea quia tergo conculco sollicito votum depulso bis.',
+    imagemUrl: 'https://picsum.photos/seed/v1Zmwgz/539/3502',
+    dataCadastro: '2026-06-07T19:07:09.025Z',
+    estoque: 617,
+    preco: 64.66
+  }
+]
+User ID usado:3
+Book ID usado:5
+Book Stock:617
+Book Price:64.66
+Buy order Quantity:206
