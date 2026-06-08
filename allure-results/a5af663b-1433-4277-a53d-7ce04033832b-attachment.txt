@@ -1,0 +1,10 @@
+Os dados foram preenchidos com sucesso!
+O nome é: Carlos Oliveira
+O email é: carlos@teste.com
+A senha é: senha123
+dialog message 1 aceite
+Os dados foram preenchidos com sucesso!
+O nome é: Rogelio Hammes
+O email é: Harry_Reichel-Satterfield@yahoo.com
+A senha é: baboj
+O usuário Carlos Oliveira já existia, foi criado um usuário aleatório!

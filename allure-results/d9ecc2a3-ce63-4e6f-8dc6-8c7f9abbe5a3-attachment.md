@@ -1,0 +1,70 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: FRONTEND_test_suite1_Registro_e_Login.spec.js >> Registo e Login >> Fluxo Completo de Registro (Aluno) (Sucesso)
+- Location: tests\FRONTEND_test_suite1_Registro_e_Login.spec.js:8:9
+
+# Error details
+
+```
+Error: expect(page).toHaveURL(expected) failed
+
+Expected: "http://localhost:3000/login.html"
+Received: "http://localhost:3000/registro.html"
+Timeout:  5000ms
+
+Call log:
+  - Expect "toHaveURL" with timeout 5000ms
+    14 × unexpected value "http://localhost:3000/registro.html"
+
+```
+
+```yaml
+- heading "📚 Criar Conta" [level=1]
+- text: "Nome:"
+- textbox "Nome:"
+- text: "Email:"
+- textbox "Email:": Carlos Oliveiracarlos@teste.com
+- text: "Senha:"
+- textbox "Senha:"
+- text: "Confirmar Senha:"
+- textbox "Confirmar Senha:": senha123senha123
+- button "Registrar"
+- paragraph:
+  - text: Já tem conta?
+  - link "Entrar":
+    - /url: login.html
+```
+
+# Test source
+
+```ts
+  1  | // @ts-check
+  2  | import { test, expect } from '@playwright/test';
+  3  | import Register_page from '../Page_Objects_Model_POM_FRONTEND/Register_Page';
+  4  | import Login_Page from '../Page_Objects_Model_POM_FRONTEND/Login_Page';
+  5  | 
+  6  | 
+  7  | test.describe('Registo e Login', () => {
+  8  |     test('Fluxo Completo de Registro (Aluno) (Sucesso)', async ({ page }) => {
+  9  |         const register_page = new Register_page(page);
+  10 |         const login_Page = new Login_Page(page);
+  11 | 
+  12 |         await page.goto('http://localhost:3000/registro.html');
+  13 | 
+  14 |         register_page.FillName_Email_Password_InputFields("Carlos Oliveira", "carlos@teste.com", "senha123");
+  15 | 
+  16 |         await register_page.ClickRegister_Button();
+  17 | 
+> 18 |         await expect(page).toHaveURL('http://localhost:3000/login.html');
+     |                            ^ Error: expect(page).toHaveURL(expected) failed
+  19 | 
+  20 | 
+  21 |     });
+  22 | })
+```

@@ -1,4 +1,11 @@
 import { expect } from '@playwright/test';
+import { faker } from '@faker-js/faker';
+
+const RandomValidUser = {
+    NAME: faker.person.fullName(),
+    EMAIL: faker.internet.email(),
+    PASSWORD: faker.internet.password({ length: faker.number.int({ min: 4, max: 20 }) }),
+}
 
 class Register_page {
     constructor(page) {
@@ -20,11 +27,21 @@ class Register_page {
     }
 
 
-    FillName_Email_Password_InputFields(name, email, password) {
-        this.NAME_InputField.fill(name);
-        this.EMAIL_InputField.fill(email);
-        this.PASSWORD_InputField.fill(password);
-        this.CONFIRM_PASSWORD_InputField.fill(password);
+    async FillName_Email_Password_InputFields(name, email, password) {
+        const finalName = name || RandomValidUser.NAME;
+        const finalEmail = email || RandomValidUser.EMAIL;
+        const finalPassword = password || RandomValidUser.PASSWORD;
+
+        await this.NAME_InputField.fill(finalName);
+        await this.EMAIL_InputField.fill(finalEmail);
+        await this.PASSWORD_InputField.fill(finalPassword);
+        await this.CONFIRM_PASSWORD_InputField.fill(finalPassword);
+        await console.log("Os dados foram preenchidos com sucesso!");
+        await console.log("O nome é: " + finalName);
+        await console.log("O email é: " + finalEmail);
+        await console.log("A senha é: " + finalPassword);
+
+        return { finalName, finalEmail, finalPassword };
     }
 
 
@@ -45,8 +62,8 @@ class Register_page {
         await this.PASSWORD_InputField.fill(password);
     }
 
-    FillConfirmPassword_InputField(password) {
-        this.CONFIRM_PASSWORD_InputField.fill(password);
+    async FillConfirmPassword_InputField(password) {
+        await this.CONFIRM_PASSWORD_InputField.fill(password);
     }
 
 

@@ -1,0 +1,6 @@
+Os dados foram preenchidos com sucesso!
+O nome é: Carlos Oliveira
+O email é: carlos@teste.com
+A senha é: senha123
+dialog message 1 aceite
+dialog message 2 aceite

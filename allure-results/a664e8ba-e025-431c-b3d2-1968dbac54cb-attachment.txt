@@ -1,0 +1,11 @@
+Os dados foram preenchidos com sucesso!
+O nome é: Carlos Oliveira
+O email é: carlos@teste.com
+A senha é: senha123
+dialog message 'Email já cadastrado' aceite
+Os dados foram preenchidos com sucesso!
+O nome é: Monica Rath
+O email é: Reilly25@hotmail.com
+A senha é: JeM87Q8Zu9tYDj9
+dialog message 'Cadastro realizado com sucesso! Faça login.' aceite
+O usuário Carlos Oliveira já existia, foi criado um usuário aleatório!
