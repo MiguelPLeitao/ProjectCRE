@@ -155,7 +155,7 @@ test.describe('Registo e Login', () => {
 
         await page.waitForTimeout(3000);
 
-        await login_page.FillEmail_Password_InputFields("miguel@teste.com", "123456");
+        await login_page.FillEmail_Password_InputFields("admin@biblioteca.com", "123456");
 
         await login_page.ClickEnterLogin_Button();
 
@@ -163,7 +163,40 @@ test.describe('Registo e Login', () => {
 
         await expect(dashboard_page.UserName_text).toBeVisible();
 
-        //await expect(dashboard_page.UserName_text).toHaveText('Admin');
+        await expect(dashboard_page.UserName_text).toHaveText('Admin MasterADMIN');
 
+        let usuario = await page.evaluate(() => localStorage.getItem('usuario'));
+        expect(usuario).toBeTruthy();
+        expect(JSON.parse(usuario)).toHaveProperty('tipo');
+        expect(JSON.parse(usuario).tipo).toBe(3);
     });
+
+
+
+    test('Login com Credenciais Inválidas (Falha)', async ({ page }) => {
+        const login_page = new Login_page(page);
+
+        await page.goto('http://localhost:3000/login.html');
+
+        await expect(page).toHaveURL('http://localhost:3000/login.html');
+
+        page.waitForEvent('dialog').then(async dialog => {
+            if (dialog.message().includes('Email ou senha incorretos')) {
+                console.log("dialog message 'Email ou senha incorretos' aceite")
+                await dialog.accept();
+            }
+            else {
+                throw new Error('Dialog message 1 não aparece ou não contém o texto esperado.');
+            }
+        });
+
+        await page.waitForTimeout(3000);
+
+        await login_page.FillEmail_Password_InputFields("admin@biblioteca.com", "1111111");
+
+        await login_page.ClickEnterLogin_Button();
+
+        await expect(page).toHaveURL('http://localhost:3000/login.html');
+    });
+
 })
