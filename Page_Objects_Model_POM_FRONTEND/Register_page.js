@@ -4,7 +4,7 @@ import { faker } from '@faker-js/faker';
 const RandomValidUser = {
     NAME: faker.person.fullName(),
     EMAIL: faker.internet.email(),
-    PASSWORD: faker.internet.password({ length: faker.number.int({ min: 4, max: 20 }) }),
+    PASSWORD: faker.internet.password({ length: faker.number.int({ min: 6, max: 20 }) }),
 }
 
 class Register_page {

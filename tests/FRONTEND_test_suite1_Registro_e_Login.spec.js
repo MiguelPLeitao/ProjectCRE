@@ -1,13 +1,16 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
+import { faker } from '@faker-js/faker';
 import Register_page from '../Page_Objects_Model_POM_FRONTEND/Register_Page';
-import Login_Page from '../Page_Objects_Model_POM_FRONTEND/Login_Page';
+import Login_page from '../Page_Objects_Model_POM_FRONTEND/Login_Page';
+import Dashboard_page from '../Page_Objects_Model_POM_FRONTEND/Dashboard_Page';
 
 
 test.describe('Registo e Login', () => {
     test('Fluxo Completo de Registro (Aluno) (Sucesso)', async ({ page }) => {
         const register_page = new Register_page(page);
-        const login_page = new Login_Page(page);
+        const login_page = new Login_page(page);
+        const dashboard_page = new Dashboard_page(page);
 
         await page.goto('http://localhost:3000/registro.html');
 
@@ -87,5 +90,80 @@ test.describe('Registo e Login', () => {
             await expect(register_page.PASSWORD_InputField).toHaveValue("");
             await expect(register_page.CONFIRM_PASSWORD_InputField).toHaveValue("");
         }
+    });
+
+
+    test('Validação de Senhas Não Correspondentes (Falha)', async ({ page }) => {
+        const register_page = new Register_page(page);
+        const login_page = new Login_Page(page);
+
+        await page.goto('http://localhost:3000/registro.html');
+
+        await expect(page).toHaveURL('http://localhost:3000/registro.html');
+
+        page.waitForEvent('dialog').then(async dialog => {
+            if (dialog.message().includes('As senhas não conferem.')) {
+                console.log("dialog message 'As senhas não conferem.' aceite")
+                await dialog.accept();
+            }
+            else {
+                throw new Error('Dialog message 1 não aparece ou não contém o texto esperado.');
+            }
+        });
+
+        await page.waitForTimeout(3000);
+
+        await register_page.FillName_InputField(faker.person.fullName());
+
+        await register_page.FillEmail_InputField(faker.internet.email());
+
+        let InvalidPassword = faker.internet.password({ length: faker.number.int({ min: 6, max: 20 }) });
+        let InvalidConfirmPassword = faker.internet.password({ length: faker.number.int({ min: 6, max: 20 }) });
+
+        console.log("Senha Invalida: " + InvalidPassword);
+        console.log("Confirmar Senha Invalida: " + InvalidConfirmPassword);
+
+        expect(InvalidPassword).not.toEqual(InvalidConfirmPassword);
+
+        await register_page.FillPasssword_InputField(InvalidPassword);
+
+        await register_page.FillConfirmPassword_InputField(InvalidConfirmPassword);
+
+        await register_page.ClickRegister_Button();
+
+        await expect(page).toHaveURL('http://localhost:3000/registro.html');
+    });
+
+
+    test('Login com Sucesso (Admin) (Sucesso)', async ({ page }) => {
+        const login_page = new Login_page(page);
+        const dashboard_page = new Dashboard_page(page);
+
+        await page.goto('http://localhost:3000/login.html');
+
+        await expect(page).toHaveURL('http://localhost:3000/login.html');
+
+        page.waitForEvent('dialog').then(async dialog => {
+            if (dialog.message().includes('Login realizado com sucesso!')) {
+                console.log("dialog message 'Login realizado com sucesso!' aceite")
+                await dialog.accept();
+            }
+            else {
+                throw new Error('Dialog message 1 não aparece ou não contém o texto esperado.');
+            }
+        });
+
+        await page.waitForTimeout(3000);
+
+        await login_page.FillEmail_Password_InputFields("admin@biblioteca.com", "123456");
+
+        await login_page.ClickEnterLogin_Button();
+
+        await expect(page).toHaveURL('http://localhost:3000/dashboard.html');
+
+        await expect(dashboard_page.UserName).toBeVisible();
+
+        await expect(dashboard_page.UserName).toHaveText('Admin');
+
     });
 })
