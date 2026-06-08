@@ -1,9 +1,9 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker';
-import Register_page from '../Page_Objects_Model_POM_FRONTEND/Register_Page';
-import Login_page from '../Page_Objects_Model_POM_FRONTEND/Login_Page';
-import Dashboard_page from '../Page_Objects_Model_POM_FRONTEND/Dashboard_Page';
+import Register_page from '../Page_Objects_Model_POM_FRONTEND/Register_page';
+import Login_page from '../Page_Objects_Model_POM_FRONTEND/Login_page';
+import Dashboard_page from '../Page_Objects_Model_POM_FRONTEND/Dashboard_page';
 
 
 test.describe('Registo e Login', () => {
@@ -95,7 +95,7 @@ test.describe('Registo e Login', () => {
 
     test('Validação de Senhas Não Correspondentes (Falha)', async ({ page }) => {
         const register_page = new Register_page(page);
-        const login_page = new Login_Page(page);
+        const login_page = new Login_page(page);
 
         await page.goto('http://localhost:3000/registro.html');
 
