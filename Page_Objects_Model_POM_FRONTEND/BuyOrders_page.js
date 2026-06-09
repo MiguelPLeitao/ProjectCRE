@@ -36,8 +36,8 @@ class BuyOrders_page {
         await this.Livros_Books_button.click();
     }
 
-    async ClickFavoritos_Favorites_button() {
-        await this.Favoritos_Favorites_button.click();
+    async ClickFavoritos_Favourites_button() {
+        await this.Favoritos_Favourites_button.click();
     }
 
     async ClickMeusArrendamentos_Rents_button() {

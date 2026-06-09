@@ -19,7 +19,7 @@ class Books_page {
         this.Sair_LogOut_button = page.getByRole('button', { name: 'Sair' });
         this.Dashboard_button = page.getByRole('link', { name: 'Dashboard' });
         this.Livros_Books_button = page.getByRole('link', { name: 'Livros' });
-        this.Favoritos_Favorites_button = page.getByRole('link', { name: 'Favoritos' });
+        this.Favoritos_Favourites_button = page.getByRole('link', { name: 'Favoritos' });
         this.MeusArrendamentos_Rents_button = page.getByRole('link', { name: 'Meus Arrendamentos' });
         this.Admin_Aprovacoes_Approvals_button = page.getByRole('link', { name: 'Aprovações' });
         this.Admin_Compras_BuyOrders_button = page.getByRole('link', { name: 'Compras Admin' });
@@ -73,8 +73,8 @@ class Books_page {
         await this.Livros_Books_button.click();
     }
 
-    async ClickFavoritos_Favorites_button() {
-        await this.Favoritos_Favorites_button.click();
+    async ClickFavoritos_Favourites_button() {
+        await this.Favoritos_Favourites_button.click();
     }
 
     async ClickMeusArrendamentos_Rents_button() {
