@@ -1,5 +1,15 @@
 import { expect } from '@playwright/test';
 
+const RandomValidBook = {
+    TITLE: faker.book.title(),
+    AUTHOR: faker.book.author(),
+    NUMBER_OF_PAGES: faker.number.int({ min: 1, max: 2000 }),
+    DESCRIPTION: faker.lorem.paragraph(),
+    URL_IMAGE: faker.internet.url(),
+    STOCK: faker.number.int({ min: 1, max: 100 }),
+    PRICE: faker.number.int({ min: 1, max: 200 })
+}
+
 class Books_page {
     constructor(page) {
         this.page = page;
@@ -17,7 +27,16 @@ class Books_page {
         this.Compras_BuyOrders_button = page.getByRole('link', { name: 'Compras', exact: true });
         this.MinhasCompras_MyBuyOrders_button = page.getByRole('link', { name: 'Minhas Compras' });
         this.MidPageTitle_header = page.getByRole('heading', { name: 'Adicionar Novo Livro' });
+        this.NomeLivro_BookName_inputfield = page.getByRole('textbox', { name: 'Nome do Livro:' });
+        this.NomeAutor_AuthorName_inputfield = page.getByRole('textbox', { name: 'Autor:' });
+        this.NumeroPaginas_NumberOfPages_spinbutton = page.getByRole('spinbutton', { name: 'Número de Páginas:' });
+        this.DescricaoLivro_BookDescription_inputfield = page.getByRole('textbox', { name: 'Descrição:' });
+        this.LivroImagemURL_BookImageURL_inputfield = page.getByRole('textbox', { name: 'URL da Imagem:' });
+        this.EstoqueLivro_BookStock_spinbutton = page.getByRole('spinbutton', { name: 'Estoque:' });
+        this.PrecoLivro_BookPrice_spinbutton = page.getByRole('spinbutton', { name: 'Preço (€):' });
+        this.AdicionarLivro_AddBook_button = page.getByRole('button', { name: 'Adicionar Livro' });
         this.EndPageTitle_header = page.getByRole('heading', { name: 'Todos os Livros' });
+        this.Messagem_Message_text = page.getByText('Nenhum livro cadastrado.');
         this.Livro1_Book1_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(0);
         this.Livro2_Book2_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(1);
         this.Livro3_Book3_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(2);
@@ -60,6 +79,18 @@ class Books_page {
 
     async ClickMeusArrendamentos_Rents_button() {
         await this.MeusArrendamentos_Rents_button.click();
+    }
+
+    async ClickAdmin_Aprovacoes_Approvals_button() {
+        this.Admin_Aprovacoes_Approvals_button.click();
+    }
+
+    async ClickAdmin_Compras_BuyOrders_button() {
+        await this.Admin_Compras_BuyOrders_button.click();
+    }
+
+    async ClickAdmin_Usuarios_AdminUsers_button() {
+        await this.Admin_Usuarios_AdminUsers_button.click();
     }
 
     async ClickCompras_BuyOrders_button() {
@@ -149,4 +180,46 @@ class Books_page {
     async ClickLivro20_Book20_button() {
         await this.Livro20_Book20_button.click();
     }
+
+    async Fill_AllNewBook_Fields(title, author, numberOfPages, description, imageURL, stock, price) {
+        const finalTitle = title || RandomValdBook.TITLE;
+        const finalAuthor = author || RandomValidBook.AUTHOR;
+        const finalNumberOfPages = numberOfPages || RandomValidBook.NUMBER_OF_PAGES;
+        const finalDescription = description || RandomValidBook.DESCRIPTION;
+        const finalImageURL = imageURL || RandomValidBook.URL_IMAGE;
+        const finalStock = stock || RandomValidBook.STOCK;
+        const finalPrice = price || RandomValidBook.PRICE;
+
+        await this.NomeLivro_BookName_inputfield.fill(finalTitle);
+        await this.Autor_BookAuthor_inputfield.fill(finalAuthor);
+        await this.NumeroPaginas_NumberOfPages_spinbutton.fill(finalNumberOfPages);
+        await this.Descricao_BookDescription_inputfield.fill(finalDescription);
+        await this.URLImagem_BookImageURL_inputfield.fill(finalImageURL);
+        await this.Estoque_Stock_spinbutton.fill(finalStock);
+        await this.Preco_BookPrice_spinbutton.fill(finalPrice);
+
+        await console.log("Os dados foram preenchidos com sucesso!");
+        await console.log("O titulo é: " + finalTitle + " e o autor é: " + finalAuthor);
+        await console.log("O estoque é: " + finalStock);
+
+        return { finalTitle, finalAuthor, finalNumberOfPages, finalDescription, finalImageURL, finalStock, finalPrice };
+    }
+
+    async Fill_BookName_inputfield(title) {
+        await this.NomeLivro_BookName_inputfield.fill(title);
+    }
+
+    async Fill_BookAuthor_inputfield(author) {
+        await this.Autor_BookAuthor_inputfield.fill(author);
+    }
+
+    async Fill_NumberOfPages_spinbutton(numberOfPages) {
+        await this.NumeroPaginas_NumberOfPages_spinbutton.fill(numberOfPages);
+    }
+
+    async ClickAdicionarLivro_AddBook_button() {
+        await this.AdicionarLivro_AddBook_button.click();
+    }
 }
+
+export default Books_page;
