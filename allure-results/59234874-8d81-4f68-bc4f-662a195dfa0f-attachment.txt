@@ -1,0 +1,5 @@
+Os dados foram preenchidos com sucesso!
+O nome é: Carlos Oliveira
+O email é: carlos@teste.com
+A senha é: senha123
+dialog message 'Cadastro realizado com sucesso! Faça login.' aceite

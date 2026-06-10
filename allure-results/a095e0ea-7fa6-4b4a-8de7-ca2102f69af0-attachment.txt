@@ -1,0 +1,51 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code',
+    autor: 'Robert C. Martin',
+    paginas: 464,
+    descricao: 'Um guia completo sobre boas práticas de programação',
+    imagemUrl: 'https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
+    dataCadastro: '2026-06-10T14:11:17.674Z',
+    estoque: 5,
+    preco: 49.9
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter - Editado',
+    autor: 'J.K. Rowling - Editado',
+    paginas: 319,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-10T14:11:17.675Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 3,
+    nome: 'The Scarlet Letter',
+    autor: 'Ervin Gorczany',
+    paginas: 628,
+    descricao: 'Sumo taceo volo thesis umbra. Spoliatio tumultus sublime sursum utrimque arceo.',
+    imagemUrl: 'https://picsum.photos/seed/8UHYf1hCy/3758/594',
+    dataCadastro: '2026-06-10T14:11:39.514Z',
+    estoque: 45,
+    preco: 110.99
+  },
+  {
+    id: 5,
+    nome: 'Scoop',
+    autor: 'Tessie Marks',
+    paginas: 485,
+    descricao: 'Conicio deficio crastinus cado verecundia sublime cado et demonstro spiritus. Volubilis alter tabernus omnis deripio tremo calco voveo repudiandae.',
+    imagemUrl: 'https://picsum.photos/seed/7mXlrOb/3156/3895',
+    dataCadastro: '2026-06-10T14:11:49.719Z',
+    estoque: 0,
+    preco: 190.79
+  }
+]
+User ID usado:3
+Book ID usado:3
+Book Stock:45
+Book Price:110.99
+Buy order Quantity:43

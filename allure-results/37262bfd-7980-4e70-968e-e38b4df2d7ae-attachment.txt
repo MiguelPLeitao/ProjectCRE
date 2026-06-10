@@ -1,0 +1,105 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code',
+    autor: 'Robert C. Martin',
+    paginas: 464,
+    descricao: 'Um guia completo sobre boas práticas de programação',
+    imagemUrl: 'https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
+    dataCadastro: '2026-06-10T14:11:17.674Z',
+    estoque: 5,
+    preco: 49.9
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter - Editado',
+    autor: 'J.K. Rowling - Editado',
+    paginas: 319,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-10T14:11:17.675Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 3,
+    nome: 'The Scarlet Letter',
+    autor: 'Ervin Gorczany',
+    paginas: 628,
+    descricao: 'Sumo taceo volo thesis umbra. Spoliatio tumultus sublime sursum utrimque arceo.',
+    imagemUrl: 'https://picsum.photos/seed/8UHYf1hCy/3758/594',
+    dataCadastro: '2026-06-10T14:11:39.514Z',
+    estoque: 25,
+    preco: 110.99
+  },
+  {
+    id: 5,
+    nome: 'Scoop',
+    autor: 'Tessie Marks',
+    paginas: 485,
+    descricao: 'Conicio deficio crastinus cado verecundia sublime cado et demonstro spiritus. Volubilis alter tabernus omnis deripio tremo calco voveo repudiandae.',
+    imagemUrl: 'https://picsum.photos/seed/7mXlrOb/3156/3895',
+    dataCadastro: '2026-06-10T14:11:49.719Z',
+    estoque: 0,
+    preco: 190.79
+  },
+  {
+    id: 6,
+    nome: 'The Aeneid',
+    autor: 'Mrs. Hellen Kuhn IV',
+    paginas: 1709,
+    descricao: 'Adeptio vitiosus acies ocer absconditus paens. Iure tabula amplexus adstringo eaque acies.',
+    imagemUrl: 'https://picsum.photos/seed/7rwTdYXvl/1472/3550',
+    dataCadastro: '2026-06-10T14:13:03.222Z',
+    estoque: 436,
+    preco: 184.75
+  },
+  {
+    id: 7,
+    nome: 'Things Fall Apart - Editado',
+    autor: 'James Joyce - Editado',
+    paginas: 952,
+    descricao: 'Maiores crur astrum excepturi cavus adfero territo combibo conforto umquam. Aurum uterque aduro non. Terra centum quam defaeco doloremque confero. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-10T14:13:06.977Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 8,
+    nome: 'Josefine Mutzenbacher',
+    autor: 'Olga Kassulke',
+    paginas: 1828,
+    descricao: 'Conturbo cunctatio iure varius quis. Sto caput defessus vix ager sapiente arceo asper conventus.',
+    imagemUrl: 'https://picsum.photos/seed/OQewKe0I/1925/3945',
+    dataCadastro: '2026-06-10T14:13:07.820Z',
+    estoque: 628,
+    preco: 100.3
+  },
+  {
+    id: 9,
+    nome: 'Paradise Lost',
+    autor: 'Liana Ratke',
+    paginas: 170,
+    descricao: 'Calculus baiulus contra ventosus pecco aspernatur explicabo thymum temperantia. Adaugeo abduco ventito voluptatem.',
+    imagemUrl: 'https://picsum.photos/seed/giYtYek7bc/2505/403',
+    dataCadastro: '2026-06-10T14:13:12.451Z',
+    estoque: 337,
+    preco: 199.75
+  },
+  {
+    id: 10,
+    nome: 'Moby Dick',
+    autor: 'Lottie Breitenberg',
+    paginas: 1205,
+    descricao: 'Aut artificiose praesentium volup vesica tam tamdiu coniuratio adipiscor cuius. Denego ustulo astrum teres subvenio color crastinus.',
+    imagemUrl: 'https://picsum.photos/seed/6zxzNOOv/2303/69',
+    dataCadastro: '2026-06-10T14:13:22.448Z',
+    estoque: 500,
+    preco: 49.59
+  }
+]
+User ID usado:1
+Book ID usado:10
+2029-02-22T05:36:38.297Z
+2029-09-01T09:48:41.857Z

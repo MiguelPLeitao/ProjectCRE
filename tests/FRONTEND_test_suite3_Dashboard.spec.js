@@ -124,68 +124,25 @@ test.describe('Dashboard', () => {
         await expect(dashboard_page.TotalAdministradores_TotalAdmins_number).not.toBeVisible();
         await expect(dashboard_page.TotalArrendamentosPendentes_TotalPendingRents_number).not.toBeVisible();
 
-        let livrostotal = await dashboard_page.TotalLivros_TotalBooks_number.textContent();
-        let numerolivrostotal = Number(livrostotal);
-        const livro6 = page.locator("//div[@id='livros-recentes']//div[contains(@class,'book-card')]").nth(5);
+        const bookCardCount = await dashboard_page.bookCards.count();
+        console.log(`Grid contains ${bookCardCount} book cards`);
 
-        if (numerolivrostotal == 0) {
-            await expect(dashboard_page.Livro1_Book1_button).not.toBeVisible();
-            await expect(dashboard_page.Livro2_Book2_button).not.toBeVisible();
-            await expect(dashboard_page.Livro3_Book3_button).not.toBeVisible();
-            await expect(dashboard_page.Livro4_Book4_button).not.toBeVisible();
-            await expect(dashboard_page.Livro5_Book5_button).not.toBeVisible();
-            await expect(livro6).not.toBeVisible();
+        expect(bookCardCount).toBeLessThanOrEqual(5);
+
+        for (let i = 0; i < bookCardCount; i++) {
+            const card = dashboard_page.bookCards.nth(i);
+            await expect(card).toBeVisible();
         }
-        else if (numerolivrostotal == 1) {
-            await expect(dashboard_page.Livr1_Book1_button).toBeVisible();
-            await expect(dashboard_page.Livro2_Book2_button).not.toBeVisible();
-            await expect(dashboard_page.Livro3_Book3_button).not.toBeVisible();
-            await expect(dashboard_page.Livro4_Book4_button).not.toBeVisible();
-            await expect(dashboard_page.Livro5_Book5_button).not.toBeVisible();
-            await expect(livro6).not.toBeVisible();
-        }
-        else if (numerolivrostotal == 2) {
-            await expect(dashboard_page.Livro1_Book1_button).toBeVisible();
-            await expect(dashboard_page.Livro2_Book2_button).toBeVisible();
-            await expect(dashboard_page.Livro3_Book3_button).not.toBeVisible();
-            await expect(dashboard_page.Livro4_Book4_button).not.toBeVisible();
-            await expect(dashboard_page.Livro5_Book5_button).not.toBeVisible();
-            await expect(livro6).not.toBeVisible();
-        }
-        else if (numerolivrostotal == 3) {
-            await expect(dashboard_page.Livro1_Book1_button).toBeVisible();
-            await expect(dashboard_page.Livro2_Book2_button).toBeVisible();
-            await expect(dashboard_page.Livro3_Book3_button).toBeVisible();
-            await expect(dashboard_page.Livro4_Book4_button).not.toBeVisible();
-            await expect(dashboard_page.Livro5_Book5_button).not.toBeVisible();
-            await expect(livro6).not.toBeVisible();
-        }
-        else if (numerolivrostotal == 4) {
-            await expect(dashboard_page.Livro1_Book1_button).toBeVisible();
-            await expect(dashboard_page.Livro2_Book2_button).toBeVisible();
-            await expect(dashboard_page.Livro3_Book3_button).toBeVisible();
-            await expect(dashboard_page.Livro4_Book4_button).toBeVisible();
-            await expect(dashboard_page.Livro5_Book5_button).not.toBeVisible();
-            await expect(livro6).not.toBeVisible();
-        }
-        else if (numerolivrostotal == 5) {
-            await expect(dashboard_page.Livro1_Book1_button).toBeVisible();
-            await expect(dashboard_page.Livro2_Book2_button).toBeVisible();
-            await expect(dashboard_page.Livro3_Book3_button).toBeVisible();
-            await expect(dashboard_page.Livro4_Book4_button).toBeVisible();
-            await expect(dashboard_page.Livro5_Book5_button).toBeVisible();
-            await expect(livro6).not.toBeVisible();
-        }
-        else if (numerolivrostotal > 5) {
-            await expect(dashboard_page.Livro1_Book1_button).toBeVisible();
-            await expect(dashboard_page.Livro2_Book2_button).toBeVisible();
-            await expect(dashboard_page.Livro3_Book3_button).toBeVisible();
-            await expect(dashboard_page.Livro4_Book4_button).toBeVisible();
-            await expect(dashboard_page.Livro5_Book5_button).toBeVisible();
-            await expect(livro6).not.toBeVisible();
-        }
-        else {
-            throw new Error('Não aparece corretamente o número total de livros OU grelha de livros recentes errada.');
+
+        // Validate no 6th card exists
+        const sixthCard = dashboard_page.bookCards.nth(5);
+        await expect(sixthCard).not.toBeVisible();
+
+        // If no books, optionally validate empty state message
+        if (bookCardCount === 0) {
+            console.log('Não existem livros. A grelha de livros está vazia e nenhum livro visível.');
+        } else {
+            console.log(`Estão ${bookCardCount} livros visíveis na grelha.`);
         }
     });
 

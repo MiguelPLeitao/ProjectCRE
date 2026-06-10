@@ -26,11 +26,8 @@ class Dashboard_page {
         this.TotalUsuarios_TotalUsers_number = page.locator('.stat-card').filter({ hasText: 'Total de Usuários' }).locator('.number');
         this.TotalAdministradores_TotalAdmins_number = page.locator('.stat-card').filter({ hasText: 'Administradores' }).locator('.number');
         this.EndPageTitle_header = page.locator('h2').filter({ hasText: 'Livros Disponíveis' });
-        this.Livro1_Book1_button = page.locator("//div[@id='livros-recentes']//div[contains(@class,'book-card')]").nth(0);
-        this.Livro2_Book2_button = page.locator("//div[@id='livros-recentes']//div[contains(@class,'book-card')]").nth(1);
-        this.Livro3_Book3_button = page.locator("//div[@id='livros-recentes']//div[contains(@class,'book-card')]").nth(2);
-        this.Livro4_Book4_button = page.locator("//div[@id='livros-recentes']//div[contains(@class,'book-card')]").nth(3);
-        this.Livro5_Book5_button = page.locator("//div[@id='livros-recentes']//div[contains(@class,'book-card')]").nth(4);
+        
+        this.bookCards = page.locator('[id="livros-recentes"] .book-card');
         
         this.PAGEBODY_allpage = page.locator('body');
 
@@ -77,25 +74,31 @@ class Dashboard_page {
         await this.MinhasCompras_MyBuyOrders_button.click();
     }
 
-    async ClickLivro1_Book1_button() {
-        await this.Livro1_Book1_button.click();
+
+async SelectLivro_BookCard_grid(book = 'random') {
+        const cards = this.bookCards;
+        const count = await cards.count();
+
+        if (book === 'random') {
+            const randomIndex = faker.number.int({ min: 0, max: count - 1 });
+            return cards.nth(randomIndex);
+        }
+
+        if (typeof book === 'number') {
+            return cards.nth(book);
+        }
+
+        if (typeof book === 'object' && book.title && book.author) {
+            return cards.filter({ hasText: book.title }).filter({ hasText: book.author }).first();
+        }
+
+        return cards.filter({ hasText: book }).first();
     }
 
-    async ClickLivro2_Book2_button() {
-        await this.Livro2_Book2_button.click();
+    async ClickLivroGrelha_BookfromGrid_button(book = 'random') {
+        await this.SelectLivro_BookCard_grid(book).click();
     }
 
-    async ClickLivro3_Book3_button() {
-        await this.Livro3_Book3_button.click();
-    }
-
-    async ClickLivro4_Book4_button() {
-        await this.Livro4_Book4_button.click();
-    }
-
-    async ClickLivro5_Book5_button() {
-        await this.Livro5_Book5_button.click();
-    }
 }
 
 export default Dashboard_page;

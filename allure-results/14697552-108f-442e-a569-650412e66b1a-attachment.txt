@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: Things Fall Apart e o autor é: James Joyce
+O estoque é: 9
+dialog message 'Livro adicionado com sucesso!' aceite
