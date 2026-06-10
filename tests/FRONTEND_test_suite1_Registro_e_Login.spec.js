@@ -169,22 +169,6 @@ test.describe('Registo e Login', () => {
         expect(usuario).toBeTruthy();
         expect(JSON.parse(usuario)).toHaveProperty('tipo');
         expect(JSON.parse(usuario).tipo).toBe(3);
-
-        dashboard_page.ClickLivros_Books_button();
-
-        await expect(page).toHaveURL('http://localhost:3000/livros.html');
-
-        dashboard_page.ClickAdmin_Aprovacoes_Approvals_button();
-
-        await expect(page).toHaveURL('http://localhost:3000/aprovacoes.html');
-
-        dashboard_page.ClickAdmin_Compras_BuyOrders_button();
-
-        await expect(page).toHaveURL('http://localhost:3000/compras-admin.html');
-
-        dashboard_page.ClickAdmin_Usuarios_AdminUsers_button();
-
-        await expect(page).toHaveURL('http://localhost:3000/admin-usuarios.html');
     });
 
 

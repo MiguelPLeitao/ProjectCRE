@@ -9,7 +9,7 @@ class Dashboard_page {
         this.Sair_LogOut_button = page.getByRole('button', { name: 'Sair' });
         this.Dashboard_button = page.getByRole('link', { name: 'Dashboard' });
         this.Livros_Books_button = page.getByRole('link', { name: 'Livros' });
-        this.Favoritos_Favorites_button = page.getByRole('link', { name: 'Favoritos' });
+        this.Favoritos_Favourites_button = page.getByRole('link', { name: 'Favoritos' });
         this.MeusArrendamentos_Rents_button = page.getByRole('link', { name: 'Meus Arrendamentos' });
         this.Admin_Aprovacoes_Approvals_button = page.getByRole('link', { name: 'Aprovações' });
         this.Admin_Compras_BuyOrders_button = page.getByRole('link', { name: 'Compras Admin' });
@@ -20,7 +20,7 @@ class Dashboard_page {
         this.MidPageTitle_header = page.getByRole('heading', { name: 'Estatísticas' });
         this.TotalLivrosDisponiveis_TotalBooksAvailable_number = page.locator('.stat-card').filter({ hasText: 'Livros Disponíveis' }).locator('.number');
         this.TotalLivros_TotalBooks_number = page.locator('.stat-card').filter({ hasText: 'Total de Livros' }).locator('.number');
-        this.TotalAlunosCadastrados_TotalStudentsRegistered_number = page.locator('.stat-card').filter({ hasText: 'Alunos Cadastrados' }).locator('.number');
+        this.TotalAlunosCadastrados_TotalStudentsRegistered_number = page.locator('.stat-card').filter({ hasText: 'Alunos' }).locator('.number');
         this.TotalArrendamentosPendentes_TotalPendingRents_number = page.locator('.stat-card').filter({ hasText: 'Arrendamentos Pendentes' }).locator('.number');
         this.TotalFuncionarios_TotalEmployees_number = page.locator('.stat-card').filter({ hasText: 'Funcionários' }).locator('.number');
         this.TotalUsuarios_TotalUsers_number = page.locator('.stat-card').filter({ hasText: 'Total de Usuários' }).locator('.number');
@@ -49,8 +49,8 @@ class Dashboard_page {
         await this.Livros_Books_button.click();
     }
 
-    async ClickFavoritos_Favorites_button() {
-        await this.Favoritos_Favorites_button.click();
+    async ClickFavoritos_Favourites_button() {
+        await this.Favoritos_Favourites_button.click();
     }
 
     async ClickMeusArrendamentos_Rents_button() {

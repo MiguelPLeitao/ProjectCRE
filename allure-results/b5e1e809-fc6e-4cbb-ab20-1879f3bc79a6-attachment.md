@@ -1,0 +1,169 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: FRONTEND_test_suite3_Dashboard.spec.js >> Dashboard >> Dashboard - Visão Admin (Sucesso)
+- Location: tests\FRONTEND_test_suite3_Dashboard.spec.js:19:9
+
+# Error details
+
+```
+TypeError: dashboard_page.TotalLivros_TotalBooks_number.textContent(...).toNumber is not a function
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - heading "📚 Minha Biblioteca" [level=1] [ref=e4]
+    - generic [ref=e5]:
+      - generic [ref=e6]: Admin MasterADMIN
+      - button "Sair" [ref=e7] [cursor=pointer]
+  - generic [ref=e8]:
+    - link "Dashboard" [ref=e9] [cursor=pointer]:
+      - /url: dashboard.html
+    - link "Livros" [ref=e10] [cursor=pointer]:
+      - /url: livros.html
+    - link "Favoritos" [ref=e11] [cursor=pointer]:
+      - /url: favoritos.html
+    - link "Meus Arrendamentos" [ref=e12] [cursor=pointer]:
+      - /url: arrendamentos.html
+    - link "Aprovações" [ref=e13] [cursor=pointer]:
+      - /url: aprovacoes.html
+    - link "Compras Admin" [ref=e14] [cursor=pointer]:
+      - /url: compras-admin.html
+    - link "Usuários (Admin)" [ref=e15] [cursor=pointer]:
+      - /url: admin-usuarios.html
+  - heading "Olá, Admin Master! Você está logado como ADMINISTRADOR." [level=3] [ref=e17]
+  - heading "Estatísticas" [level=2] [ref=e18]
+  - generic [ref=e19]:
+    - generic [ref=e20]:
+      - heading "Total de Livros" [level=3] [ref=e21]
+      - generic [ref=e22]: "2"
+    - generic [ref=e23]:
+      - heading "Total de Usuários" [level=3] [ref=e24]
+      - generic [ref=e25]: "7"
+    - generic [ref=e26]:
+      - heading "Livros Disponíveis" [level=3] [ref=e27]
+      - generic [ref=e28]: "2"
+    - generic [ref=e29]:
+      - heading "Alunos" [level=3] [ref=e30]
+      - generic [ref=e31]: "4"
+    - generic [ref=e32]:
+      - heading "Funcionários" [level=3] [ref=e33]
+      - generic [ref=e34]: "1"
+    - generic [ref=e35]:
+      - heading "Administradores" [level=3] [ref=e36]
+      - generic [ref=e37]: "2"
+  - heading "Livros Disponíveis" [level=2] [ref=e38]
+  - generic [ref=e39]:
+    - generic [ref=e40] [cursor=pointer]:
+      - img "Clean Code" [ref=e41]
+      - heading "Clean Code" [level=3] [ref=e42]
+      - paragraph [ref=e43]:
+        - strong [ref=e44]: "Autor:"
+        - text: Robert C. Martin
+      - paragraph [ref=e45]:
+        - strong [ref=e46]: "Estoque:"
+        - text: "4"
+      - paragraph [ref=e47]:
+        - strong [ref=e48]: € 49.90
+    - generic [ref=e49] [cursor=pointer]:
+      - img "Harry Potter" [ref=e50]
+      - heading "Harry Potter" [level=3] [ref=e51]
+      - paragraph [ref=e52]:
+        - strong [ref=e53]: "Autor:"
+        - text: J.K. Rowling
+      - paragraph [ref=e54]:
+        - strong [ref=e55]: "Estoque:"
+        - text: "3"
+      - paragraph [ref=e56]:
+        - strong [ref=e57]: € 39.90
+```
+
+# Test source
+
+```ts
+  1  | import { test, expect } from '@playwright/test';
+  2  | import { faker } from '@faker-js/faker';
+  3  | import Register_page from '../Page_Objects_Model_POM_FRONTEND/Register_page';
+  4  | import Login_page from '../Page_Objects_Model_POM_FRONTEND/Login_page';
+  5  | import Dashboard_page from '../Page_Objects_Model_POM_FRONTEND/Dashboard_page';
+  6  | import BuyOrders_page from '../Page_Objects_Model_POM_FRONTEND/BuyOrders_page';
+  7  | import Books_page from '../Page_Objects_Model_POM_FRONTEND/Books_page';
+  8  | import BookDetails_page from '../Page_Objects_Model_POM_FRONTEND/BookDetails_page';
+  9  | import Favourites_page from '../Page_Objects_Model_POM_FRONTEND/Favourites_page';
+  10 | import Rents_page from '../Page_Objects_Model_POM_FRONTEND/Rents_page';
+  11 | import MyBuyOrders_page from '../Page_Objects_Model_POM_FRONTEND/MyBuyOrders_page';
+  12 | import Admin_Approvals_page from '../Page_Objects_Model_POM_FRONTEND/Admin_Approvals_page';
+  13 | import Admin_BuyOrders_page from '../Page_Objects_Model_POM_FRONTEND/Admin_BuyOrders_page';
+  14 | import Admin_AdminUsers_page from '../Page_Objects_Model_POM_FRONTEND/Admin_AdminUsers_page';
+  15 | 
+  16 | 
+  17 | 
+  18 | test.describe('Dashboard', () => {
+  19 |     test('Dashboard - Visão Admin (Sucesso)', async ({ page }) => {
+  20 |         const login_page = new Login_page(page);
+  21 |         const dashboard_page = new Dashboard_page(page);
+  22 | 
+  23 |         await page.goto('http://localhost:3000/login.html');
+  24 | 
+  25 |         await expect(page).toHaveURL('http://localhost:3000/login.html');
+  26 | 
+  27 |         page.waitForEvent('dialog').then(async dialog => {
+  28 |             if (dialog.message().includes('Login realizado com sucesso!')) {
+  29 |                 console.log("dialog message 'Login realizado com sucesso!' aceite")
+  30 |                 await dialog.accept();
+  31 |             }
+  32 |             else {
+  33 |                 throw new Error('Dialog message 1 não aparece ou não contém o texto esperado.');
+  34 |             }
+  35 |         });
+  36 | 
+  37 |         await page.waitForTimeout(3000);
+  38 | 
+  39 |         await login_page.FillEmail_Password_InputFields("admin@biblioteca.com", "123456");
+  40 | 
+  41 |         await login_page.ClickEnterLogin_Button();
+  42 | 
+  43 |         await expect(page).toHaveURL('http://localhost:3000/dashboard.html');
+  44 | 
+  45 |         await expect(dashboard_page.TotalLivros_TotalBooks_number).toBeVisible();
+  46 |         await expect(dashboard_page.TotalUsuarios_TotalUsers_number).toBeVisible();
+  47 |         await expect(dashboard_page.TotalLivrosDisponiveis_TotalBooksAvailable_number).toBeVisible();
+  48 |         await expect(dashboard_page.TotalAlunosCadastrados_TotalStudentsRegistered_number).toBeVisible();
+  49 |         await expect(dashboard_page.TotalFuncionarios_TotalEmployees_number).toBeVisible();
+  50 |         await expect(dashboard_page.TotalAdministradores_TotalAdmins_number).toBeVisible();
+  51 | 
+  52 |         console.log(dashboard_page.TotalLivros_TotalBooks_number);
+> 53 |         let livrostotal = await dashboard_page.TotalLivros_TotalBooks_number.textContent().toNumber();
+     |                                                                                            ^ TypeError: dashboard_page.TotalLivros_TotalBooks_number.textContent(...).toNumber is not a function
+  54 |         console.log(livrostotal);
+  55 | 
+  56 |         if (await dashboard_page.TotalLivrosDisponiveis_TotalBooksAvailable_number > 0) {
+  57 |             await expect(dashboard_page.TotalLivrosDisponiveis_TotalBooksAvailable_number).toBeGreaterThan(0);
+  58 |         }
+  59 |         else if (await dashboard_page.TotalLivrosDisponiveis_TotalBooksAvailable_number == 0) {
+  60 |             await expect(dashboard_page.TotalLivrosDisponiveis_TotalBooksAvailable_number).toBe(0);
+  61 |         }
+  62 |         else {
+  63 |             throw new Error('Não aparece corretamente o número total de livros.');
+  64 |         }
+  65 | 
+  66 |         await expect(dashboard_page.Livro1_Book1_button).toBeVisible();
+  67 |         await expect(dashboard_page.Livro2_Book2_button).toBeVisible();
+  68 |         await expect(dashboard_page.Livro3_Book3_button).toBeVisible();
+  69 |         await expect(dashboard_page.Livro4_Book4_button).toBeVisible();
+  70 |         await expect(dashboard_page.Livro5_Book5_button).toBeVisible();
+  71 |         const livro6 = page.locator("//div[@id='livros-recentes']//div[contains(@class,'book-card')]").nth(5);
+  72 |         await expect(livro6).not.toBeVisible();
+  73 | 
+  74 |     });
+  75 | 
+  76 | })
+```

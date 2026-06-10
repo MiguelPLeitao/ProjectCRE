@@ -4,6 +4,7 @@ import { faker } from '@faker-js/faker';
 import Register_page from '../Page_Objects_Model_POM_FRONTEND/Register_page';
 import Login_page from '../Page_Objects_Model_POM_FRONTEND/Login_page';
 import Dashboard_page from '../Page_Objects_Model_POM_FRONTEND/Dashboard_page';
+import BuyOrders_page from '../Page_Objects_Model_POM_FRONTEND/BuyOrders_page';
 
 
 test.describe('Protecao de Rotas e Navegacao', () => {
@@ -31,6 +32,7 @@ test.describe('Protecao de Rotas e Navegacao', () => {
         const register_page = new Register_page(page);
         const login_page = new Login_page(page);
         const dashboard_page = new Dashboard_page(page);
+        const buyorders_page = new BuyOrders_page(page);
 
         const ValidUser = {
             "nome": faker.person.fullName(),
@@ -96,7 +98,7 @@ test.describe('Protecao de Rotas e Navegacao', () => {
         await expect(dashboard_page.Dashboard_button).toBeVisible();
         await expect(dashboard_page.Dashboard_button).toBeEnabled();
         await expect(dashboard_page.Livros_Books_button).toBeVisible();
-        await expect(dashboard_page.Favoritos_Favorites_button).toBeVisible();
+        await expect(dashboard_page.Favoritos_Favourites_button).toBeVisible();
         await expect(dashboard_page.MeusArrendamentos_Rents_button).toBeVisible();
         await expect(dashboard_page.Compras_BuyOrders_button).toBeVisible();
         await expect(dashboard_page.MinhasCompras_MyBuyOrders_button).toBeVisible();
@@ -107,7 +109,7 @@ test.describe('Protecao de Rotas e Navegacao', () => {
         await page.goBack();
         await expect(page).toHaveURL('http://localhost:3000/dashboard.html');
 
-        await dashboard_page.ClickFavoritos_Favorites_button();
+        await dashboard_page.ClickFavoritos_Favourites_button();
         await expect(page).toHaveURL('http://localhost:3000/favoritos.html');
 
         await page.goBack();
@@ -122,16 +124,55 @@ test.describe('Protecao de Rotas e Navegacao', () => {
         await dashboard_page.ClickCompras_BuyOrders_button();
         await expect(page).toHaveURL('http://localhost:3000/compras.html');
 
-        await page.goBack();
+        await buyorders_page.ClickDashboard_button();
+        await expect(page).toHaveURL('http://localhost:3000/dashboard.html');
+    });
+
+
+    test('Menu Dinâmico – Admin (Sucesso)', async ({ page }) => {
+        const login_page = new Login_page(page);
+        const dashboard_page = new Dashboard_page(page);
+
+        await page.goto('http://localhost:3000/login.html');
+
+        await expect(page).toHaveURL('http://localhost:3000/login.html');
+
+        page.waitForEvent('dialog').then(async dialog => {
+            if (dialog.message().includes('Login realizado com sucesso!')) {
+                console.log("dialog message 'Login realizado com sucesso!' aceite")
+                await dialog.accept();
+            }
+            else {
+                throw new Error('Dialog message 1 não aparece ou não contém o texto esperado.');
+            }
+        });
+
+        await page.waitForTimeout(3000);
+
+        await login_page.FillEmail_Password_InputFields("admin@biblioteca.com", "123456");
+
+        await login_page.ClickEnterLogin_Button();
+
         await expect(page).toHaveURL('http://localhost:3000/dashboard.html');
 
-        await page.goto('http://localhost:3000/detalhes.html?id=1');
-        await expect(page).toHaveURL('http://localhost:3000/detalhes.html?id=1');
+        await expect(dashboard_page.UserName_text).toBeVisible();
 
+        await expect(dashboard_page.Dashboard_button).toBeVisible();
+        await expect(dashboard_page.Dashboard_button).toBeEnabled();
+        await expect(dashboard_page.Livros_Books_button).toBeVisible();
+        await expect(dashboard_page.Livros_Books_button).toBeEnabled();
+        await expect(dashboard_page.Favoritos_Favourites_button).toBeVisible();
+        await expect(dashboard_page.Favoritos_Favourites_button).toBeEnabled();
+        await expect(dashboard_page.MeusArrendamentos_Rents_button).toBeVisible();
+        await expect(dashboard_page.MeusArrendamentos_Rents_button).toBeEnabled();
+        await expect(dashboard_page.Admin_Aprovacoes_Approvals_button).toBeVisible();
+        await expect(dashboard_page.Admin_Aprovacoes_Approvals_button).toBeEnabled();
+        await expect(dashboard_page.Admin_Compras_BuyOrders_button).toBeVisible();
+        await expect(dashboard_page.Admin_Compras_BuyOrders_button).toBeEnabled();
+        await expect(dashboard_page.Admin_Usuarios_AdminUsers_button).toBeVisible();
 
-
-
-    })
-
+        await dashboard_page.ClickAdmin_Usuarios_AdminUsers_button();
+        await expect(page).toHaveURL('http://localhost:3000/admin-usuarios.html');
+    });
 
 })
