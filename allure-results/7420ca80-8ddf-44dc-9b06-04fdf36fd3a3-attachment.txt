@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: Beloved e o autor é: John Dos Passos
+O estoque é: 77
+dialog message 'Livro adicionado com sucesso!' aceite

@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: Nineteen Eighty Four e o autor é: Saul Bellow
+O estoque é: 27
+dialog message 'Livro adicionado com sucesso!' aceite

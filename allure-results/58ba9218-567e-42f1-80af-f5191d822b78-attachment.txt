@@ -1,0 +1,185 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code',
+    autor: 'Robert C. Martin',
+    paginas: 464,
+    descricao: 'Um guia completo sobre boas práticas de programação',
+    imagemUrl: 'https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
+    dataCadastro: '2026-06-10T12:13:52.760Z',
+    estoque: 0,
+    preco: 49.9
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter - Editado',
+    autor: 'J.K. Rowling - Editado',
+    paginas: 319,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-10T12:13:52.761Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 3,
+    nome: 'Adventures of Huckleberry Finn',
+    autor: 'Felipe Doyle-Raynor',
+    paginas: 1177,
+    descricao: 'Thorax aurum combibo ambulo clamo verbera. Terra vita aequitas.',
+    imagemUrl: 'https://picsum.photos/seed/DkeTDA8/3431/1451',
+    dataCadastro: '2026-06-10T13:59:55.887Z',
+    estoque: 258,
+    preco: 153.79
+  },
+  {
+    id: 5,
+    nome: 'L.A. Confidential',
+    autor: "Alejandra Schoen-D'Amore III",
+    paginas: 869,
+    descricao: 'Victoria ullam stultus comis officia eligendi tantum demens. Succurro taedium alienus expedita.',
+    imagemUrl: 'https://picsum.photos/seed/M1EIYZ4Xg/490/486',
+    dataCadastro: '2026-06-10T14:00:06.112Z',
+    estoque: 0,
+    preco: 95.59
+  },
+  {
+    id: 6,
+    nome: 'Mrs. Dalloway - Editado',
+    autor: 'Chaya VonRueden - Editado',
+    paginas: 255,
+    descricao: 'Atque teneo vallum defungo adnuo utrimque texo. Arx vinitor veritatis minima testimonium turbo. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-10T14:00:50.090Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 7,
+    nome: 'The Great Gatsby',
+    autor: 'Arthur Conan Doyle',
+    paginas: 1225,
+    descricao: 'Desidero curto desparatus supellex exercitationem amita. Canto benigne vinco terga. Thema conor amor sumptus desparatus vito curriculum.',
+    imagemUrl: 'https://negligible-stall.name',
+    dataCadastro: '2026-06-10T14:00:53.845Z',
+    estoque: 1,
+    preco: 70
+  },
+  {
+    id: 8,
+    nome: 'The Lion, the Witch, and the Wardrobe - Editado',
+    autor: 'Sadie Hamill - Editado',
+    paginas: 1916,
+    descricao: 'Vociferor ratione adfectus sopor canis. Tempore ater facere timidus vado. - Editado',
+    imagemUrl: 'Editado',
+    dataCadastro: '2026-06-10T14:00:54.680Z',
+    estoque: 0,
+    preco: 0
+  },
+  {
+    id: 9,
+    nome: 'The Iliad',
+    autor: 'Erica Baumbach',
+    paginas: 1999,
+    descricao: 'Nobis surgo una tricesimus contra cubicularis conicio. Addo utrum corrumpo tristis denuo provident.',
+    imagemUrl: 'https://picsum.photos/seed/WBfN4Vqg/1325/1943',
+    dataCadastro: '2026-06-10T14:00:59.428Z',
+    estoque: 118,
+    preco: 160.85
+  },
+  {
+    id: 10,
+    nome: 'Vanity Fair',
+    autor: 'Kristoffer Bins',
+    paginas: 632,
+    descricao: 'Vulnus umbra deludo stultus aiunt. Substantia minus carbo sublime placeat error deleniti timidus tenus.',
+    imagemUrl: 'https://picsum.photos/seed/aVyl66/1868/2397',
+    dataCadastro: '2026-06-10T14:01:10.784Z',
+    estoque: 245,
+    preco: 20.75
+  },
+  {
+    id: 12,
+    nome: 'Vanity Fair',
+    autor: 'Dr. Paulette Quitzon III',
+    paginas: 211,
+    descricao: 'Verbera cariosus tenuis alter trans tempora baiulus. Desino vir caries beatus cultellus.',
+    imagemUrl: 'https://picsum.photos/seed/coUMyy/611/1444',
+    dataCadastro: '2026-06-10T14:01:24.168Z',
+    estoque: 0,
+    preco: 80.19
+  },
+  {
+    id: 13,
+    nome: 'The Thirty-Nine Steps',
+    autor: 'Mr. Gregg Lang',
+    paginas: 1683,
+    descricao: 'Vos vulgivagus spiritus auxilium decens vespillo soleo. Sopor cognomen cubo a coerceo cotidie.',
+    imagemUrl: 'https://picsum.photos/seed/DX8SpsQG7k/1424/3016',
+    dataCadastro: '2026-06-10T14:02:15.006Z',
+    estoque: 210,
+    preco: 184.85
+  },
+  {
+    id: 14,
+    nome: 'Beloved',
+    autor: 'John Dos Passos',
+    paginas: 330,
+    descricao: 'Demitto tubineus terreo rerum amplitudo subvenio saepe comburo tactus cauda. Celer trepide desipio asper talus paulatim adsum. Demitto modi argumentum.',
+    imagemUrl: 'https://present-provision.com',
+    dataCadastro: '2026-06-10T14:02:19.029Z',
+    estoque: 77,
+    preco: 25
+  },
+  {
+    id: 15,
+    nome: 'The Woman in White',
+    autor: 'Mr. Elias Smith DDS',
+    paginas: 283,
+    descricao: 'Credo cohors delectus admoveo toties convoco canis consequuntur eveniet. Subnecto vaco consequatur denique iste.',
+    imagemUrl: 'https://picsum.photos/seed/PSt70i/3577/2600',
+    dataCadastro: '2026-06-10T14:02:20.333Z',
+    estoque: 330,
+    preco: 41.05
+  },
+  {
+    id: 16,
+    nome: 'Carmilla',
+    autor: 'Joshuah Prosacco DVM',
+    paginas: 1781,
+    descricao: 'Tergiversatio voluptatem aureus amaritudo nobis consequatur cupiditas cunctatio. Causa carcer soluta.',
+    imagemUrl: 'https://picsum.photos/seed/gwMrg6v/3284/3423',
+    dataCadastro: '2026-06-10T14:02:25.653Z',
+    estoque: 261,
+    preco: 118.8
+  },
+  {
+    id: 17,
+    nome: 'Ruth Fielding in Alaska',
+    autor: 'Norman Lowe',
+    paginas: 581,
+    descricao: 'Beneficium tabgo utique admoveo odio adopto varius. Amoveo vinco ea arbitro architecto defero sapiente valeo.',
+    imagemUrl: 'https://picsum.photos/seed/SkhEg5HRr/490/2744',
+    dataCadastro: '2026-06-10T14:02:34.222Z',
+    estoque: 272,
+    preco: 62.89
+  },
+  {
+    id: 19,
+    nome: 'American Pastoral',
+    autor: 'Mekhi Parker',
+    paginas: 1553,
+    descricao: 'Appositus stipes varietas tandem vilitas a appono doloremque crebro. Alienus textus amo cauda vinco curiositas caecus.',
+    imagemUrl: 'https://picsum.photos/seed/6jKpu/337/1861',
+    dataCadastro: '2026-06-10T14:02:45.005Z',
+    estoque: 0,
+    preco: 140.99
+  }
+]
+User ID usado:23
+Book ID usado:10
+Book Stock:245
+Book Price:20.75
+Buy order Quantity:169
+Order ID: 11
+Book Stock after cancel:245
