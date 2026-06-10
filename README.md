@@ -74,6 +74,11 @@ Inclui fluxos reais de uso: cadastro/login, CRUD de livros, favoritos, emprésti
 - **JavaScript (ES6+)** – Lógica da aplicação.
 - **Fetch API** – Requisições HTTP assíncronas.
 
+### Testes
+- **Playwright** (`@playwright/test`)
+- **Allure** (`allure-playwright`, `allure-commandline`)
+- **Faker** (`@faker-js/faker`)
+
 ***
 
 ## 📋 Pré‑requisitos
@@ -81,11 +86,6 @@ Inclui fluxos reais de uso: cadastro/login, CRUD de livros, favoritos, emprésti
 - Node.js 14+ (LTS recomendada).
 - npm.
 - Git (para clonar o repositório).
-
-### Testes
-- **Playwright** (`@playwright/test`)
-- **Allure** (`allure-playwright`, `allure-commandline`)
-- **Faker** (`@faker-js/faker`)
 
 ***
 
@@ -267,6 +267,7 @@ Não é necessário configurar dados adicionais; os testes geram dados quando fo
 - `tests/FRONTEND_test_suite2_Protecao_Rotas_e_Navegacao.spec.js`
 - `tests/FRONTEND_test_suite3_Dashboard.spec.js`
 - `tests/FRONTEND_test_suite4_Livros.spec.js`
+- `tests/FRONTEND_test_suite5_Favoritos.spec.js`
 
 ***
 
