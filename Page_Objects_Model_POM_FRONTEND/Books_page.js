@@ -1,4 +1,5 @@
 import { expect } from '@playwright/test';
+import { faker } from '@faker-js/faker';
 
 const RandomValidBook = {
     TITLE: faker.book.title(),

@@ -1,4 +1,5 @@
 import { expect } from '@playwright/test';
+import { faker } from '@faker-js/faker';
 
 class MyBuyOrders_page {
     constructor(page) {

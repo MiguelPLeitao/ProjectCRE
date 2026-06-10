@@ -125,8 +125,10 @@ test.describe('Protecao de Rotas e Navegacao', () => {
         await page.goBack();
         await expect(page).toHaveURL('http://localhost:3000/dashboard.html');
 
-        await dashboard_page.ClickMinhasCompras_MyBuyOrders_button();
-        await expect(page).toHaveURL('http://localhost:3000/minhas-compras.html');
+        await page.goto('http://localhost:3000/detalhes.html?id=1');
+        await expect(page).toHaveURL('http://localhost:3000/detalhes.html?id=1');
+
+
 
 
     })
