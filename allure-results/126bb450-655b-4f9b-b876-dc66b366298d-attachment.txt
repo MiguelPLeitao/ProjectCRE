@@ -1,3 +1,0 @@
-Senha Invalida: RagDNrBUJ
-Confirmar Senha Invalida: e7ElDKJ8hV3W9eREzo
-dialog message 'As senhas não conferem.' aceite

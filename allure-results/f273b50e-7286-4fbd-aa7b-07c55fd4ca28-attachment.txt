@@ -1,1 +1,0 @@
-dialog message 'Email ou senha incorretos' aceite

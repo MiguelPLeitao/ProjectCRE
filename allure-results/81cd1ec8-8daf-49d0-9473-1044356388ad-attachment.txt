@@ -1,3 +1,0 @@
-dialog message 'Login realizado com sucesso!' aceite
-2
-2

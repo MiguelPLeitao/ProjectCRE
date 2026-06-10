@@ -1,5 +1,0 @@
-Os dados foram preenchidos com sucesso!
-O nome é: Mrs. Tiffany Hickle
-O email é: Mathilde.Bartoletti90@gmail.com
-A senha é: rbOU62W0aUQ
-dialog message 'Cadastro realizado com sucesso! Faça login.' aceite

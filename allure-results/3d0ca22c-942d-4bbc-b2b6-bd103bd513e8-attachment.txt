@@ -1,3 +1,0 @@
-1
-undefined
-Tipo de usuário: undefined

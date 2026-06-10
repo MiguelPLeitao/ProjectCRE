@@ -1,5 +1,0 @@
-dialog message 'Login realizado com sucesso!' aceite
-Os dados foram preenchidos com sucesso!
-O titulo é: Anna Karenina e o autor é: Brian Evenson
-O estoque é: 82
-dialog message 'Livro adicionado com sucesso!' aceite

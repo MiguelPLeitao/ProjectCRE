@@ -1,9 +1,0 @@
-Os dados foram preenchidos com sucesso!
-O nome é: Carlos Oliveira
-O email é: carlos@teste.com
-A senha é: senha123
-dialog message 'Email já cadastrado' aceite
-Os dados foram preenchidos com sucesso!
-O nome é: Sophie Hirthe
-O email é: Laura_Crooks@yahoo.com
-A senha é: HSAf6DGKpqTrLq1MXb5

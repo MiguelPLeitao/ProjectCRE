@@ -1,5 +1,0 @@
-dialog message 'Login realizado com sucesso!' aceite
-Os dados foram preenchidos com sucesso!
-O titulo é: Wuthering Heights e o autor é: Jules Verne
-O estoque é: 63
-dialog message 'Livro adicionado com sucesso!' aceite

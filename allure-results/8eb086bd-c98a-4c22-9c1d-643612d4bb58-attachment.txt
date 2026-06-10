@@ -1,3 +1,0 @@
-dialog message 'Login realizado com sucesso!' aceite
-Grid contains 2 book cards
-Validated 2 book card(s) are visible and properly displayed

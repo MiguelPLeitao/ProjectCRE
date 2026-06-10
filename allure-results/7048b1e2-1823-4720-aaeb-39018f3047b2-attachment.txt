@@ -1,3 +1,0 @@
-{ id: 1, nome: 'Admin Master', email: 'admin@biblioteca.com', tipo: 3 }
-{ id: 2, nome: 'João Funcionário', email: 'func@biblio.com', tipo: 2 }
-{ id: 3, nome: 'Maria Aluna', email: 'aluna@teste.com', tipo: 1 }

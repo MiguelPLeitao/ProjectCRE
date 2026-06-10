@@ -1,5 +1,0 @@
-Os dados foram preenchidos com sucesso!
-O nome é: Amanda Wiegand
-O email é: Boyd91@yahoo.com
-A senha é: cpYWNbB
-dialog message 'Cadastro realizado com sucesso! Faça login.' aceite

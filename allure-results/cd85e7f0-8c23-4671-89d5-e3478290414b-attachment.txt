@@ -1,5 +1,0 @@
-dialog message 'Login realizado com sucesso!' aceite
-Os dados foram preenchidos com sucesso!
-O titulo é: The Ambassadors e o autor é: J.M. Barrie
-O estoque é: 3
-dialog message 'Livro adicionado com sucesso!' aceite

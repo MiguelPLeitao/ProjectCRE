@@ -1,3 +1,0 @@
-Senha Invalida: 28wXfpBlzZ3ZxZ5z
-Confirmar Senha Invalida: DvPIU0AXToTDL0g
-dialog message 'As senhas não conferem.' aceite

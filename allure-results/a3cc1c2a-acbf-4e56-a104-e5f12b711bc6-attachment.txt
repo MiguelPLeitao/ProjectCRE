@@ -1,8 +1,0 @@
-usuário 1: tem 1 ordens de compra
-usuário 2: tem 1 ordens de compra
-usuário 4: tem 1 ordens de compra
-usuário 6: tem 1 ordens de compra
-usuário 7: tem 2 ordens de compra
-usuário 9: tem 1 ordens de compra
-usuário 16: tem 1 ordens de compra
-Total de ordens de compra: 8

@@ -1,3 +1,0 @@
-Senha Invalida: _NS5vfGRt4b
-Confirmar Senha Invalida: d80TkcVd7Wb
-dialog message 'As senhas não conferem.' aceite

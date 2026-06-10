@@ -1,4 +1,0 @@
-dialog message 'Login realizado com sucesso!' aceite
-locator('.stat-card').filter({ hasText: 'Total de Livros' }).locator('.number')
-2
-2

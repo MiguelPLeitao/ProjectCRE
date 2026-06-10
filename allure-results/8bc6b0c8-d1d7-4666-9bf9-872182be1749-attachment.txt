@@ -1,5 +1,0 @@
-dialog message 'Login realizado com sucesso!' aceite
-Os dados foram preenchidos com sucesso!
-O titulo é: Grimms' Fairy Tales e o autor é: Michael Chabon
-O estoque é: 39
-dialog message 'Livro adicionado com sucesso!' aceite

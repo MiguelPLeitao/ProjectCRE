@@ -1,4 +1,0 @@
-dialog message 'Login realizado com sucesso!' aceite
-Os dados foram preenchidos com sucesso!
-O titulo é: Stories of Anton Chekhov e o autor é: George R. R. Martin
-O estoque é: 81

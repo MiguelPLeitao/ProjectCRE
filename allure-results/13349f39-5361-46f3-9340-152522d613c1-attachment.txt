@@ -1,8 +1,0 @@
-Os dados foram preenchidos com sucesso!
-O nome é: Carlos Oliveira
-O email é: carlos@teste.com
-A senha é: senha123
-Os dados foram preenchidos com sucesso!
-O nome é: Barney Gottlieb
-O email é: Gracie18@hotmail.com
-A senha é: XvWUfNJ64NLcajcdadFs

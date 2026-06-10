@@ -1,3 +1,0 @@
-Senha Invalida: JzkoKvB2w2jrxdrQj
-Confirmar Senha Invalida: lnAapsl
-dialog message 'As senhas não conferem.' aceite

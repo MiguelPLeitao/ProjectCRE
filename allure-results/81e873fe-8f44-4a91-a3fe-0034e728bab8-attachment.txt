@@ -1,5 +1,0 @@
-dialog message 'Login realizado com sucesso!' aceite
-Os dados foram preenchidos com sucesso!
-O titulo é: The Great Gatsby e o autor é: Arthur Conan Doyle
-O estoque é: 7
-dialog message 'Livro adicionado com sucesso!' aceite

@@ -1,9 +1,0 @@
-{
-  totalLivros: 7,
-  totalPaginas: 3495,
-  totalUsuarios: 35,
-  usuariosPorTipo: { alunos: 33, funcionarios: 1, admins: 1 },
-  livrosDisponiveis: 3,
-  arrendamentosPendentes: 0,
-  comprasPendentes: 0
-}

@@ -1,5 +1,0 @@
-dialog message 'Login realizado com sucesso!' aceite
-Os dados foram preenchidos com sucesso!
-O titulo é: East of Eden e o autor é: Muriel Spark
-O estoque é: 90
-dialog message 'Livro adicionado com sucesso!' aceite

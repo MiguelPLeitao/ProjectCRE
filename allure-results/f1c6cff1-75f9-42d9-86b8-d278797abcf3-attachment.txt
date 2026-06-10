@@ -1,1 +1,0 @@
-{ id: 1, nome: 'Admin Master', email: 'admin@biblioteca.com', tipo: 3 }

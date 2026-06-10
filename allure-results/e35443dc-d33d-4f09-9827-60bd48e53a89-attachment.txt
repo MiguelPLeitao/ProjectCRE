@@ -1,5 +1,0 @@
-dialog message 'Login realizado com sucesso!' aceite
-Os dados foram preenchidos com sucesso!
-O titulo é: Tinker, Tailor, Soldier, Spy e o autor é: J.K. Rowling
-O estoque é: 38
-dialog message 'Livro adicionado com sucesso!' aceite

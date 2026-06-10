@@ -1,5 +1,0 @@
-Os dados foram preenchidos com sucesso!
-O nome é: Maudie Carter
-O email é: Madison_Kautzer@hotmail.com
-A senha é: vrlBYpdHxMMlIL
-dialog message 'Cadastro realizado com sucesso! Faça login.' aceite

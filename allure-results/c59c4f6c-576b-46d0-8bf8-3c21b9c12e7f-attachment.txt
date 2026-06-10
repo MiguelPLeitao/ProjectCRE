@@ -1,3 +1,0 @@
-Senha Invalida: 9Omk37B
-Confirmar Senha Invalida: 6WJNCI8pPdwKNUYFGpCc
-dialog message 'As senhas não conferem.' aceite

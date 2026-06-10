@@ -1,9 +1,0 @@
-{
-  mensagem: 'Usuário criado com sucesso',
-  usuario: {
-    id: 20,
-    nome: 'Dewitt Lakin',
-    email: 'Nathen_Langosh8@gmail.com',
-    tipo: 1
-  }
-}

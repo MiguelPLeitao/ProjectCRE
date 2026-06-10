@@ -1,1 +1,0 @@
-{ mensagem: 'Nome, autor e páginas são obrigatórios' }
