@@ -1,4 +1,5 @@
 import { expect } from '@playwright/test';
+import { faker } from '@faker-js/faker';
 
 class Favourites_page {
     constructor(page) {
@@ -17,26 +18,9 @@ class Favourites_page {
         this.Compras_BuyOrders_button = page.getByRole('link', { name: 'Compras', exact: true });
         this.MinhasCompras_MyBuyOrders_button = page.getByRole('link', { name: 'Minhas Compras' });
         this.Mensagem_Message_text = page.getByText('Você ainda não tem livros');
-        this.Livro1_Book1_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(0);
-        this.Livro2_Book2_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(1);
-        this.Livro3_Book3_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(2);
-        this.Livro4_Book4_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(3);
-        this.Livro5_Book5_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(4);
-        this.Livro6_Book6_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(5);
-        this.Livro7_Book7_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(6);
-        this.Livro8_Book8_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(7);
-        this.Livro9_Book9_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(8);
-        this.Livro10_Book10_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(9);
-        this.Livro11_Book11_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(10);
-        this.Livro12_Book12_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(11);
-        this.Livro13_Book13_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(12);
-        this.Livro14_Book14_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(13);
-        this.Livro15_Book15_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(14);
-        this.Livro16_Book16_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(15);
-        this.Livro17_Book17_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(16);
-        this.Livro18_Book18_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(17);
-        this.Livro19_Book19_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(18);
-        this.Livro20_Book20_button = page.locator("//div[@id='livros-favoritos']//div[contains(@class,'book-card')]").nth(19);
+
+        this.FavouriteBookCards = page.locator('[id="lista-favoritos"] .book-card');
+
         this.PAGEBODY_allpage = page.locator('body');
     }
 
@@ -80,84 +64,30 @@ class Favourites_page {
         await this.MinhasCompras_MyBuyOrders_button.click();
     }
 
-    ClickLivro1_Book1_button() {
-        this.Livro1_Book1_button.click();
+    async SelectLivroFavorito_FavouriteBookCard_grid(book = 'random') {
+        const cards = this.FavouriteBookCards;
+        const count = await cards.count();
+
+        if (book === 'random') {
+            const randomIndex = faker.number.int({ min: 0, max: count - 1 });
+            return cards.nth(randomIndex);
+        }
+
+        if (typeof book === 'number') {
+            return cards.nth(book);
+        }
+
+        if (typeof book === 'object' && book.title && book.author) {
+            return cards.filter({ hasText: book.title }).filter({ hasText: book.author }).first();
+        }
+
+        return cards.filter({ hasText: book }).first();
     }
 
-    ClickLivro2_Book2_button() {
-        this.Livro2_Book2_button.click();
-    }
 
-    ClickLivro3_Book3_button() {
-        this.Livro3_Book3_button.click();
-    }
-
-    ClickLivro4_Book4_button() {
-        this.Livro4_Book4_button.click();
-    }
-
-    ClickLivro5_Book5_button() {
-        this.Livro5_Book5_button.click();
-    }
-
-    ClickLivro6_Book6_button() {
-        this.Livro6_Book6_button.click();
-    }
-
-    ClickLivro7_Book7_button() {
-        this.Livro7_Book7_button.click();
-    }
-
-    ClickLivro8_Book8_button() {
-        this.Livro8_Book8_button.click();
-    }
-
-    ClickLivro9_Book9_button() {
-        this.Livro9_Book9_button.click();
-    }
-
-    ClickLivro10_Book10_button() {
-        this.Livro10_Book10_button.click();
-    }
-
-    ClickLivro11_Book11_button() {
-        this.Livro11_Book11_button.click();
-    }
-
-    ClickLivro12_Book12_button() {
-        this.Livro12_Book12_button.click();
-    }
-
-    ClickLivro13_Book13_button() {
-        this.Livro13_Book13_button.click();
-    }
-
-    ClickLivro14_Book14_button() {
-        this.Livro14_Book14_button.click();
-    }
-
-    ClickLivro15_Book15_button() {
-        this.Livro15_Book15_button.click();
-    }
-
-    ClickLivro16_Book16_button() {
-        this.Livro16_Book16_button.click();
-    }
-
-    ClickLivro17_Book17_button() {
-        this.Livro17_Book17_button.click();
-    }
-
-    ClickLivro18_Book18_button() {
-        this.Livro18_Book18_button.click();
-    }
-
-    ClickLivro19_Book19_button() {
-        this.Livro19_Book19_button.click();
-    }
-
-    ClickLivro20_Book20_button() {
-        this.Livro20_Book20_button.click();
+    async ClickLivroGrelha_BookfromGrid_button(book = 'random') {
+        const card = await this.SelectLivroFavorito_FavouriteBookCard_grid(book);
+        await card.click();
     }
 
 }

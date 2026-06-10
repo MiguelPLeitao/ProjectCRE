@@ -34,6 +34,63 @@ class BookDetails_page {
         });
     }
 
+
+     async ClickSair_LogOut_button() {
+        await this.Sair_LogOut_button.click();
+    }
+
+    async ClickDashboard_button() {
+        await this.Dashboard_button.click();
+    }
+
+    async ClickLivros_Books_button() {
+        await this.Livros_Books_button.click();
+    }
+
+    async ClickFavoritos_Favourites_button() {
+        await this.Favoritos_Favourites_button.click();
+    }
+
+    async ClickMeusArrendamentos_Rents_button() {
+        await this.MeusArrendamentos_Rents_button.click();
+    }
+
+    async ClickAdmin_Aprovacoes_Approvals_button() {
+        await this.Admin_Aprovacoes_Approvals_button.click();
+    }
+
+    async ClickAdmin_Compras_BuyOrders_button() {
+        await this.Admin_Compras_BuyOrders_button.click();
+    }
+
+    async ClickAdmin_Usuarios_AdminUsers_button() {
+        await this.Admin_Usuarios_AdminUsers_button.click();
+    }
+
+    async ClickCompras_BuyOrders_button() {
+        await this.Compras_BuyOrders_button.click();
+    }
+
+    async ClickMinhasCompras_MyBuyOrders_button() {
+        await this.MinhasCompras_MyBuyOrders_button.click();
+    }
+
+    async ClickAdicionarFavoritos_AddToFavourites_button() {
+        await this.AdicionarFavoritos_AddToFavourites_button.click();
+    }
+
+    async ClickRemoverFavoritos_RemoveFromFavourites_button() {
+        await this.RemoverFavoritos_RemoveFromFavourites_button.click();
+    }
+
+    async ClickApagarLivro_DeleteBook_button() {
+        await this.ApagarLivro_DeleteBook_button.click();
+    }
+
+    async ClickVoltarPaginaLivros_BacktoBooksPage_button() {
+        await this.VoltarPaginaLivros_BacktoBooksPage_button.click();
+    }
+
 }
 
 
