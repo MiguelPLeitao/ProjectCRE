@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: The Blue Castle e o autor é: Philip Roth
+O estoque é: 4
+dialog message 'Livro adicionado com sucesso!' aceite

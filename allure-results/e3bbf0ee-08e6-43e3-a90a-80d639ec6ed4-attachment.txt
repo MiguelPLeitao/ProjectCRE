@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: The Fountainhead e o autor é: John Steinbeck
+O estoque é: 72
+dialog message 'Livro adicionado com sucesso!' aceite

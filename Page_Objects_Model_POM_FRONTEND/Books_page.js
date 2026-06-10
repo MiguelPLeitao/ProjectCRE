@@ -4,11 +4,11 @@ import { faker } from '@faker-js/faker';
 const RandomValidBook = {
     TITLE: faker.book.title(),
     AUTHOR: faker.book.author(),
-    NUMBER_OF_PAGES: faker.number.int({ min: 1, max: 2000 }),
+    NUMBER_OF_PAGES: faker.number.int({ min: 1, max: 2000 }).toString(),
     DESCRIPTION: faker.lorem.paragraph(),
     URL_IMAGE: faker.internet.url(),
-    STOCK: faker.number.int({ min: 1, max: 100 }),
-    PRICE: faker.number.int({ min: 1, max: 200 })
+    STOCK: faker.number.int({ min: 1, max: 100 }).toString(),
+    PRICE: faker.number.int({ min: 1, max: 200 }).toString()
 }
 
 class Books_page {
@@ -38,26 +38,9 @@ class Books_page {
         this.AdicionarLivro_AddBook_button = page.getByRole('button', { name: 'Adicionar Livro' });
         this.EndPageTitle_header = page.getByRole('heading', { name: 'Todos os Livros' });
         this.Messagem_Message_text = page.getByText('Nenhum livro cadastrado.');
-        this.Livro1_Book1_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(0);
-        this.Livro2_Book2_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(1);
-        this.Livro3_Book3_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(2);
-        this.Livro4_Book4_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(3);
-        this.Livro5_Book5_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(4);
-        this.Livro6_Book6_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(5);
-        this.Livro7_Book7_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(6);
-        this.Livro8_Book8_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(7);
-        this.Livro9_Book9_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(8);
-        this.Livro10_Book10_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(9);
-        this.Livro11_Book11_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(10);
-        this.Livro12_Book12_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(11);
-        this.Livro13_Book13_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(12);
-        this.Livro14_Book14_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(13);
-        this.Livro15_Book15_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(14);
-        this.Livro16_Book16_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(15);
-        this.Livro17_Book17_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(16);
-        this.Livro18_Book18_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(17);
-        this.Livro19_Book19_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(18);
-        this.Livro20_Book20_button = page.locator("//div[@id='lista-livros']//div[contains(@class,'book-card')]").nth(19);
+
+        this.bookCards = page.locator('[id="lista-livros"] .book-card');
+
         this.PAGEBODY_allpage = page.locator('body');
     }
 
@@ -102,88 +85,34 @@ class Books_page {
         await this.MinhasCompras_MyBuyOrders_button.click();
     }
 
-    async ClickLivro1_Book1_button() {
-        await this.Livro1_Book1_button.click();
+    async SelectLivro_BookCard_grid(book = 'random') {
+        const cards = this.bookCards;
+        const count = await cards.count();
+
+        if (book === 'random') {
+            const randomIndex = faker.number.int({ min: 0, max: count - 1 });
+            return cards.nth(randomIndex);
+        }
+
+        if (typeof book === 'number') {
+            return cards.nth(book);
+        }
+
+        if (typeof book === 'object' && book.title && book.author) {
+            return cards.filter({ hasText: book.title }).filter({ hasText: book.author }).first();
+        }
+
+        return cards.filter({ hasText: book }).first();
     }
 
-    async ClickLivro2_Book2_button() {
-        await this.Livro2_Book2_button.click();
+
+    async ClickLivroGrelha_BookfromGrid_button(book = 'random') {
+        await this.SelectLivro_BookCard_grid(book).click();
     }
 
-    async ClickLivro3_Book3_button() {
-        await this.Livro3_Book3_button.click();
-    }
-
-    async ClickLivro4_Book4_button() {
-        await this.Livro4_Book4_button.click();
-    }
-
-    async ClickLivro5_Book5_button() {
-        await this.Livro5_Book5_button.click();
-    }
-
-    async ClickLivro6_Book6_button() {
-        await this.Livro6_Book6_button.click();
-    }
-
-    async ClickLivro7_Book7_button() {
-        await this.Livro7_Book7_button.click();
-    }
-
-    async ClickLivro8_Book8_button() {
-        await this.Livro8_Book8_button.click();
-    }
-
-    async ClickLivro9_Book9_button() {
-        await this.Livro9_Book9_button.click();
-    }
-
-    async ClickLivro10_Book10_button() {
-        await this.Livro10_Book10_button.click();
-    }
-
-    async ClickLivro11_Book11_button() {
-        await this.Livro11_Book11_button.click();
-    }
-
-    async ClickLivro12_Book12_button() {
-        await this.Livro12_Book12_button.click();
-    }
-
-    async ClickLivro13_Book13_button() {
-        await this.Livro13_Book13_button.click();
-    }
-
-    async ClickLivro14_Book14_button() {
-        await this.Livro14_Book14_button.click();
-    }
-
-    async ClickLivro15_Book15_button() {
-        await this.Livro15_Book15_button.click();
-    }
-
-    async ClickLivro16_Book16_button() {
-        await this.Livro16_Book16_button.click();
-    }
-
-    async ClickLivro17_Book17_button() {
-        await this.Livro17_Book17_button.click();
-    }
-
-    async ClickLivro18_Book18_button() {
-        await this.Livro18_Book18_button.click();
-    }
-
-    async ClickLivro19_Book19_button() {
-        await this.Livro19_Book19_button.click();
-    }
-
-    async ClickLivro20_Book20_button() {
-        await this.Livro20_Book20_button.click();
-    }
 
     async Fill_AllNewBook_Fields(title, author, numberOfPages, description, imageURL, stock, price) {
-        const finalTitle = title || RandomValdBook.TITLE;
+        const finalTitle = title || RandomValidBook.TITLE;
         const finalAuthor = author || RandomValidBook.AUTHOR;
         const finalNumberOfPages = numberOfPages || RandomValidBook.NUMBER_OF_PAGES;
         const finalDescription = description || RandomValidBook.DESCRIPTION;
@@ -192,12 +121,12 @@ class Books_page {
         const finalPrice = price || RandomValidBook.PRICE;
 
         await this.NomeLivro_BookName_inputfield.fill(finalTitle);
-        await this.Autor_BookAuthor_inputfield.fill(finalAuthor);
+        await this.NomeAutor_AuthorName_inputfield.fill(finalAuthor);
         await this.NumeroPaginas_NumberOfPages_spinbutton.fill(finalNumberOfPages);
-        await this.Descricao_BookDescription_inputfield.fill(finalDescription);
-        await this.URLImagem_BookImageURL_inputfield.fill(finalImageURL);
-        await this.Estoque_Stock_spinbutton.fill(finalStock);
-        await this.Preco_BookPrice_spinbutton.fill(finalPrice);
+        await this.DescricaoLivro_BookDescription_inputfield.fill(finalDescription);
+        await this.LivroImagemURL_BookImageURL_inputfield.fill(finalImageURL);
+        await this.EstoqueLivro_BookStock_spinbutton.fill(finalStock);
+        await this.PrecoLivro_BookPrice_spinbutton.fill(finalPrice);
 
         await console.log("Os dados foram preenchidos com sucesso!");
         await console.log("O titulo é: " + finalTitle + " e o autor é: " + finalAuthor);
@@ -211,7 +140,7 @@ class Books_page {
     }
 
     async Fill_BookAuthor_inputfield(author) {
-        await this.Autor_BookAuthor_inputfield.fill(author);
+        await this.NomeAutor_AuthorName_inputfield.fill(author);
     }
 
     async Fill_NumberOfPages_spinbutton(numberOfPages) {

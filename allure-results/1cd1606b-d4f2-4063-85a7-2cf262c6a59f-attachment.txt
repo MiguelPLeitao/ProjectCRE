@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: The Thirty-Nine Steps e o autor é: Robert Graves
+O estoque é: 71
+dialog message 'Livro adicionado com sucesso!' aceite

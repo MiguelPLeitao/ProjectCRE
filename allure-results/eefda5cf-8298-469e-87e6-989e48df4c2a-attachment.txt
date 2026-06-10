@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: Josefine Mutzenbacher e o autor é: G.K. Chesterton
+O estoque é: 27
+dialog message 'Livro adicionado com sucesso!' aceite

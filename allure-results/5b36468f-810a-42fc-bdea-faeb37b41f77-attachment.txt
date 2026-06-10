@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: Austerlitz e o autor é: Grady Ward
+O estoque é: 68
+dialog message 'Livro adicionado com sucesso!' aceite
