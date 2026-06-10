@@ -82,24 +82,35 @@ Inclui fluxos reais de uso: cadastro/login, CRUD de livros, favoritos, emprésti
 - npm.
 - Git (para clonar o repositório).
 
+### Testes
+- **Playwright** (`@playwright/test`)
+- **Allure** (`allure-playwright`, `allure-commandline`)
+- **Faker** (`@faker-js/faker`)
+
 ***
 
-## 🚀 Como Executar Localmente
+## 📦 Instalação
 
 ```bash
 git clone https://github.com/brunonf15/biblioteca-pro-max.git
 cd crud-livros-expandido
 npm install
+```
+
+***
+
+## ▶️ Executando a Aplicação
+
+```bash
 npm start
 ```
 
-O servidor sobe na porta **3000**.
+A aplicação ficará disponível em `http://localhost:3000`.
 
 Acessos principais:
-
-- Aplicação (login): `http://localhost:3000/login.html`  
-- Swagger: `http://localhost:3000/api-docs`  
-- Base da API: `http://localhost:3000`
+- Aplicação: `http://localhost:3000/login.html`
+- Swagger: `http://localhost:3000/api-docs`
+- API base: `http://localhost:3000`
 
 ***
 
@@ -221,22 +232,41 @@ Ferramentas sugeridas:
 
 ## 💡 Dados de Teste
 
-Usuários iniciais:
+Os testes usam usuários fixos e dados gerados dinamicamente.
 
-- **Admin:**  
-  - Email: `admin@biblioteca.com`  
-  - Senha: `123456`  
-- **Funcionário:**  
-  - Email: `func@biblio.com`  
-  - Senha: `123456`  
-- **Aluno:**  
-  - Email: `aluna@teste.com`  
+Usuários iniciais disponíveis:
+- **Admin**
+  - Email: `admin@biblioteca.com`
+  - Senha: `123456`
+- **Funcionário**
+  - Email: `func@biblio.com`
+  - Senha: `123456`
+- **Aluno**
+  - Email: `aluna@teste.com`
   - Senha: `123456`
 
-Livros iniciais:
+Livros iniciais disponíveis:
 
 1. Clean Code – Robert C. Martin (464 páginas)  
 2. Harry Potter – J.K. Rowling (309 páginas)
+
+Não é necessário configurar dados adicionais; os testes geram dados quando for preciso.
+
+***
+
+## 📁 Estrutura de Testes
+
+- `tests/API_test_suite1_Autenticacao_e_Perfis.spec.js`
+- `tests/API_test_suite2_Livros.spec.js`
+- `tests/API_test_suite3_Estatisticas.spec.js`
+- `tests/API_test_suite4_Favoritos.spec.js`
+- `tests/API_test_suite5_Arrendamentos.spec.js`
+- `tests/API_test_suite6_Compras.spec.js`
+- `tests/API_test_suite7_Admin_Usuarios.spec.js`
+- `tests/FRONTEND_test_suite1_Registro_e_Login.spec.js`
+- `tests/FRONTEND_test_suite2_Protecao_Rotas_e_Navegacao.spec.js`
+- `tests/FRONTEND_test_suite3_Dashboard.spec.js`
+- `tests/FRONTEND_test_suite4_Livros.spec.js`
 
 ***
 
@@ -247,6 +277,10 @@ Projeto de código aberto para fins educacionais.
 **Autor:** Bruno Figueiredo  
 - GitHub: [@brunonf15](https://github.com/brunonf15)  
 - LinkedIn: [Bruno Figueiredo](https://www.linkedin.com/in/brunonascimento15/)
+
+**Autor Testes:** Miguel Leitão  
+- GitHub: [@MiguelPLeitao](https://github.com/MiguelPLeitao)  
+- LinkedIn: [Miguel Leitão](www.linkedin.com/in/miguel-leitão-280650379/)
 
 ***
 
