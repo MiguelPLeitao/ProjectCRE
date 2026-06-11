@@ -28,49 +28,55 @@ class Admin_Approvals_page {
         this.PAGEBODY_allpage = page.locator('body');
     }
 
-    async SelectPending_Rent_gridCard(pendingRent = 'random') {
+    async SelectPending_Rent_gridCard(userID = 'random', bookID) {
         const pendingcards = this.PendingRentCards;
         const count = await pendingcards.count();
 
-        if (pendingRent === 'random') {
+        if (userID === 'random') {
             const randomIndex = faker.number.int({ min: 0, max: count - 1 });
             return pendingcards.nth(randomIndex);
         }
 
-        if (typeof pendingRent === 'number') {
-            return cards.nth(pendingRent);
+        if (typeof userID === 'number') {
+            return cards.nth(userID);
         }
 
-        return pendingcards.filter({ hasText: pendingRent }).first();
+        return pendingcards.filter({ hasText: userID })
+        .filter({ hasText: bookID })
+        .filter({ hasText: 'PENDENTE' })
+        .first();
     }
 
-    async AprovarArrendamento_ApproveRent(pendingRent = 'random') {
-        const pendingCard = await this.SelectPending_Rent_gridCard(pendingRent);
+    async AprovarArrendamento_ApproveRent(userID = 'random', bookID) {
+        const pendingCard = await this.SelectPending_Rent_gridCard(userID, bookID);
 
         await pendingCard.getByRole('button', { name: 'Aprovar' }).click();
     }
 
-    async RejeitarArrendamento_RejectRent(pendingRent = 'random') {
-        const pendingCard = await this.SelectPending_Rent_gridCard(pendingRent);
+    async RejeitarArrendamento_RejectRent(userID = 'random', bookID) {
+        const pendingCard = await this.SelectPending_Rent_gridCard(userID, bookID);
 
         await pendingCard.getByRole('button', { name: 'Rejeitar' }).click();
 
     }
 
-    async Select_Rent_gridCard(Rent = 'random') {
+    async Select_Rent_gridCard(userID = 'random', bookID, status) {
         const rentcards = this.AllRentCards;
         const count = await rentcards.count();
 
-        if (Rent === 'random') {
+        if (userID === 'random') {
             const randomIndex = faker.number.int({ min: 0, max: count - 1 });
             return rentcards.nth(randomIndex);
         }
 
-        if (typeof Rent === 'number') {
-            return rentcards.nth(Rent);
+        if (typeof userID === 'number') {
+            return rentcards.nth(userID);
         }
 
-        return rentcards.filter({ hasText: Rent }).first();
+        return rentcards.filter({ hasText: userID })
+        .filter({ hasText: bookID })
+        .filter({ hasText: status })
+        .first();
     }
 
 

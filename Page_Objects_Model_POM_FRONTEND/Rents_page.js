@@ -24,26 +24,9 @@ class Rents_page {
         this.SolicitarArrendamento_RequestRent_button = page.getByRole('button', { name: 'Solicitar Arrendamento' });
         this.EndPageTitle_header = page.getByRole('heading', { name: 'Meus Arrendamentos', exact: true });
         this.Messagem_Message_text = page.getByText('Nenhum arrendamento');
-        this.Aluguer1_Rent1_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(0);
-        this.Alguer2_Rent2_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(1);
-        this.Alguer3_Rent3_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(2);
-        this.Alguer4_Rent4_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(3);
-        this.Alguer5_Rent5_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(4);
-        this.Alguer6_Rent6_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(5);
-        this.Alguer7_Rent7_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(6);
-        this.Alguer8_Rent8_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(7);
-        this.Alguer9_Rent9_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(8);
-        this.Alguer10_Rent10_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(9);
-        this.Alguer11_Rent11_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(10);
-        this.Alguer12_Rent12_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(11);
-        this.Alguer13_Rent13_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(12);
-        this.Alguer14_Rent14_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(13);
-        this.Alguer15_Rent15_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(14);
-        this.Alguer16_Rent16_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(15);
-        this.Alguer17_Rent17_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(16);
-        this.Alguer18_Rent18_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(17);
-        this.Alguer19_Rent19_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(18);
-        this.Alguer20_Rent20_button = page.locator("//div[@id='lista-arrendamentos']//div[contains(@class,'book-card')]").nth(19);
+
+        this.RentCards = page.locator('[id="lista-arrendamentos"] .book-card');
+
         this.PAGEBODY_allpage = page.locator('body');
     }
 
@@ -59,7 +42,7 @@ class Rents_page {
             );
             await this.SelecionarLivro_SelectBook_dropdown.selectOption(randomValue);
         } else {
-            await this.SelecionarLivro_SelectBook_dropdown.selectOption({ hasText: BookName });
+            await this.SelecionarLivro_SelectBook_dropdown.selectOption({ label: BookName });
         }
     }
 
@@ -79,7 +62,7 @@ class Rents_page {
         const day = String(date.getDate()).padStart(2, '0');
         const month = String(date.getMonth() + 1).padStart(2, '0');
         const year = date.getFullYear();
-        const formatted = `${day}/${month}/${year}`;
+        const formatted = `${year}-${month}-${day}`;
 
         // Fill the input with the formatted date
         await this.SelecionarDataInicio_StartDate_datepicker.fill(formatted);
@@ -106,16 +89,40 @@ class Rents_page {
         const day = String(date.getDate()).padStart(2, '0');
         const month = String(date.getMonth() + 1).padStart(2, '0');
         const year = date.getFullYear();
-        const formatted = `${day}/${month}/${year}`;
+        const formatted = `${year}-${month}-${day}`;
 
         // Fill the input with the formatted date
         await this.SelecionarDataFim_EndDate_datepicker.fill(formatted);
     }
 
 
-    async ClickRequestRent_button() {
+    async ClickSolicitarArrendamento_RequestRent_button() {
         await this.SolicitarArrendamento_RequestRent_button.click();
     }
+
+
+    async SelectArrendamento_RentCard_grid(rent = 'random') {
+        const cards = this.RentCards;
+        const count = await cards.count();
+
+        if (rent === 'random') {
+            const randomIndex = faker.number.int({ min: 0, max: count - 1 });
+            return cards.nth(randomIndex);
+        }
+
+        if (typeof rent === 'number') {
+            return cards.nth(rent);
+        }
+
+        return cards.filter({ hasText: rent }).first();
+    }
+
+
+    async ClickArrendamentoGrelha_RentfromGrid_button(rent = 'random') {
+        const card = await this.SelectArrendamento_RentCard_grid(rent);
+        await card.click();
+    }
+
 
     async ClickDashboard_button() {
         await this.Dashboard_button.click();
@@ -151,86 +158,6 @@ class Rents_page {
 
     async ClickMinhasCompras_MyBuyOrders_button() {
         await this.MinhasCompras_MyBuyOrders_button.click();
-    }
-
-    async ClickAluguer1_Rent1_button() {
-        await this.Alguer1_Rent1_button.click();
-    }
-
-    async ClickAluguer2_Rent2_button() {
-        await this.Alguer2_Rent2_button.click();
-    }
-
-    async ClickAluguer3_Rent3_button() {
-        await this.Alguer3_Rent3_button.click();
-    }
-
-    async ClickAluguer4_Rent4_button() {
-        await this.Alguer4_Rent4_button.click();
-    }
-
-    async ClickAluguer5_Rent5_button() {
-        await this.Alguer5_Rent5_button.click();
-    }
-
-    async ClickAluguer6_Rent6_button() {
-        await this.Alguer6_Rent6_button.click();
-    }
-
-    async ClickAluguer7_Rent7_button() {
-        await this.Alguer7_Rent7_button.click();
-    }
-
-    async ClickAluguer8_Rent8_button() {
-        await this.Alguer8_Rent8_button.click();
-    }
-
-    async ClickAluguer9_Rent9_button() {
-        await this.Alguer9_Rent9_button.click();
-    }
-
-    async ClickAluguer10_Rent10_button() {
-        await this.Alguer10_Rent10_button.click();
-    }
-
-    async ClickAluguer11_Rent11_button() {
-        await this.Alguer11_Rent11_button.click();
-    }
-
-    async ClickAluguer12_Rent12_button() {
-        await this.Alguer12_Rent12_button.click();
-    }
-
-    async ClickAluguer13_Rent13_button() {
-        await this.Alguer13_Rent13_button.click();
-    }
-
-    async ClickAluguer14_Rent14_button() {
-        await this.Alguer14_Rent14_button.click();
-    }
-
-    async ClickAluguer15_Rent15_button() {
-        await this.Alguer15_Rent15_button.click();
-    }
-
-    async ClickAluguer16_Rent16_button() {
-        await this.Alguer16_Rent16_button.click();
-    }
-
-    async ClickAluguer17_Rent17_button() {
-        await this.Alguer17_Rent17_button.click();
-    }
-
-    async ClickAluguer18_Rent18_button() {
-        await this.Alguer18_Rent18_button.click();
-    }
-
-    async ClickAluguer19_Rent19_button() {
-        await this.Alguer19_Rent19_button.click();
-    }
-
-    async ClickAluguer20_Rent20_button() {
-        await this.Alguer20_Rent20_button.click();
     }
 
 
