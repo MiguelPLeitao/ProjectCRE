@@ -1,0 +1,27 @@
+usuário 1: tem 2 ordens de compra
+usuário 4: tem 2 ordens de compra
+usuário 5: tem 1 ordens de compra
+usuário 6: tem 1 ordens de compra
+usuário 7: tem 1 ordens de compra
+usuário 8: tem 1 ordens de compra
+usuário 12: tem 1 ordens de compra
+usuário 14: tem 1 ordens de compra
+usuário 15: tem 1 ordens de compra
+usuário 16: tem 1 ordens de compra
+usuário 18: tem 1 ordens de compra
+usuário 19: tem 1 ordens de compra
+usuário 21: tem 1 ordens de compra
+usuário 22: tem 1 ordens de compra
+usuário 24: tem 1 ordens de compra
+usuário 25: tem 1 ordens de compra
+usuário 27: tem 1 ordens de compra
+usuário 38: tem 1 ordens de compra
+usuário 43: tem 1 ordens de compra
+usuário 44: tem 1 ordens de compra
+usuário 47: tem 1 ordens de compra
+usuário 48: tem 1 ordens de compra
+usuário 59: tem 1 ordens de compra
+usuário 61: tem 1 ordens de compra
+usuário 62: tem 1 ordens de compra
+usuário 65: tem 1 ordens de compra
+Total de ordens de compra: 28

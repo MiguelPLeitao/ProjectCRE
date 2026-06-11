@@ -1,0 +1,5 @@
+Os dados foram preenchidos com sucesso!
+O nome é: Leo Sanford-Cronin
+O email é: Nicholas.Schneider@hotmail.com
+A senha é: Lo5Bf0dA8
+dialog message 'Cadastro realizado com sucesso! Faça login.' aceite

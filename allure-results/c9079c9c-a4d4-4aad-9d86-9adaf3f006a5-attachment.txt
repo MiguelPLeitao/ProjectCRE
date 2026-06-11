@@ -1,0 +1,5 @@
+Os dados foram preenchidos com sucesso!
+O nome é: Angus Keebler
+O email é: Rosalinda.Konopelski82@gmail.com
+A senha é: Ujk8Eh0a
+dialog message 'Cadastro realizado com sucesso! Faça login.' aceite

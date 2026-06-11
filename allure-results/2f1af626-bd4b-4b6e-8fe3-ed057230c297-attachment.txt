@@ -1,0 +1,124 @@
+User ID usado:25
+Book ID usado:5
+2023-08-30T14:38:14.748Z
+2024-06-11T12:31:38.217Z
+13
+[
+  {
+    id: 1,
+    usuarioId: 4,
+    livroId: 1,
+    dataInicio: '2026-06-11',
+    dataFim: '2026-06-27',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-11T20:33:03.332Z'
+  },
+  {
+    id: 2,
+    usuarioId: 28,
+    livroId: 17,
+    dataInicio: '2027-05-18',
+    dataFim: '2027-06-02',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-11T21:15:11.362Z'
+  },
+  {
+    id: 3,
+    usuarioId: 29,
+    livroId: 18,
+    dataInicio: '2022-09-16T05:28:57.948Z',
+    dataFim: '2023-07-31T14:59:21.497Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-11T21:15:11.980Z'
+  },
+  {
+    id: 4,
+    usuarioId: 30,
+    livroId: 19,
+    dataInicio: '2026-06-22',
+    dataFim: '2027-01-05',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-11T21:15:29.731Z'
+  },
+  {
+    id: 5,
+    usuarioId: 31,
+    livroId: 20,
+    dataInicio: '2030-03-22T22:24:26.536Z',
+    dataFim: '2030-05-28T20:35:35.945Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-11T21:15:31.136Z'
+  },
+  {
+    id: 6,
+    usuarioId: 32,
+    livroId: 21,
+    dataInicio: '2026-11-19',
+    dataFim: '2027-01-15',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-11T21:15:49.226Z'
+  },
+  {
+    id: 7,
+    usuarioId: 33,
+    livroId: 22,
+    dataInicio: '2022-12-06T19:20:07.388Z',
+    dataFim: '2023-07-26T15:24:19.284Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-11T21:15:50.244Z'
+  },
+  {
+    id: 8,
+    usuarioId: 1,
+    livroId: 2,
+    dataInicio: '2024-08-25T18:47:21.242Z',
+    dataFim: '2025-02-17T10:33:04.159Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-11T21:21:16.397Z'
+  },
+  {
+    id: 9,
+    usuarioId: 12,
+    livroId: 7,
+    dataInicio: '2030-09-13T15:41:28.482Z',
+    dataFim: '2031-01-03T18:54:28.922Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-11T21:21:16.556Z'
+  },
+  {
+    id: 10,
+    usuarioId: 20,
+    livroId: 17,
+    dataInicio: '2027-11-24T05:28:15.271Z',
+    dataFim: '2028-05-08T07:55:46.588Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-11T21:21:16.700Z'
+  },
+  {
+    id: 11,
+    usuarioId: 14,
+    livroId: 5,
+    dataInicio: '2021-01-26T22:25:46.683Z',
+    dataFim: '2021-12-15T12:56:10.073Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-11T21:21:16.779Z'
+  },
+  {
+    id: 12,
+    usuarioId: 3,
+    livroId: 5,
+    dataInicio: '2027-12-29T01:45:48.696Z',
+    dataFim: '2028-12-05T08:06:12.513Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-11T21:21:18.323Z'
+  },
+  {
+    id: 13,
+    usuarioId: 25,
+    livroId: 5,
+    dataInicio: '2023-08-30T14:38:14.748Z',
+    dataFim: '2024-06-11T12:31:38.217Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-11T21:21:18.764Z'
+  }
+]

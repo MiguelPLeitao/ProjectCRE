@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: Carmilla e o autor é: Dan Brown
+O estoque é: 85
+dialog message 'Livro adicionado com sucesso!' aceite

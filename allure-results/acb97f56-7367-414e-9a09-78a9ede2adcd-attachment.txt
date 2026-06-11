@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: The Kite Runner e o autor é: Nathanael West
+O estoque é: 29
+dialog message 'Livro adicionado com sucesso!' aceite

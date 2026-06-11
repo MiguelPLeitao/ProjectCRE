@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: Ulysses e o autor é: Aylmer Maude
+O estoque é: 28
+dialog message 'Livro adicionado com sucesso!' aceite

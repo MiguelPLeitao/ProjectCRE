@@ -118,12 +118,6 @@ class Rents_page {
     }
 
 
-    async ClickArrendamentoGrelha_RentfromGrid_button(rent = 'random') {
-        const card = await this.SelectArrendamento_RentCard_grid(rent);
-        await card.click();
-    }
-
-
     async ClickDashboard_button() {
         await this.Dashboard_button.click();
     }

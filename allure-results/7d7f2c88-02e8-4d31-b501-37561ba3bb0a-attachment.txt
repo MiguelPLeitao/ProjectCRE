@@ -1,0 +1,5 @@
+Os dados foram preenchidos com sucesso!
+O nome é: Daryl Paucek
+O email é: Alysson_Jakubowski12@gmail.com
+A senha é: HO7BRLxR7mbBbCHFTn9
+dialog message 'Cadastro realizado com sucesso! Faça login.' aceite

@@ -94,8 +94,6 @@ test.describe('Favoritos', async () => {
 
         await expect(page).toHaveURL(`http://localhost:3000/detalhes.html?id=${newBook_random.id}`);
 
-        await bookdetails_page.ClickAdicionarFavoritos_AddToFavourites_button();
-
         page.waitForEvent('dialog').then(async dialog => {
             if (dialog.message().includes('Adicionado aos favoritos!')) {
                 console.log("dialog message 'Adicionado aos favoritos!' aceite")
@@ -107,6 +105,8 @@ test.describe('Favoritos', async () => {
         });
 
         await page.waitForTimeout(3000);
+
+        await bookdetails_page.ClickAdicionarFavoritos_AddToFavourites_button();
 
         await expect(bookdetails_page.RemoverFavoritos_RemoveFromFavourites_button).toBeVisible();
         await expect(bookdetails_page.AdicionarFavoritos_AddToFavourites_button).not.toBeVisible();

@@ -26,33 +26,34 @@ class Admin_BuyOrders_page {
         this.PAGEBODY_allpage = page.locator('body');
     }
 
-    async SelectBuyOrder_gridCard(buyOrder = 'random') {
+    async SelectBuyOrder_gridCard(userID = 'random', bookID, buyorder_quantity, status) {
         const buyordercards = this.BuyOrderCards;
         const count = await buyordercards.count();
 
-        if (buyOrder === 'random') {
+        if (userID === 'random') {
             const randomIndex = faker.number.int({ min: 0, max: count - 1 });
             return buyordercards.nth(randomIndex);
         }
 
-        if (typeof buyOrder === 'number') {
+        if (typeof userID === 'number') {
             return buyordercards.nth(buyOrder);
         }
 
-        return buyordercards.filter({ hasText: buyOrder }).first();
+        return buyordercards.filter({ hasText: userID })
+        .filter({ hasText: bookID })
+        .filter({ hasText: buyorder_quantity })
+        .filter({ hasText: status })
+        .first();
     }
 
-    async AprovarCompra_ApproveBuyOrder(buyOrder = 'random') {
-        const buyOrderCard = await this.SelectBuyOrder_gridCard(buyOrder);
-
+    async AprovarCompra_ApproveBuyOrder(userID = 'random', bookID, buyorder_quantity, status) {
+        const buyOrderCard = await this.SelectBuyOrder_gridCard(userID, bookID, buyorder_quantity, status);
         await buyOrderCard.getByRole('button', { name: 'Aprovar' }).click();
     }
 
-    async RejeitarCompra_RejectBuyOrder(buyOrder = 'random') {
-        const buyOrderCard = await this.SelectBuyOrder_gridCard(buyOrder);
-
+    async RejeitarCompra_RejectBuyOrder(userID = 'random', bookID, buyorder_quantity, status) {
+        const buyOrderCard = await this.SelectBuyOrder_gridCard(userID, bookID, buyorder_quantity, status);
         await buyOrderCard.getByRole('button', { name: 'Cancelar' }).click();
-
     }
 
 

@@ -84,7 +84,7 @@ class BuyOrders_page {
     async SelectQtdCompraLivro_QntBuyOrderBook_selector_button(book = 'random', quantity = '1') {
         const card = await this.SelectLivro_BookCard_grid(book);
 
-        await card.locator('select').selectOption(String(quantity));
+        await card.getByLabel('Quantidade').fill(String(quantity));
         await card.getByRole('button', { name: 'Comprar' }).click();
     }
 }
