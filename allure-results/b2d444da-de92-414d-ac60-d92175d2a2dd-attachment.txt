@@ -1,0 +1,2 @@
+dialog message 'Login realizado com sucesso!' aceite
+dialog message 'Compra registrada com sucesso! Aguarde aprovação.' aceite

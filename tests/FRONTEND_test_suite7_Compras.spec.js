@@ -119,8 +119,10 @@ test.describe('Compras', () => {
 
         await buyorders_page.SelectQtdCompraLivro_QntBuyOrderBook_selector_button(newBook_random.nome, buyQuantity);
 
+        await page.waitForTimeout(3000);
         await expect(page).toHaveURL('http://localhost:3000/compras.html');
-
+        await page.removeAllListeners('dialog');
+        
         const EndStock = Number((await bookTobuy
             .locator('p')
             .filter({ hasText: 'Estoque' })
