@@ -155,8 +155,9 @@ test.describe('Registo e Login', () => {
         await login_page.FillEmail_Password_InputFields("admin@biblioteca.com", "1111111");
 
         await login_page.ClickEnterLogin_Button();
-
+        await page.waitForTimeout(3000);
         await expect(page).toHaveURL('http://localhost:3000/login.html');
+        await page.removeAllListeners('dialog');
     });
 
 })

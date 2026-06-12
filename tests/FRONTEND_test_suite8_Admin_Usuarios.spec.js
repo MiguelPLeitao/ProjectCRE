@@ -280,8 +280,10 @@ test.describe('Admin_Usuarios', () => {
 
         await login_page.ClickEnterLogin_Button();
 
-        await expect(page).toHaveURL('http://localhost:3000/dashboard.html');
+        await page.waitForTimeout(3000);
 
+        await expect(page).toHaveURL('http://localhost:3000/dashboard.html');
+        await page.removeAllListeners('dialog');
         await dashboard_page.ClickAdmin_Usuarios_AdminUsers_button();
 
         await expect(page).toHaveURL('http://localhost:3000/admin-usuarios.html');
@@ -303,8 +305,11 @@ test.describe('Admin_Usuarios', () => {
         const userEmployeeID = await adminusers_page.Table_GetUserId(Table_newUserEmployee);
         await adminusers_page.Table_EditUserName(Table_newUserEmployee, `${newUserEmployee.usuario.nome} EDITADO`);
         await adminusers_page.Table_ClickSaveChanges(Table_newUserEmployee);
-        await page.reload();
+        await page.waitForTimeout(3000);
+
         await page.removeAllListeners('dialog');
+        await page.reload();
+
 
         const Table_newUserEmployeeEdited = await adminusers_page.Table_GetUserRow(userEmployeeID);
         await expect(Table_newUserEmployeeEdited).toBeVisible();
@@ -329,8 +334,10 @@ test.describe('Admin_Usuarios', () => {
         const userStudentID = await adminusers_page.Table_GetUserId(Table_newUserStudent);
         await adminusers_page.Table_EditUserName(Table_newUserStudent, `${newUserStudent.usuario.nome} EDITADO`);
         await adminusers_page.Table_ClickSaveChanges(Table_newUserStudent);
-        await page.reload();
+        await page.waitForTimeout(3000);
         await page.removeAllListeners('dialog');
+        await page.reload();
+
 
         const Table_newUserStudentEdited = await adminusers_page.Table_GetUserRow(userStudentID);
         await expect(Table_newUserStudentEdited).toBeVisible();
@@ -407,9 +414,9 @@ test.describe('Admin_Usuarios', () => {
         await login_page.FillEmail_Password_InputFields("admin@biblioteca.com", "123456");
 
         await login_page.ClickEnterLogin_Button();
-
+        await page.waitForTimeout(3000);
         await expect(page).toHaveURL('http://localhost:3000/dashboard.html');
-
+        await page.removeAllListeners('dialog');
         await dashboard_page.ClickAdmin_Usuarios_AdminUsers_button();
 
         await expect(page).toHaveURL('http://localhost:3000/admin-usuarios.html');
@@ -443,8 +450,10 @@ test.describe('Admin_Usuarios', () => {
         await expect(Table_newUserEmployee).toBeVisible();
         const userEmployeeID = await adminusers_page.Table_GetUserId(Table_newUserEmployee);
         await adminusers_page.Table_ClickDeleteUser(Table_newUserEmployee);
-        await page.reload();
+        await page.waitForTimeout(3000);
         await page.removeAllListeners('dialog');
+        await page.reload();
+
 
         await expect(Table_newUserEmployee).not.toBeVisible();
         const Table_newUserEmployeeDeleted = await adminusers_page.Table_GetUserRow(userEmployeeID);
@@ -481,8 +490,10 @@ test.describe('Admin_Usuarios', () => {
         await expect(Table_newUserStudent).toBeVisible();
         const userStudentID = await adminusers_page.Table_GetUserId(Table_newUserStudent);
         await adminusers_page.Table_ClickDeleteUser(Table_newUserStudent);
-        await page.reload();
+        await page.waitForTimeout(3000);
         await page.removeAllListeners('dialog');
+        await page.reload();
+
 
         await expect(Table_newUserStudent).not.toBeVisible();
         const Table_newUserStudentDeleted = await adminusers_page.Table_GetUserRow(userStudentID);

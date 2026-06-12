@@ -1,0 +1,3 @@
+dialog message 'Login realizado com sucesso!' aceite
+dialog message 'Usuário atualizado com sucesso!' aceite
+dialog message 'Usuário atualizado com sucesso!' aceite
