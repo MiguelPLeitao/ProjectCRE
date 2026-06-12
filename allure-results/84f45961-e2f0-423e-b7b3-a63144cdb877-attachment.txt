@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: The Idiot e o autor é: Ernest Hemingway
+O estoque é: 82
+dialog message 'Livro adicionado com sucesso!' aceite

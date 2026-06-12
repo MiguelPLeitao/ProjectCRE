@@ -304,6 +304,7 @@ test.describe('Admin_Usuarios', () => {
         await adminusers_page.Table_EditUserName(Table_newUserEmployee, `${newUserEmployee.usuario.nome} EDITADO`);
         await adminusers_page.Table_ClickSaveChanges(Table_newUserEmployee);
         await page.reload();
+        await page.removeAllListeners('dialog');
 
         const Table_newUserEmployeeEdited = await adminusers_page.Table_GetUserRow(userEmployeeID);
         await expect(Table_newUserEmployeeEdited).toBeVisible();
@@ -329,6 +330,7 @@ test.describe('Admin_Usuarios', () => {
         await adminusers_page.Table_EditUserName(Table_newUserStudent, `${newUserStudent.usuario.nome} EDITADO`);
         await adminusers_page.Table_ClickSaveChanges(Table_newUserStudent);
         await page.reload();
+        await page.removeAllListeners('dialog');
 
         const Table_newUserStudentEdited = await adminusers_page.Table_GetUserRow(userStudentID);
         await expect(Table_newUserStudentEdited).toBeVisible();

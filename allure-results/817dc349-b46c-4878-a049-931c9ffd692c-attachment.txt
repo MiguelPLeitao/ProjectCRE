@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: The Alchemist e o autor é: Benjamin Jowett
+O estoque é: 6
+dialog message 'Livro adicionado com sucesso!' aceite

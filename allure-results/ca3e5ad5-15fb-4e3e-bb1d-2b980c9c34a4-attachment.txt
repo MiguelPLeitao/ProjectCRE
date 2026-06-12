@@ -1,0 +1,19 @@
+usuário 12: tem 1 ordens de compra
+usuário 14: tem 1 ordens de compra
+usuário 25: tem 1 ordens de compra
+usuário 31: tem 1 ordens de compra
+usuário 46: tem 1 ordens de compra
+usuário 67: tem 1 ordens de compra
+usuário 82: tem 1 ordens de compra
+usuário 84: tem 1 ordens de compra
+usuário 85: tem 1 ordens de compra
+usuário 87: tem 1 ordens de compra
+usuário 88: tem 1 ordens de compra
+usuário 89: tem 1 ordens de compra
+usuário 90: tem 1 ordens de compra
+usuário 94: tem 1 ordens de compra
+usuário 99: tem 1 ordens de compra
+usuário 122: tem 1 ordens de compra
+usuário 149: tem 1 ordens de compra
+usuário 152: tem 1 ordens de compra
+Total de ordens de compra: 18

@@ -1,0 +1,97 @@
+User ID usado:115
+Book ID usado:5
+2020-10-09T05:57:10.047Z
+2021-02-25T23:52:59.481Z
+10
+[
+  {
+    id: 1,
+    usuarioId: 127,
+    livroId: 2,
+    dataInicio: '2022-12-02T19:11:06.535Z',
+    dataFim: '2023-04-27T05:17:54.810Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-12T12:37:03.074Z'
+  },
+  {
+    id: 2,
+    usuarioId: 133,
+    livroId: 2,
+    dataInicio: '2025-01-22T03:44:28.829Z',
+    dataFim: '2025-10-13T12:18:47.834Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-12T12:37:03.228Z'
+  },
+  {
+    id: 3,
+    usuarioId: 47,
+    livroId: 2,
+    dataInicio: '2027-05-19T02:44:42.828Z',
+    dataFim: '2027-06-19T20:00:28.499Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-12T12:37:03.319Z'
+  },
+  {
+    id: 4,
+    usuarioId: 64,
+    livroId: 8,
+    dataInicio: '2030-01-19T00:45:29.396Z',
+    dataFim: '2030-12-20T18:03:31.874Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-12T12:37:03.398Z'
+  },
+  {
+    id: 5,
+    usuarioId: 127,
+    livroId: 6,
+    dataInicio: '2030-05-22T18:04:10.189Z',
+    dataFim: '2030-12-30T02:28:03.706Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-12T12:37:06.333Z'
+  },
+  {
+    id: 6,
+    usuarioId: 31,
+    livroId: 7,
+    dataInicio: '2021-07-17T23:51:03.546Z',
+    dataFim: '2022-04-30T16:23:29.996Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-12T12:37:06.778Z'
+  },
+  {
+    id: 7,
+    usuarioId: 37,
+    livroId: 3,
+    dataInicio: '2025-04-21T17:00:10.248Z',
+    dataFim: '2025-12-30T18:08:32.693Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-12T12:37:07.060Z'
+  },
+  {
+    id: 8,
+    usuarioId: 42,
+    livroId: 2,
+    dataInicio: '2022-01-06T17:57:49.037Z',
+    dataFim: '2022-08-18T18:41:58.441Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-12T12:37:07.227Z'
+  },
+  {
+    id: 9,
+    usuarioId: 82,
+    livroId: 4,
+    dataInicio: '2027-11-30T01:56:48.373Z',
+    dataFim: '2027-12-06T00:30:58.306Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-12T12:37:08.176Z'
+  },
+  {
+    id: 10,
+    usuarioId: 115,
+    livroId: 5,
+    dataInicio: '2020-10-09T05:57:10.047Z',
+    dataFim: '2021-02-25T23:52:59.481Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-12T12:37:08.421Z'
+  }
+]

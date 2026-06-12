@@ -1,0 +1,5 @@
+Os dados foram preenchidos com sucesso!
+O nome é: Elizabeth Schultz
+O email é: Katlyn46@hotmail.com
+A senha é: X7telR2gZnaDw
+dialog message 'Cadastro realizado com sucesso! Faça login.' aceite

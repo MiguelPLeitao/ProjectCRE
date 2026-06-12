@@ -1,0 +1,94 @@
+[
+  {
+    id: 1,
+    nome: 'Clean Code',
+    autor: 'Robert C. Martin',
+    paginas: 464,
+    descricao: 'Um guia completo sobre boas práticas de programação',
+    imagemUrl: 'https://images-na.ssl-images-amazon.com/images/I/41xShlnTZTL._SX376_BO1,204,203,200_.jpg',
+    dataCadastro: '2026-06-12T09:00:36.186Z',
+    estoque: 5,
+    preco: 49.9
+  },
+  {
+    id: 2,
+    nome: 'Harry Potter',
+    autor: 'J.K. Rowling',
+    paginas: 309,
+    descricao: 'O primeiro livro da saga do bruxinho mais famoso',
+    imagemUrl: 'https://m.media-amazon.com/images/I/81ibfYk4qmL._SY466_.jpg',
+    dataCadastro: '2026-06-12T09:00:36.186Z',
+    estoque: 3,
+    preco: 39.9
+  },
+  {
+    id: 3,
+    nome: 'The Trial',
+    autor: 'Bret Trantow',
+    paginas: 513,
+    descricao: 'Adsidue charisma tabgo crinis atavus tempore sublime velut ipsum. Clarus aestivus adsidue demoror dapifer contego vester cubitum uredo celo.',
+    imagemUrl: 'https://picsum.photos/seed/1H3vBRWjx/944/2686',
+    dataCadastro: '2026-06-12T12:26:23.290Z',
+    estoque: 127,
+    preco: 177.19
+  },
+  {
+    id: 4,
+    nome: 'Hitting the line',
+    autor: 'Kristy Walker',
+    paginas: 653,
+    descricao: 'Absens audax maxime curatio. Summisse curso cohibeo depono utrimque deleo confugo cubitum copiose.',
+    imagemUrl: 'https://picsum.photos/seed/nrUBlIB3o/2090/1076',
+    dataCadastro: '2026-06-12T12:26:30.941Z',
+    estoque: 335,
+    preco: 134.8
+  },
+  {
+    id: 5,
+    nome: 'American Pastoral',
+    autor: 'Dr. Johnathan Bernhard I',
+    paginas: 478,
+    descricao: 'Aurum absorbeo compono confero bibo audeo creptio. Veritas animadverto vorax consuasor summopere vulgus vere.',
+    imagemUrl: 'https://picsum.photos/seed/xt7EM/176/3503',
+    dataCadastro: '2026-06-12T12:26:41.295Z',
+    estoque: 891,
+    preco: 10.5
+  },
+  {
+    id: 6,
+    nome: 'Dracula',
+    autor: 'Vallie Dicki',
+    paginas: 317,
+    descricao: 'Argentum tametsi auctor vel deprecator subnecto. Illo acies totidem accendo condico via.',
+    imagemUrl: 'https://picsum.photos/seed/1BQWnU/1708/1774',
+    dataCadastro: '2026-06-12T12:26:50.114Z',
+    estoque: 39,
+    preco: 182.19
+  },
+  {
+    id: 7,
+    nome: "If on a Winter's Night a Traveler",
+    autor: 'Mr. Malcolm Bruen',
+    paginas: 1639,
+    descricao: 'Damnatio tremo vinco nisi balbus. Vapulus deprimo odio hic.',
+    imagemUrl: 'https://picsum.photos/seed/Y2AXv/3685/1739',
+    dataCadastro: '2026-06-12T12:26:58.909Z',
+    estoque: 465,
+    preco: 14.19
+  },
+  {
+    id: 8,
+    nome: 'The Portrait of a Lady',
+    autor: 'Rene MacGyver PhD',
+    paginas: 321,
+    descricao: 'Ademptio ante crapula canto tero teres. Adficio ventus blandior cubicularis tondeo demum molestias bestia chirographum solutio.',
+    imagemUrl: 'https://picsum.photos/seed/hGXPplRUh6/166/1906',
+    dataCadastro: '2026-06-12T12:27:10.013Z',
+    estoque: 326,
+    preco: 153.49
+  }
+]
+User ID usado:127
+Book ID usado:2
+2022-12-02T19:11:06.535Z
+2023-04-27T05:17:54.810Z

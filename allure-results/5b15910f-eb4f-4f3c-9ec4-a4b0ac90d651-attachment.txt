@@ -1,0 +1,25 @@
+User ID usado:133
+Book ID usado:2
+2025-01-22T03:44:28.829Z
+2025-10-13T12:18:47.834Z
+2
+[
+  {
+    id: 1,
+    usuarioId: 127,
+    livroId: 2,
+    dataInicio: '2022-12-02T19:11:06.535Z',
+    dataFim: '2023-04-27T05:17:54.810Z',
+    status: 'PENDENTE',
+    criadoEm: '2026-06-12T12:37:03.074Z'
+  },
+  {
+    id: 2,
+    usuarioId: 133,
+    livroId: 2,
+    dataInicio: '2025-01-22T03:44:28.829Z',
+    dataFim: '2025-10-13T12:18:47.834Z',
+    status: 'APROVADO',
+    criadoEm: '2026-06-12T12:37:03.228Z'
+  }
+]

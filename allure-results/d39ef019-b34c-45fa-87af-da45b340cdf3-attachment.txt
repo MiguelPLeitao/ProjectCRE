@@ -1,0 +1,5 @@
+Os dados foram preenchidos com sucesso!
+O nome é: Abraham Jerde
+O email é: Carmella_Russel@hotmail.com
+A senha é: roAUCi1
+dialog message 'Cadastro realizado com sucesso! Faça login.' aceite

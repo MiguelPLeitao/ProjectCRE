@@ -1,0 +1,3 @@
+Senha Invalida: 7uHvJU
+Confirmar Senha Invalida: udB_JaC2igei_DpjgQ
+dialog message 'As senhas não conferem.' aceite
