@@ -136,7 +136,7 @@ test.describe('Compras', () => {
 
         const MyCreatedBuyOrder = await mybuyorders_page.SelectCompra_BuyOrder_grid(`Livro ID: ${newBook_random.id}`);
 
-        await expect(MyCreatedBuyOrder).toBeVisible();
+        await expect(MyCreatedBuyOrder).toBeVisible({ timeout: 5000 });
 
     });
 

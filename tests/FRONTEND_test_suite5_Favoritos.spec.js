@@ -362,6 +362,7 @@ test.describe('Favoritos', async () => {
 
         await expect(page).toHaveURL('http://localhost:3000/favoritos.html');
 
+        await expect(favourites_page.FavouriteBookCards.first()).toBeVisible();
         const EndFavouriteBookCards = await favourites_page.FavouriteBookCards.count();
         expect(EndFavouriteBookCards).toBeGreaterThan(0);
 
