@@ -1,0 +1,721 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: FRONTEND_test_suite8_Admin_Usuarios.spec.js >> Admin_Usuarios >> Editar Usuário na Tabela (Sucesso)
+- Location: tests\FRONTEND_test_suite8_Admin_Usuarios.spec.js:214:9
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: locator('#lista-usuarios').locator('tr').filter({ has: locator('td:nth-child(1):text("undefined"), input[data-campo="nome"][value="undefined"], input[data-campo="email"][value="undefined"]') })
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for locator('#lista-usuarios').locator('tr').filter({ has: locator('td:nth-child(1):text("undefined"), input[data-campo="nome"][value="undefined"], input[data-campo="email"][value="undefined"]') })
+
+```
+
+```yaml
+- heading "👨‍💻 Administração de Usuários" [level=1]
+- text: Admin MasterADMIN
+- button "Sair"
+- link "Dashboard":
+  - /url: dashboard.html
+- link "Livros":
+  - /url: livros.html
+- link "Favoritos":
+  - /url: favoritos.html
+- link "Meus Arrendamentos":
+  - /url: arrendamentos.html
+- link "Aprovações":
+  - /url: aprovacoes.html
+- link "Compras Admin":
+  - /url: compras-admin.html
+- link "Usuários (Admin)":
+  - /url: admin-usuarios.html
+- heading "Criar Funcionário / Admin" [level=2]
+- text: "Nome:"
+- textbox "Nome:"
+- text: "Email:"
+- textbox "Email:"
+- text: "Senha:"
+- textbox "Senha:"
+- text: "Tipo:"
+- combobox "Tipo:":
+  - option "Selecione..." [selected]
+  - option "Funcionário"
+  - option "Administrador"
+- button "Criar Usuário"
+- heading "Usuários Cadastrados" [level=2]
+- table:
+  - rowgroup:
+    - row "ID Nome Email Tipo Ações":
+      - columnheader "ID"
+      - columnheader "Nome"
+      - columnheader "Email"
+      - columnheader "Tipo"
+      - columnheader "Ações"
+  - rowgroup:
+    - row "1 Admin Master admin@biblioteca.com Admin Salvar":
+      - cell "1"
+      - cell "Admin Master":
+        - textbox: Admin Master
+      - cell "admin@biblioteca.com":
+        - textbox: admin@biblioteca.com
+      - cell "Admin":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário"
+          - option "Admin" [selected]
+      - cell "Salvar":
+        - button "Salvar"
+    - row "2 João Funcionário func@biblio.com Funcionário Salvar Excluir":
+      - cell "2"
+      - cell "João Funcionário":
+        - textbox: João Funcionário
+      - cell "func@biblio.com":
+        - textbox: func@biblio.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "3 Maria Aluna aluna@teste.com Aluno Salvar Excluir":
+      - cell "3"
+      - cell "Maria Aluna":
+        - textbox: Maria Aluna
+      - cell "aluna@teste.com":
+        - textbox: aluna@teste.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "4 miguel miguel@teste.com Aluno Salvar Excluir":
+      - cell "4"
+      - cell "miguel":
+        - textbox: miguel
+      - cell "miguel@teste.com":
+        - textbox: miguel@teste.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "5 funcionario funcionario@teste.com Aluno Salvar Excluir":
+      - cell "5"
+      - cell "funcionario":
+        - textbox: funcionario
+      - cell "funcionario@teste.com":
+        - textbox: funcionario@teste.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "6 Noah Rowe Simon.Gislason22@yahoo.com Funcionário Salvar Excluir":
+      - cell "6"
+      - cell "Noah Rowe":
+        - textbox: Noah Rowe
+      - cell "Simon.Gislason22@yahoo.com":
+        - textbox: Simon.Gislason22@yahoo.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "7 Otis Stamm Jamaal.Langworth@gmail.com Aluno Salvar Excluir":
+      - cell "7"
+      - cell "Otis Stamm":
+        - textbox: Otis Stamm
+      - cell "Jamaal.Langworth@gmail.com":
+        - textbox: Jamaal.Langworth@gmail.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "8 Mrs. Viviane Schumm Emely1@yahoo.com Funcionário Salvar Excluir":
+      - cell "8"
+      - cell "Mrs. Viviane Schumm":
+        - textbox: Mrs. Viviane Schumm
+      - cell "Emely1@yahoo.com":
+        - textbox: Emely1@yahoo.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "9 Oliver Franecki Clifford_Feest@yahoo.com Aluno Salvar Excluir":
+      - cell "9"
+      - cell "Oliver Franecki":
+        - textbox: Oliver Franecki
+      - cell "Clifford_Feest@yahoo.com":
+        - textbox: Clifford_Feest@yahoo.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "10 Giovani Glover Eleanore99@hotmail.com Funcionário Salvar Excluir":
+      - cell "10"
+      - cell "Giovani Glover":
+        - textbox: Giovani Glover
+      - cell "Eleanore99@hotmail.com":
+        - textbox: Eleanore99@hotmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "11 Wellington Cronin Reyna_Torphy@yahoo.com Aluno Salvar Excluir":
+      - cell "11"
+      - cell "Wellington Cronin":
+        - textbox: Wellington Cronin
+      - cell "Reyna_Torphy@yahoo.com":
+        - textbox: Reyna_Torphy@yahoo.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "12 Aaron Russel Theron_Bosco@gmail.com Funcionário Salvar Excluir":
+      - cell "12"
+      - cell "Aaron Russel":
+        - textbox: Aaron Russel
+      - cell "Theron_Bosco@gmail.com":
+        - textbox: Theron_Bosco@gmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "13 Mr. Cary Wyman Ruthe.Hackett66@hotmail.com Aluno Salvar Excluir":
+      - cell "13"
+      - cell "Mr. Cary Wyman":
+        - textbox: Mr. Cary Wyman
+      - cell "Ruthe.Hackett66@hotmail.com":
+        - textbox: Ruthe.Hackett66@hotmail.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "14 Miguel EDITADO1 Cathryn.Zulauf@gmail.com Funcionário Salvar Excluir":
+      - cell "14"
+      - cell "Miguel EDITADO1":
+        - textbox: Miguel EDITADO1
+      - cell "Cathryn.Zulauf@gmail.com":
+        - textbox: Cathryn.Zulauf@gmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "15 Mr. Luther Marks Marlon_Witting93@hotmail.com Aluno Salvar Excluir":
+      - cell "15"
+      - cell "Mr. Luther Marks":
+        - textbox: Mr. Luther Marks
+      - cell "Marlon_Witting93@hotmail.com":
+        - textbox: Marlon_Witting93@hotmail.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "16 Amanda Rowe Heidi42@yahoo.com Funcionário Salvar Excluir":
+      - cell "16"
+      - cell "Amanda Rowe":
+        - textbox: Amanda Rowe
+      - cell "Heidi42@yahoo.com":
+        - textbox: Heidi42@yahoo.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "17 Nikolas McLaughlin Valentina_Gorczany96@gmail.com Aluno Salvar Excluir":
+      - cell "17"
+      - cell "Nikolas McLaughlin":
+        - textbox: Nikolas McLaughlin
+      - cell "Valentina_Gorczany96@gmail.com":
+        - textbox: Valentina_Gorczany96@gmail.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "19 2 2@2.pt Funcionário Salvar Excluir":
+      - cell "19"
+      - cell "2":
+        - textbox: "2"
+      - cell "2@2.pt":
+        - textbox: 2@2.pt
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "20 Ms. Claire Kertzmann Herman53@hotmail.com Funcionário Salvar Excluir":
+      - cell "20"
+      - cell "Ms. Claire Kertzmann":
+        - textbox: Ms. Claire Kertzmann
+      - cell "Herman53@hotmail.com":
+        - textbox: Herman53@hotmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "21 Mr. Fred Goldner Noemy98@gmail.com Funcionário Salvar Excluir":
+      - cell "21"
+      - cell "Mr. Fred Goldner":
+        - textbox: Mr. Fred Goldner
+      - cell "Noemy98@gmail.com":
+        - textbox: Noemy98@gmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "22 Irene Baumbach Jeffrey38@gmail.com Funcionário Salvar Excluir":
+      - cell "22"
+      - cell "Irene Baumbach":
+        - textbox: Irene Baumbach
+      - cell "Jeffrey38@gmail.com":
+        - textbox: Jeffrey38@gmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "23 Zander Keebler-Wilkinson Marcus2@yahoo.com Funcionário Salvar Excluir":
+      - cell "23"
+      - cell "Zander Keebler-Wilkinson":
+        - textbox: Zander Keebler-Wilkinson
+      - cell "Marcus2@yahoo.com":
+        - textbox: Marcus2@yahoo.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "24 Miguel Koelpin Phillip33@yahoo.com Funcionário Salvar Excluir":
+      - cell "24"
+      - cell "Miguel Koelpin":
+        - textbox: Miguel Koelpin
+      - cell "Phillip33@yahoo.com":
+        - textbox: Phillip33@yahoo.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "25 Leo Kshlerin Trenton.Goldner@gmail.com Funcionário Salvar Excluir":
+      - cell "25"
+      - cell "Leo Kshlerin":
+        - textbox: Leo Kshlerin
+      - cell "Trenton.Goldner@gmail.com":
+        - textbox: Trenton.Goldner@gmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "26 Miguel EDITADO2 Franco.Braun56@hotmail.com Funcionário Salvar Excluir":
+      - cell "26"
+      - cell "Miguel EDITADO2":
+        - textbox: Miguel EDITADO2
+      - cell "Franco.Braun56@hotmail.com":
+        - textbox: Franco.Braun56@hotmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "27 Luis Bartoletti Joshua_Schulist29@gmail.com Funcionário Salvar Excluir":
+      - cell "27"
+      - cell "Luis Bartoletti":
+        - textbox: Luis Bartoletti
+      - cell "Joshua_Schulist29@gmail.com":
+        - textbox: Joshua_Schulist29@gmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "28 Miss Fidel Yost-Cruickshank Briana_Kuhlman@hotmail.com Funcionário Salvar Excluir":
+      - cell "28"
+      - cell "Miss Fidel Yost-Cruickshank":
+        - textbox: Miss Fidel Yost-Cruickshank
+      - cell "Briana_Kuhlman@hotmail.com":
+        - textbox: Briana_Kuhlman@hotmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "29 Miguel EDITADO 1406 Noemi.Hoppe@yahoo.com Aluno Salvar Excluir":
+      - cell "29"
+      - cell "Miguel EDITADO 1406":
+        - textbox: Miguel EDITADO 1406
+      - cell "Noemi.Hoppe@yahoo.com":
+        - textbox: Noemi.Hoppe@yahoo.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "30 Mr. Anjali Murphy Lambert18@yahoo.com Funcionário Salvar Excluir":
+      - cell "30"
+      - cell "Mr. Anjali Murphy":
+        - textbox: Mr. Anjali Murphy
+      - cell "Lambert18@yahoo.com":
+        - textbox: Lambert18@yahoo.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "31 Erick Hettinger I Joanna.Mayert71@yahoo.com Aluno Salvar Excluir":
+      - cell "31"
+      - cell "Erick Hettinger I":
+        - textbox: Erick Hettinger I
+      - cell "Joanna.Mayert71@yahoo.com":
+        - textbox: Joanna.Mayert71@yahoo.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "32 Funcionário Novo Editado Tate.Russel@yahoo.com Funcionário Salvar Excluir":
+      - cell "32"
+      - cell "Funcionário Novo Editado":
+        - textbox: Funcionário Novo Editado
+      - cell "Tate.Russel@yahoo.com":
+        - textbox: Tate.Russel@yahoo.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "33 Sara Bailey Jr. Erik_Schoen@yahoo.com Aluno Salvar Excluir":
+      - cell "33"
+      - cell "Sara Bailey Jr.":
+        - textbox: Sara Bailey Jr.
+      - cell "Erik_Schoen@yahoo.com":
+        - textbox: Erik_Schoen@yahoo.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "34 Judith Ebert-Volkman DDS EDITADO Steve_Connelly3@hotmail.com Funcionário Salvar Excluir":
+      - cell "34"
+      - cell "Judith Ebert-Volkman DDS EDITADO":
+        - textbox: Judith Ebert-Volkman DDS EDITADO
+      - cell "Steve_Connelly3@hotmail.com":
+        - textbox: Steve_Connelly3@hotmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "35 James Krajcik Katrine_Mueller@yahoo.com Aluno Salvar Excluir":
+      - cell "35"
+      - cell "James Krajcik":
+        - textbox: James Krajcik
+      - cell "Katrine_Mueller@yahoo.com":
+        - textbox: Katrine_Mueller@yahoo.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "36 Marc Bayer EDITADO Viva.Gislason92@yahoo.com Funcionário Salvar Excluir":
+      - cell "36"
+      - cell "Marc Bayer EDITADO":
+        - textbox: Marc Bayer EDITADO
+      - cell "Viva.Gislason92@yahoo.com":
+        - textbox: Viva.Gislason92@yahoo.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "37 Olaf Beatty Marguerite85@hotmail.com Aluno Salvar Excluir":
+      - cell "37"
+      - cell "Olaf Beatty":
+        - textbox: Olaf Beatty
+      - cell "Marguerite85@hotmail.com":
+        - textbox: Marguerite85@hotmail.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "38 Luis Reynolds EDITADO Rochelle94@hotmail.com Funcionário Salvar Excluir":
+      - cell "38"
+      - cell "Luis Reynolds EDITADO":
+        - textbox: Luis Reynolds EDITADO
+      - cell "Rochelle94@hotmail.com":
+        - textbox: Rochelle94@hotmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "39 Parker Mills Katrina78@hotmail.com Aluno Salvar Excluir":
+      - cell "39"
+      - cell "Parker Mills":
+        - textbox: Parker Mills
+      - cell "Katrina78@hotmail.com":
+        - textbox: Katrina78@hotmail.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+```
+
+# Test source
+
+```ts
+  209 |         const Table_newUserEmployee = await adminusers_page.Table_GetUserRow(employee_name);
+  210 |         await expect(Table_newUserEmployee).toBeVisible();
+  211 |     });
+  212 | 
+  213 | 
+  214 |     test('Editar Usuário na Tabela (Sucesso)', async ({ page }) => {
+  215 |         const login_page = new Login_page(page);
+  216 |         const dashboard_page = new Dashboard_page(page);
+  217 |         const adminusers_page = new Admin_AdminUsers_page(page);
+  218 | 
+  219 | 
+  220 |         const ValidUserStudent = {
+  221 |             "nome": faker.person.fullName(),
+  222 |             "email": faker.internet.email(),
+  223 |             "senha": faker.internet.password(),
+  224 |             "tipo": 1
+  225 |         }
+  226 | 
+  227 |         const ValidUserEmployee = {
+  228 |             "nome": faker.person.fullName(),
+  229 |             "email": faker.internet.email(),
+  230 |             "senha": faker.internet.password(),
+  231 |             "tipo": 2
+  232 |         }
+  233 | 
+  234 |         let responsePOSTnewUserEmployee = await page.request.post('/registro',
+  235 |             {
+  236 |                 data: ValidUserEmployee
+  237 |             });
+  238 | 
+  239 |         let response2POSTnewUserStudent = await page.request.post('/registro',
+  240 |             {
+  241 |                 data: ValidUserStudent
+  242 |             });
+  243 | 
+  244 |         expect(responsePOSTnewUserEmployee.status()).toBe(201);
+  245 |         let newUserEmployee = await responsePOSTnewUserEmployee.json();
+  246 |         expect(newUserEmployee.usuario).toHaveProperty('id');
+  247 |         expect(newUserEmployee.usuario).toHaveProperty('nome');
+  248 |         expect(newUserEmployee.usuario.nome).toBe(ValidUserEmployee.nome);
+  249 |         expect(newUserEmployee.usuario).toHaveProperty('email');
+  250 |         expect(newUserEmployee.usuario.email).toBe(ValidUserEmployee.email);
+  251 |         expect(newUserEmployee.usuario).toHaveProperty('tipo');
+  252 | 
+  253 |         expect(response2POSTnewUserStudent.status()).toBe(201);
+  254 |         let newUserStudent = await response2POSTnewUserStudent.json();
+  255 |         expect(newUserStudent.usuario).toHaveProperty('id');
+  256 |         expect(newUserStudent.usuario).toHaveProperty('nome');
+  257 |         expect(newUserStudent.usuario.nome).toBe(ValidUserStudent.nome);
+  258 |         expect(newUserStudent.usuario).toHaveProperty('email');
+  259 |         expect(newUserStudent.usuario.email).toBe(ValidUserStudent.email);
+  260 |         expect(newUserStudent.usuario).toHaveProperty('tipo');
+  261 | 
+  262 | 
+  263 | 
+  264 | 
+  265 |         await page.goto('http://localhost:3000/login.html');
+  266 | 
+  267 |         page.waitForEvent('dialog').then(async dialog => {
+  268 |             if (dialog.message().includes('Login realizado com sucesso!')) {
+  269 |                 console.log("dialog message 'Login realizado com sucesso!' aceite")
+  270 |                 await dialog.accept();
+  271 |             }
+  272 |             else {
+  273 |                 throw new Error('Dialog message 1 não aparece ou não contém o texto esperado.');
+  274 |             }
+  275 |         });
+  276 | 
+  277 |         await page.waitForTimeout(3000);
+  278 | 
+  279 |         await login_page.FillEmail_Password_InputFields("admin@biblioteca.com", "123456");
+  280 | 
+  281 |         await login_page.ClickEnterLogin_Button();
+  282 | 
+  283 |         await expect(page).toHaveURL('http://localhost:3000/dashboard.html');
+  284 | 
+  285 |         await dashboard_page.ClickAdmin_Usuarios_AdminUsers_button();
+  286 | 
+  287 |         await expect(page).toHaveURL('http://localhost:3000/admin-usuarios.html');
+  288 | 
+  289 |         page.waitForEvent('dialog').then(async dialog => {
+  290 |             if (dialog.message().includes('Usuário atualizado com sucesso!')) {
+  291 |                 console.log("dialog message 'Usuário atualizado com sucesso!' aceite")
+  292 |                 await dialog.accept();
+  293 |             }
+  294 |             else {
+  295 |                 throw new Error('Dialog message 2 não aparece ou não contém o texto esperado.');
+  296 |             }
+  297 |         });
+  298 | 
+  299 |         await page.waitForTimeout(3000);
+  300 | 
+  301 |         const Table_newUserEmployee = await adminusers_page.Table_GetUserRow(newUserEmployee.usuario.nome);
+  302 |         await expect(Table_newUserEmployee).toBeVisible();
+  303 |         const userEmployeeID = await adminusers_page.Table_GetUserId(Table_newUserEmployee);
+  304 |         console.log(userEmployeeID);
+  305 |         await adminusers_page.Table_EditUserName(Table_newUserEmployee, `${newUserEmployee.usuario.nome} EDITADO`);
+  306 |         await adminusers_page.Table_ClickSaveChanges(Table_newUserEmployee);
+  307 | 
+  308 |         const Table_newUserEmployeeEdited = await adminusers_page.Table_GetUserRow(userEmployeeID);
+> 309 |         await expect(Table_newUserEmployeeEdited).toBeVisible();
+      |                                                   ^ Error: expect(locator).toBeVisible() failed
+  310 |         const userEmployeeEditedName = await adminusers_page.Table_GetUserName(Table_newUserEmployeeEdited);
+  311 |         await expect(userEmployeeEditedName).toBe(`${newUserEmployee.usuario.nome} EDITADO`);
+  312 | 
+  313 | 
+  314 |         const Table_newUserStudent = await adminusers_page.Table_GetUserRow(newUserStudent.usuario.nome);
+  315 |         await expect(Table_newUserStudent).toBeVisible();
+  316 | 
+  317 | 
+  318 | 
+  319 | 
+  320 |     });
+  321 | 
+  322 | 
+  323 | })
+```

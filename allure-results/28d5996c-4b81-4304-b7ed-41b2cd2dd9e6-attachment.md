@@ -1,0 +1,474 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: FRONTEND_test_suite8_Admin_Usuarios.spec.js >> Admin_Usuarios >> Criar Funcionário pela UI Admin (Sucesso)
+- Location: tests\FRONTEND_test_suite8_Admin_Usuarios.spec.js:160:9
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: locator('#lista-usuarios').locator('tr').filter({ has: locator('td:nth-child(1)').filter({ hasText: 'Irene Baumbach' }) })
+Expected: visible
+Timeout: 5000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 5000ms
+  - waiting for locator('#lista-usuarios').locator('tr').filter({ has: locator('td:nth-child(1)').filter({ hasText: 'Irene Baumbach' }) })
+
+```
+
+```yaml
+- heading "👨‍💻 Administração de Usuários" [level=1]
+- text: Admin MasterADMIN
+- button "Sair"
+- link "Dashboard":
+  - /url: dashboard.html
+- link "Livros":
+  - /url: livros.html
+- link "Favoritos":
+  - /url: favoritos.html
+- link "Meus Arrendamentos":
+  - /url: arrendamentos.html
+- link "Aprovações":
+  - /url: aprovacoes.html
+- link "Compras Admin":
+  - /url: compras-admin.html
+- link "Usuários (Admin)":
+  - /url: admin-usuarios.html
+- heading "Criar Funcionário / Admin" [level=2]
+- text: "Nome:"
+- textbox "Nome:"
+- text: "Email:"
+- textbox "Email:"
+- text: "Senha:"
+- textbox "Senha:"
+- text: "Tipo:"
+- combobox "Tipo:":
+  - option "Selecione..." [selected]
+  - option "Funcionário"
+  - option "Administrador"
+- button "Criar Usuário"
+- heading "Usuários Cadastrados" [level=2]
+- table:
+  - rowgroup:
+    - row "ID Nome Email Tipo Ações":
+      - columnheader "ID"
+      - columnheader "Nome"
+      - columnheader "Email"
+      - columnheader "Tipo"
+      - columnheader "Ações"
+  - rowgroup:
+    - row "1 Admin Master admin@biblioteca.com Admin Salvar":
+      - cell "1"
+      - cell "Admin Master":
+        - textbox: Admin Master
+      - cell "admin@biblioteca.com":
+        - textbox: admin@biblioteca.com
+      - cell "Admin":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário"
+          - option "Admin" [selected]
+      - cell "Salvar":
+        - button "Salvar"
+    - row "2 João Funcionário func@biblio.com Funcionário Salvar Excluir":
+      - cell "2"
+      - cell "João Funcionário":
+        - textbox: João Funcionário
+      - cell "func@biblio.com":
+        - textbox: func@biblio.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "3 Maria Aluna aluna@teste.com Aluno Salvar Excluir":
+      - cell "3"
+      - cell "Maria Aluna":
+        - textbox: Maria Aluna
+      - cell "aluna@teste.com":
+        - textbox: aluna@teste.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "4 miguel miguel@teste.com Aluno Salvar Excluir":
+      - cell "4"
+      - cell "miguel":
+        - textbox: miguel
+      - cell "miguel@teste.com":
+        - textbox: miguel@teste.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "5 funcionario funcionario@teste.com Aluno Salvar Excluir":
+      - cell "5"
+      - cell "funcionario":
+        - textbox: funcionario
+      - cell "funcionario@teste.com":
+        - textbox: funcionario@teste.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "6 Noah Rowe Simon.Gislason22@yahoo.com Funcionário Salvar Excluir":
+      - cell "6"
+      - cell "Noah Rowe":
+        - textbox: Noah Rowe
+      - cell "Simon.Gislason22@yahoo.com":
+        - textbox: Simon.Gislason22@yahoo.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "7 Otis Stamm Jamaal.Langworth@gmail.com Aluno Salvar Excluir":
+      - cell "7"
+      - cell "Otis Stamm":
+        - textbox: Otis Stamm
+      - cell "Jamaal.Langworth@gmail.com":
+        - textbox: Jamaal.Langworth@gmail.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "8 Mrs. Viviane Schumm Emely1@yahoo.com Funcionário Salvar Excluir":
+      - cell "8"
+      - cell "Mrs. Viviane Schumm":
+        - textbox: Mrs. Viviane Schumm
+      - cell "Emely1@yahoo.com":
+        - textbox: Emely1@yahoo.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "9 Oliver Franecki Clifford_Feest@yahoo.com Aluno Salvar Excluir":
+      - cell "9"
+      - cell "Oliver Franecki":
+        - textbox: Oliver Franecki
+      - cell "Clifford_Feest@yahoo.com":
+        - textbox: Clifford_Feest@yahoo.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "10 Giovani Glover Eleanore99@hotmail.com Funcionário Salvar Excluir":
+      - cell "10"
+      - cell "Giovani Glover":
+        - textbox: Giovani Glover
+      - cell "Eleanore99@hotmail.com":
+        - textbox: Eleanore99@hotmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "11 Wellington Cronin Reyna_Torphy@yahoo.com Aluno Salvar Excluir":
+      - cell "11"
+      - cell "Wellington Cronin":
+        - textbox: Wellington Cronin
+      - cell "Reyna_Torphy@yahoo.com":
+        - textbox: Reyna_Torphy@yahoo.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "12 Aaron Russel Theron_Bosco@gmail.com Funcionário Salvar Excluir":
+      - cell "12"
+      - cell "Aaron Russel":
+        - textbox: Aaron Russel
+      - cell "Theron_Bosco@gmail.com":
+        - textbox: Theron_Bosco@gmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "13 Mr. Cary Wyman Ruthe.Hackett66@hotmail.com Aluno Salvar Excluir":
+      - cell "13"
+      - cell "Mr. Cary Wyman":
+        - textbox: Mr. Cary Wyman
+      - cell "Ruthe.Hackett66@hotmail.com":
+        - textbox: Ruthe.Hackett66@hotmail.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "14 Moses Weimann Cathryn.Zulauf@gmail.com Funcionário Salvar Excluir":
+      - cell "14"
+      - cell "Moses Weimann":
+        - textbox: Moses Weimann
+      - cell "Cathryn.Zulauf@gmail.com":
+        - textbox: Cathryn.Zulauf@gmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "15 Mr. Luther Marks Marlon_Witting93@hotmail.com Aluno Salvar Excluir":
+      - cell "15"
+      - cell "Mr. Luther Marks":
+        - textbox: Mr. Luther Marks
+      - cell "Marlon_Witting93@hotmail.com":
+        - textbox: Marlon_Witting93@hotmail.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "16 Amanda Rowe Heidi42@yahoo.com Funcionário Salvar Excluir":
+      - cell "16"
+      - cell "Amanda Rowe":
+        - textbox: Amanda Rowe
+      - cell "Heidi42@yahoo.com":
+        - textbox: Heidi42@yahoo.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "17 Nikolas McLaughlin Valentina_Gorczany96@gmail.com Aluno Salvar Excluir":
+      - cell "17"
+      - cell "Nikolas McLaughlin":
+        - textbox: Nikolas McLaughlin
+      - cell "Valentina_Gorczany96@gmail.com":
+        - textbox: Valentina_Gorczany96@gmail.com
+      - cell "Aluno":
+        - combobox:
+          - option "Aluno" [selected]
+          - option "Funcionário"
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "19 2 2@2.pt Funcionário Salvar Excluir":
+      - cell "19"
+      - cell "2":
+        - textbox: "2"
+      - cell "2@2.pt":
+        - textbox: 2@2.pt
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "20 Ms. Claire Kertzmann Herman53@hotmail.com Funcionário Salvar Excluir":
+      - cell "20"
+      - cell "Ms. Claire Kertzmann":
+        - textbox: Ms. Claire Kertzmann
+      - cell "Herman53@hotmail.com":
+        - textbox: Herman53@hotmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "21 Mr. Fred Goldner Noemy98@gmail.com Funcionário Salvar Excluir":
+      - cell "21"
+      - cell "Mr. Fred Goldner":
+        - textbox: Mr. Fred Goldner
+      - cell "Noemy98@gmail.com":
+        - textbox: Noemy98@gmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+    - row "22 Irene Baumbach Jeffrey38@gmail.com Funcionário Salvar Excluir":
+      - cell "22"
+      - cell "Irene Baumbach":
+        - textbox: Irene Baumbach
+      - cell "Jeffrey38@gmail.com":
+        - textbox: Jeffrey38@gmail.com
+      - cell "Funcionário":
+        - combobox:
+          - option "Aluno"
+          - option "Funcionário" [selected]
+          - option "Admin"
+      - cell "Salvar Excluir":
+        - button "Salvar"
+        - button "Excluir"
+```
+
+# Test source
+
+```ts
+  110 |         await login_page.FillEmail_Password_InputFields(newUserEmployee.usuario.email, ValidUserEmployee.senha);
+  111 |         await login_page.ClickEnterLogin_Button();
+  112 |         await expect(page).toHaveURL('http://localhost:3000/dashboard.html');
+  113 |         await expect(dashboard_page.Admin_Usuarios_AdminUsers_button).not.toBeVisible();
+  114 |         await page.goto('http://localhost:3000/admin-usuarios.html');
+  115 |         await expect(page).toHaveURL('http://localhost:3000/admin-usuarios.html');
+  116 |         await expect(adminusers_page.Mensagem_Message_text).toBeVisible();
+  117 |         await expect(adminusers_page.NomeUsuario_UserName_inputfield).not.toBeVisible();
+  118 |         await expect(adminusers_page.EmailUsuario_UserEmail_inputfield).not.toBeVisible();
+  119 |         await expect(adminusers_page.SenhaUsuario_UserPassword_inputfield).not.toBeVisible();
+  120 |         await expect(adminusers_page.TipoUsuario_UserType_dropdown).not.toBeVisible();
+  121 |         await expect(adminusers_page.CriarUsuario_AddUser_button).not.toBeVisible();
+  122 |         await expect(adminusers_page.UsersTable).not.toBeVisible();
+  123 |         await adminusers_page.ClickSair_LogOut_button();
+  124 |         await expect(page).toHaveURL('http://localhost:3000/login.html');
+  125 |         const usuarioEmployee = await page.evaluate(() => localStorage.getItem('usuario'));
+  126 |         expect(usuarioEmployee).toBeFalsy();
+  127 | 
+  128 |         page.waitForEvent('dialog').then(async dialog => {
+  129 |             if (dialog.message().includes('Login realizado com sucesso!')) {
+  130 |                 console.log("dialog message 'Login realizado com sucesso!' aceite")
+  131 |                 await dialog.accept();
+  132 |             }
+  133 |             else {
+  134 |                 throw new Error('Dialog message 1 não aparece ou não contém o texto esperado.');
+  135 |             }
+  136 |         });
+  137 | 
+  138 |         await page.waitForTimeout(3000);
+  139 | 
+  140 |         await login_page.FillEmail_Password_InputFields("admin@biblioteca.com", "123456");
+  141 | 
+  142 |         await login_page.ClickEnterLogin_Button();
+  143 | 
+  144 |         await expect(page).toHaveURL('http://localhost:3000/dashboard.html');
+  145 | 
+  146 |         await dashboard_page.ClickAdmin_Usuarios_AdminUsers_button();
+  147 | 
+  148 |         await expect(page).toHaveURL('http://localhost:3000/admin-usuarios.html');
+  149 | 
+  150 |         await expect(adminusers_page.Mensagem_Message_text).not.toBeVisible();
+  151 |         await expect(adminusers_page.NomeUsuario_UserName_inputfield).toBeVisible();
+  152 |         await expect(adminusers_page.EmailUsuario_UserEmail_inputfield).toBeVisible();
+  153 |         await expect(adminusers_page.SenhaUsuario_UserPassword_inputfield).toBeVisible();
+  154 |         await expect(adminusers_page.TipoUsuario_UserType_dropdown).toBeVisible();
+  155 |         await expect(adminusers_page.CriarUsuario_AddUser_button).toBeVisible();
+  156 |         await expect(adminusers_page.UsersTable).toBeVisible();
+  157 |     });
+  158 | 
+  159 | 
+  160 |     test('Criar Funcionário pela UI Admin (Sucesso)', async ({ page }) => {
+  161 |         const login_page = new Login_page(page);
+  162 |         const dashboard_page = new Dashboard_page(page);
+  163 |         const adminusers_page = new Admin_AdminUsers_page(page);
+  164 | 
+  165 |         await page.goto('http://localhost:3000/login.html');
+  166 | 
+  167 |         page.waitForEvent('dialog').then(async dialog => {
+  168 |             if (dialog.message().includes('Login realizado com sucesso!')) {
+  169 |                 console.log("dialog message 'Login realizado com sucesso!' aceite")
+  170 |                 await dialog.accept();
+  171 |             }
+  172 |             else {
+  173 |                 throw new Error('Dialog message 1 não aparece ou não contém o texto esperado.');
+  174 |             }
+  175 |         });
+  176 | 
+  177 |         await page.waitForTimeout(3000);
+  178 | 
+  179 |         await login_page.FillEmail_Password_InputFields("admin@biblioteca.com", "123456");
+  180 | 
+  181 |         await login_page.ClickEnterLogin_Button();
+  182 | 
+  183 |         await expect(page).toHaveURL('http://localhost:3000/dashboard.html');
+  184 | 
+  185 |         await dashboard_page.ClickAdmin_Usuarios_AdminUsers_button();
+  186 | 
+  187 |         await expect(page).toHaveURL('http://localhost:3000/admin-usuarios.html');
+  188 | 
+  189 |         page.waitForEvent('dialog').then(async dialog => {
+  190 |             if (dialog.message().includes('Usuário criado com sucesso!')) {
+  191 |                 console.log("dialog message 'Usuário criado com sucesso!' aceite")
+  192 |                 await dialog.accept();
+  193 |             }
+  194 |             else {
+  195 |                 throw new Error('Dialog message 2 não aparece ou não contém o texto esperado.');
+  196 |             }
+  197 |         });
+  198 | 
+  199 |         await page.waitForTimeout(3000);
+  200 | 
+  201 |         const employee_name = faker.person.fullName();
+  202 |         const employee_email = faker.internet.email();
+  203 |         const employee_password = faker.internet.password();
+  204 | 
+  205 |         await adminusers_page.Fill_NovoUsuario_NewUser_inputfields(employee_name, employee_email, employee_password, "Funcionário");
+  206 | 
+  207 |         await adminusers_page.Click_CriarNovoUsuario_AddNewUser_button();
+  208 | 
+  209 |         const Table_newUserEmplyee = await adminusers_page.Table_GetUserRow_ById(employee_name);
+> 210 |         await expect(Table_newUserEmplyee).toBeVisible();
+      |                                            ^ Error: expect(locator).toBeVisible() failed
+  211 | 
+  212 |     });
+  213 | 
+  214 | 
+  215 | })
+```

@@ -1,0 +1,2 @@
+dialog message 'Login realizado com sucesso!' aceite
+dialog message 'Usuário criado com sucesso!' aceite
