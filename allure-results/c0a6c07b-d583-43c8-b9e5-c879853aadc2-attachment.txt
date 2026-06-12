@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: Uncle Tom's Cabin e o autor é: W.K. Marriott
+O estoque é: 23
+dialog message 'Livro adicionado com sucesso!' aceite

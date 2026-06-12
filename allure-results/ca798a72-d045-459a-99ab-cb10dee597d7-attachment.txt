@@ -1,0 +1,5 @@
+Os dados foram preenchidos com sucesso!
+O nome é: Arch O'Kon
+O email é: Arianna11@gmail.com
+A senha é: Nbbu_3zi8lH81qRI46B8
+dialog message 'Cadastro realizado com sucesso! Faça login.' aceite

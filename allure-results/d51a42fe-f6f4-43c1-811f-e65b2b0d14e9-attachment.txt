@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+Os dados foram preenchidos com sucesso!
+O titulo é: Dracula e o autor é: Henry James
+O estoque é: 68
+dialog message 'Livro adicionado com sucesso!' aceite

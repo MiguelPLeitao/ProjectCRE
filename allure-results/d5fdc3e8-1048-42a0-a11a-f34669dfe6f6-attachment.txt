@@ -1,0 +1,5 @@
+dialog message 'Login realizado com sucesso!' aceite
+dialog message 'Deseja realmente excluir o usuário?' aceite
+dialog message 'Usuário excluído com sucesso!' aceite
+dialog message 'Deseja realmente excluir o usuário?' aceite
+dialog message 'Usuário excluído com sucesso!' aceite

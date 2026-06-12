@@ -1,0 +1,5 @@
+Os dados foram preenchidos com sucesso!
+O nome é: Shirley Stehr
+O email é: Misael.Cole59@yahoo.com
+A senha é: O7TmP6F42AQjmVbK
+dialog message 'Cadastro realizado com sucesso! Faça login.' aceite

@@ -1,0 +1,5 @@
+Os dados foram preenchidos com sucesso!
+O nome é: Darrel Haag
+O email é: Marie13@gmail.com
+A senha é: gB2XVJ5j
+dialog message 'Cadastro realizado com sucesso! Faça login.' aceite
